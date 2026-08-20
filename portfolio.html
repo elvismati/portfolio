@@ -18,6 +18,7 @@
     <!-- Shared CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
 
     <!-- Page CSS -->
@@ -37,21 +38,43 @@
 <body>
 
     <!-- ==================================================
-         HEADER / NAVIGATION
+        HEADER / NAVIGATION
     =================================================== -->
+
     <header class="header">
+
         <div class="container">
+
             <nav class="navbar">
 
+                <!-- LOGO -->
                 <a href="index.html" class="logo">
                     Elvis<span>Mati</span>
                 </a>
 
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
 
-                    <!--services dropdown-->
+                <!-- =========================================
+                    NAVIGATION LINKS
+                ========================================== -->
+
+                <ul class="nav-links">
+
+                    <!-- HOME -->
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+
+                    <!-- ABOUT -->
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+
+                    <!-- =====================================
+                        SERVICES DROPDOWN
+                    ====================================== -->
+
                     <li class="dropdown">
 
                         <div class="dropdown-trigger">
@@ -60,22 +83,48 @@
                                 Services
                             </a>
 
-                            <button class="dropdown-toggle" type="button" aria-label="Toggle Services">
+                            <button
+                                class="dropdown-toggle"
+                                type="button"
+                                aria-label="Toggle Services menu"
+                                aria-expanded="false"
+                            >
                                 <i class="fa-solid fa-chevron-down"></i>
                             </button>
 
                         </div>
 
+
                         <ul class="dropdown-menu">
-                            <li><a href="web-development.html">Web Development</a></li>
-                            <li><a href="graphic-design.html">Graphic Design</a></li>
-                            <li><a href="virtual-assistant.html">Virtual Assistant</a></li>
+
+                            <li>
+                                <a href="web-development.html">
+                                    Web Development
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="graphic-design.html">
+                                    Graphic Design
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="virtual-assistant.html">
+                                    Virtual Assistant
+                                </a>
+                            </li>
+
                         </ul>
 
                     </li>
 
-                    <!--portfolio dropdown-->
-                    <li class="dropdown">
+
+                    <!-- =====================================
+                        PORTFOLIO DROPDOWN
+                    ====================================== -->
+
+                    <!--<li class="dropdown">
 
                         <div class="dropdown-trigger">
 
@@ -83,68 +132,122 @@
                                 Portfolio
                             </a>
 
-                            <button class="dropdown-toggle" type="button" aria-label="Toggle Portfolio">
+                            <button
+                                class="dropdown-toggle"
+                                type="button"
+                                aria-label="Toggle Portfolio menu"
+                                aria-expanded="false"
+                            >
                                 <i class="fa-solid fa-chevron-down"></i>
                             </button>
 
                         </div>
 
+
                         <ul class="dropdown-menu">
-                            <li><a href="web-development-portfolio.html">Web Development</a></li>
-                            <li><a href="graphic-design-portfolio.html">Graphic Design</a></li>
-                            <li><a href="virtual-assistant-portfolio.html">Virtual Assistant</a></li>
+
+                            <li>
+                                <a href="web-development-portfolio.html">
+                                    Web Development
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="graphic-design-portfolio.html">
+                                    Graphic Design
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="virtual-assistant-portfolio.html">
+                                    Virtual Assistant
+                                </a>
+                            </li>
+
                         </ul>
 
+                    </li>-->
+
+
+                    <!-- PRICING -->
+                    <li>
+                        <a href="pricing.html">Pricing</a>
                     </li>
 
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
 
-                    <!-- Theme option shown inside opened mobile menu -->
-                    <li class="mobile-theme-item">
-                        <button class="theme-btn mobile-theme-btn" type="button" aria-label="Switch to dark theme">
-                            <i class="fa-solid fa-moon"></i>
-                            <span class="theme-btn-text">Dark</span>
-                        </button>
+                    <!-- CONTACT -->
+                    <li>
+                        <a href="contact.html">Contact</a>
                     </li>
+
                 </ul>
 
-                 <!-- My existing desktop theme and WhatsApp buttons stay here -->
-                <div class="nav-actions">
-                    <button class="theme-btn desktop-theme-btn" type="button" aria-label="Switch to dark theme">
-                        <i class="fa-solid fa-moon"></i>
-                        <span class="theme-btn-text">Dark</span>
-                    </button>
 
+                <!-- =========================================
+                    DESKTOP ACTIONS
+                ========================================== -->
+
+                <div class="nav-actions">
+
+
+                    <!-- WHATSAPP -->
                     <a
                         href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services.%20I'd%20love%20to%20discuss%20my%20project."
                         class="whatsapp-btn"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span>WhatsApp</span>
+
+                        <span>
+                            WhatsApp
+                        </span>
+
                     </a>
+
                 </div>
 
-                 <!-- Mobile WhatsApp button -->
-                <a href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services."
-                class="mobile-whatsapp-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat with Elvis on WhatsApp">
+
+                <!-- =========================================
+                    MOBILE WHATSAPP
+                ========================================== -->
+
+                <a
+                    href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services."
+                    class="mobile-whatsapp-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with Elvis on WhatsApp"
+                >
+
                     <i class="fa-brands fa-whatsapp"></i>
+
                 </a>
-                <!-- End of Mobile WhatsApp button -->
-                 <!-- Hamburger menu on mobile -->
-                <div class="hamburger" role="button" tabindex="0" aria-label="Open navigation menu">
+
+
+                <!-- =========================================
+                    HAMBURGER
+                ========================================== -->
+
+                <button
+                    class="hamburger"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="main-navigation"
+                >
+
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+
+                </button>
 
             </nav>
+
         </div>
+
     </header>
 
     <main>
@@ -324,145 +427,127 @@
 
     </main>
 
-   <!-- ==================================================
-     FOOTER
-     Contains brand information, navigation links,
-     services, and contact/social links.
+    <!-- ==================================================
+         FOOTER
     =================================================== -->
-
     <footer class="site-footer">
+        <div class="container">
 
-    <div class="container">
+            <div class="footer-grid">
 
-        <!-- Main footer content -->
-        <div class="footer-grid">
-
-            <!-- Brand and short introduction -->
-            <div class="footer-brand">
-
-                <!-- Replace "Elvis Mati" with your preferred brand name if needed -->
-                <a href="index.html" class="footer-logo">
-                    Elvis<span>Mati</span>
-                </a>
-
-                <p>
-                    Helping individuals, businesses, and organizations build a
-                    stronger digital presence through web development, graphic
-                    design, and virtual assistance.
-                </p>
-
-                <!-- Social links: replace # with your real profile links -->
-                <div class="footer-social-links">
-
-                    <a href="https://www.linkedin.com/in/elvismati/"
-                    aria-label="Visit my LinkedIn profile"
-                    target="_blank"
-                    rel="noopener">
-                        <i class="fa-brands fa-linkedin-in"></i>
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        Elvis<span>Mati</span>
                     </a>
 
-                    <a href="https://www.instagram.com/elvismati1/"
-                    aria-label="Visit my Instagram profile"
-                    target="_blank"
-                    rel="noopener">
-                        <i class="fa-brands fa-instagram"></i>
+                    <p>
+                        Helping individuals, businesses, and organizations build a
+                        stronger digital presence through web development, graphic
+                        design, and virtual assistance.
+                    </p>
+
+                    <div class="footer-social-links">
+                        <a
+                            href="https://www.linkedin.com/in/elvismati/"
+                            aria-label="Visit my LinkedIn profile"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/elvismati1/"
+                            aria-label="Visit my Instagram profile"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/sonraz"
+                            aria-label="Visit my GitHub profile"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="order.html">Start a Project</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>My Services</h3>
+
+                    <ul>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="graphic-design.html">Graphic Design</a></li>
+                        <li><a href="virtual-assistant.html">Virtual Assistant</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+
+                    <a
+                        href="https://wa.me/254700531854?text=Hello%20Elvis%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Chat on WhatsApp
                     </a>
 
-                    <a href="https://github.com/sonraz"
-                    aria-label="Visit my GitHub profile"
-                    target="_blank"
-                    rel="noopener">
-                        <i class="fa-brands fa-github"></i>
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=elvismati.work@gmail.com&su=Project%20Inquiry"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                        Send an Email
                     </a>
 
+                    <p class="footer-availability">
+                        <i class="fa-solid fa-circle"></i>
+                        Available for freelance work
+                    </p>
                 </div>
 
             </div>
 
-            <!-- Quick navigation links -->
-            <div class="footer-links">
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Elvis Mati. All rights reserved.</p>
 
-                <h3>Quick Links</h3>
-
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="order.html">Start a Project</a></li>
-                </ul>
-
-            </div>
-
-            <!-- Service page links -->
-            <div class="footer-links">
-
-                <h3>My Services</h3>
-
-                <ul>
-                    <li><a href="web-development.html">Web Development</a></li>
-                    <li><a href="graphic-design.html">Graphic Design</a></li>
-                    <li><a href="virtual-assistant.html">Virtual Assistant</a></li>
-                </ul>
-
-            </div>
-
-            <!-- Contact details -->
-            <div class="footer-contact">
-
-                <h3>Get in Touch</h3>
-
-                <!-- Replace the WhatsApp number with my real number -->
-                <a href="https://wa.me/254700531854?text=Hello%20Elvis%2C%20I%20would%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noopener">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    Chat on WhatsApp
-                </a>
-
-                <!-- Replace your-email@gmail.com with my real Gmail address -->
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=elvismati.work@gmail.com&su=Project%20Inquiry"
-                target="_blank"
-                rel="noopener">
-                    <i class="fa-solid fa-envelope"></i>
-                    Send an Email
-                </a>
-
-                <p class="footer-availability">
-                    <i class="fa-solid fa-circle"></i>
-                    Available for freelance projects
+                <p>
+                    Designed and built with <i class="fa-solid fa-heart"></i> by Elvis Mati.
                 </p>
-
             </div>
 
         </div>
+    </footer>
 
-    <!-- Bottom copyright area -->
-    <div class="footer-bottom">
-
-        <p>
-            © <span id="currentYear"></span> Elvis Mati. All rights reserved.
-        </p>
-
-        <p>
-            Designed and built with <i class="fa-solid fa-heart"></i> by Elvis Mati.
-        </p>
-
-    </div>
-
-</div>
-
-    <!-- Back-to-top button -->
     <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Shared JavaScript -->
-    <script src="js/script.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/back-to-top.js"></script>
+
+  <!--All js Script files-->
+  
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
 
     <!-- Portfolio page JavaScript -->
     <script src="js/portfolio.js"></script>

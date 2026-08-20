@@ -1,420 +1,536 @@
-/* ==================================================
-   SERVICES PAGE STYLES
-   Controls the Services page hero, service cards,
-   call-to-action area, responsive layout, and
-   dark-theme readability.
-================================================== */
+/* =========================================================
+   SERVICES PAGE
+   Branded Services Page
+========================================================= */
 
 
-/* ==================================================
+/* =========================================================
    SERVICES HERO
-================================================== */
+========================================================= */
 
 .services-hero {
     position: relative;
     overflow: hidden;
-    padding: 115px 0 95px;
-    background:
-        linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+
+    padding: 88px 0 72px;
+
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
 }
+
+
+/* Subtle branded background glow */
 
 .services-hero::before,
 .services-hero::after {
     position: absolute;
+
+    width: 320px;
+    height: 320px;
+
     border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.35;
+
+    filter: blur(100px);
+
+    opacity: 0.10;
+
     content: "";
+    pointer-events: none;
 }
 
 .services-hero::before {
-    top: -130px;
-    left: -110px;
-    width: 330px;
-    height: 330px;
-    background-color: #2563eb;
+    top: -180px;
+    left: -120px;
+
+    background: var(--accent);
 }
 
 .services-hero::after {
-    right: -100px;
-    bottom: -150px;
-    width: 310px;
-    height: 310px;
-    background-color: #14b8a6;
+    right: -140px;
+    bottom: -180px;
+
+    background: #14b8a6;
 }
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .services-hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
-    text-align: center;
+
+    max-width: 820px;
+
     margin: 0 auto;
+
+    text-align: center;
 }
 
 .services-hero-content h1 {
-    margin-bottom: 22px;
-    color: #0f172a;
-    font-size: clamp(2.35rem, 5vw, 4rem);
-    line-height: 1.16;
+    margin: 16px 0 20px;
+
+    color: var(--text);
+
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.12;
+
+    letter-spacing: -0.045em;
 }
 
 .services-hero-content h1 span {
     display: block;
-    color: #2563eb;
+
+    color: var(--accent);
 }
 
 .services-hero-content > p {
-    max-width: 690px;
-    margin: 0 auto 28px;
-    color: #64748b;
-    font-size: 1.05rem;
-    line-height: 1.85;
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: var(--text-faint);
+
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
 
-/* ==================================================
+/* =========================================================
    BREADCRUMB
-================================================== */
+========================================================= */
 
 .breadcrumb {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 28px;
-    font-size: 0.95rem;
+
+    gap: 9px;
+
+    margin-top: 24px;
+
+    font-size: 0.85rem;
 }
 
-/* Home link in the light theme */
 .breadcrumb a {
-    color: #0f172a;
+    color: var(--text-faint);
+
     text-decoration: none;
-    transition: color 0.3s ease;
+
+    transition: color 0.2s ease;
 }
 
 .breadcrumb a:hover {
-    color: #2563eb;
+    color: var(--accent);
 }
 
-/* Arrow separator */
 .breadcrumb i {
-    color: #94a3b8;
-    font-size: 0.75rem;
+    color: var(--text-faint);
+
+    font-size: 0.7rem;
+
+    opacity: 0.65;
 }
 
-/* Current page: Services or Portfolio */
 .breadcrumb-current {
-    color: #2563eb;
+    color: var(--accent);
+
     font-weight: 700;
-    cursor: default;
-}
-
-/* ==================================================
-   DARK THEME BREADCRUMB
-================================================== */
-
-/* Home link becomes white in dark mode */
-body.dark-theme .breadcrumb a {
-    color: #ffffff;
-}
-
-/* Home link becomes blue when hovered */
-body.dark-theme .breadcrumb a:hover {
-    color: #60a5fa;
-}
-
-/* Arrow remains a soft grey */
-body.dark-theme .breadcrumb i {
-    color: #94a3b8;
-}
-
-/* Current page stays blue in dark mode */
-body.dark-theme .breadcrumb-current {
-    color: #60a5fa;
 }
 
 
-/* ==================================================
+/* =========================================================
    SERVICES OVERVIEW
-================================================== */
+========================================================= */
 
 .services-overview-page {
-    padding: 105px 0;
-    background-color: #ffffff;
+    padding: 88px 0 96px;
+
+    background: var(--bg);
 }
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.services-overview-page .section-heading {
+    max-width: 720px;
+
+    margin-bottom: 42px;
+}
+
+.services-overview-page .section-heading h2 {
+    margin-top: 10px;
+
+    color: var(--text);
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+
+    letter-spacing: -0.04em;
+}
+
+.services-overview-page .section-heading h2 span {
+    color: var(--accent);
+}
+
+.services-overview-page .section-heading p {
+    max-width: 650px;
+
+    margin-top: 16px;
+
+    color: var(--text-faint);
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
 
 .services-page-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
 }
 
 
-/* ==================================================
-   SERVICE PAGE CARD
-================================================== */
+/* =========================================================
+   SERVICE CARD
+========================================================= */
 
 .service-page-card {
     position: relative;
+
     display: flex;
     flex-direction: column;
+
+    min-width: 0;
     min-height: 100%;
-    padding: 38px 32px;
+
+    padding: 30px 28px;
+
     overflow: hidden;
-    background-color: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.09);
-    border-radius: 20px;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: none;
+
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .service-page-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(37, 99, 235, 0.3);
-    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.13);
+    transform: translateY(-5px);
+
+    border-color: rgba(59, 109, 240, 0.35);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.08);
 }
 
 
-/* ==================================================
-   SERVICE ICON AND NUMBER
-================================================== */
+/* =========================================================
+   SERVICE ICON
+========================================================= */
 
 .service-page-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    margin-bottom: 28px;
-    border-radius: 16px;
-    background-color: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-    font-size: 1.55rem;
-    transition: transform 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(59, 109, 240, 0.16);
+
+    border-radius: 13px;
+
+    background: rgba(59, 109, 240, 0.09);
+
+    color: var(--accent);
+
+    font-size: 1.3rem;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
 .service-page-card:hover .service-page-icon {
-    transform: rotate(-6deg) scale(1.08);
-    background-color: #2563eb;
+    transform: translateY(-2px);
+
+    background: var(--accent);
+
     color: #ffffff;
 }
 
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
 .service-page-number {
     position: absolute;
-    top: 34px;
-    right: 30px;
-    color: rgba(15, 23, 42, 0.12);
-    font-size: 1.1rem;
+
+    top: 28px;
+    right: 26px;
+
+    color: var(--text);
+
+    opacity: 0.08;
+
+    font-size: 1rem;
     font-weight: 800;
 }
 
 
-/* ==================================================
-   SERVICE CARD TEXT
-================================================== */
+/* =========================================================
+   CARD TEXT
+========================================================= */
 
 .service-page-card h3 {
-    margin-bottom: 16px;
-    color: #0f172a;
-    font-size: 1.35rem;
+    margin: 0 0 12px;
+
+    color: var(--text);
+
+    font-size: 1.2rem;
+    line-height: 1.3;
+
+    letter-spacing: -0.02em;
 }
 
 .service-page-card > p {
-    margin-bottom: 26px;
-    color: #64748b;
-    line-height: 1.8;
+    margin: 0 0 24px;
+
+    color: var(--text-faint);
+
+    font-size: 0.9rem;
+    line-height: 1.7;
 }
 
 
-/* ==================================================
-   SERVICE FEATURE LIST
-================================================== */
+/* =========================================================
+   FEATURE LIST
+========================================================= */
 
 .service-feature-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 0 0 32px;
+
+    gap: 10px;
+
+    margin: 0 0 28px;
     padding: 0;
+
+    list-style: none;
 }
 
 .service-feature-list li {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    color: #475569;
-    font-size: 0.92rem;
-    line-height: 1.55;
+
+    gap: 9px;
+
+    color: var(--text-faint);
+
+    font-size: 0.82rem;
+    line-height: 1.5;
 }
 
 .service-feature-list i {
+    flex-shrink: 0;
+
     margin-top: 4px;
+
     color: #22c55e;
-    font-size: 0.78rem;
+
+    font-size: 0.68rem;
 }
 
 
-/* ==================================================
-   SERVICE CARD LINK
-================================================== */
+/* =========================================================
+   SERVICE LINK
+========================================================= */
 
 .service-page-link {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+
+    gap: 8px;
+
     margin-top: auto;
-    color: #2563eb;
+
+    color: var(--accent);
+
+    font-size: 0.85rem;
     font-weight: 700;
+
     text-decoration: none;
-    transition: gap 0.3s ease, color 0.3s ease;
+
+    transition:
+        gap 0.2s ease,
+        color 0.2s ease;
 }
 
 .service-page-link:hover {
-    gap: 15px;
-    color: #0f172a;
+    gap: 12px;
+
+    color: var(--text);
 }
 
 
-/* ==================================================
-   SERVICES PAGE CTA
-================================================== */
+/* =========================================================
+   SERVICES CTA
+========================================================= */
 
 .services-page-cta {
-    padding: 105px 0;
-    background-color: #0f172a;
+    padding: 88px 0;
+
+    background: var(--surface);
+
+    border-top: 1px solid var(--border);
 }
 
 .services-page-cta-content {
-    max-width: 820px;
+    max-width: 760px;
+
     margin: 0 auto;
+
     text-align: center;
 }
 
 .services-page-cta-content h2 {
-    margin-bottom: 22px;
-    color: #ffffff;
-    font-size: clamp(2.15rem, 4vw, 3rem);
-    line-height: 1.2;
+    margin: 14px 0 16px;
+
+    color: var(--text);
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+
+    letter-spacing: -0.04em;
 }
 
 .services-page-cta-content h2 span {
     display: block;
-    color: #60a5fa;
+
+    color: var(--accent);
 }
 
 .services-page-cta-content > p {
-    max-width: 680px;
-    margin: 0 auto 34px;
-    color: #cbd5e1;
-    line-height: 1.8;
+    max-width: 620px;
+
+    margin: 0 auto 28px;
+
+    color: var(--text-faint);
+
+    line-height: 1.75;
 }
 
 
-/* ==================================================
-   DARK THEME
-   These rules ensure every Services page text/card
-   remains clearly visible after theme switching.
-================================================== */
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
 
-body.dark-theme .services-hero {
-    background-color: #0f172a;
-    background-image: none;
-}
+.final-cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-body.dark-theme .services-hero-content h1 {
-    color: #f8fafc;
-}
+    gap: 12px;
 
-body.dark-theme .services-hero-content h1 span {
-    color: #60a5fa;
-}
-
-body.dark-theme .services-hero-content > p {
-    color: #cbd5e1;
-}
-
-body.dark-theme .services-overview-page {
-    background-color: #0f172a;
-}
-
-body.dark-theme .service-page-card {
-    background-color: #1e293b;
-    border-color: rgba(148, 163, 184, 0.2);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
-}
-
-body.dark-theme .service-page-card:hover {
-    border-color: rgba(96, 165, 250, 0.45);
-    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.35);
-}
-
-body.dark-theme .service-page-card h3 {
-    color: #f8fafc;
-}
-
-body.dark-theme .service-page-card > p {
-    color: #cbd5e1;
-}
-
-body.dark-theme .service-feature-list li {
-    color: #cbd5e1;
-}
-
-body.dark-theme .service-page-number {
-    color: rgba(226, 232, 240, 0.16);
-}
-
-body.dark-theme .service-page-icon {
-    background-color: rgba(96, 165, 250, 0.15);
-    color: #93c5fd;
-}
-
-body.dark-theme .service-page-card:hover .service-page-icon {
-    background-color: #60a5fa;
-    color: #0f172a;
-}
-
-body.dark-theme .service-page-link {
-    color: #93c5fd;
-}
-
-body.dark-theme .service-page-link:hover {
-    color: #ffffff;
+    flex-wrap: wrap;
 }
 
 
-/* ==================================================
-   RESPONSIVE STYLES
-================================================== */
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
 
-/* Tablet: two cards, then the third card below. */
 @media (max-width: 992px) {
+
+    .services-hero {
+        padding: 78px 0 64px;
+    }
+
+    .services-overview-page {
+        padding: 72px 0 80px;
+    }
+
     .services-page-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
     }
 
     .service-page-card:last-child {
-        grid-column: span 2;
+        grid-column: 1 / -1;
+    }
+
+    .services-page-cta {
+        padding: 72px 0;
     }
 }
 
 
-/* Mobile: exactly one card per row. */
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
 @media (max-width: 768px) {
+
     .services-hero {
-        padding: 95px 0 75px;
+        padding: 64px 0 52px;
     }
 
-    .services-overview-page,
-    .services-page-cta {
-        padding: 75px 0;
+    .services-hero-content {
+        max-width: 100%;
     }
+
+    .services-hero-content h1 {
+        font-size: clamp(2rem, 8vw, 2.7rem);
+
+        line-height: 1.12;
+    }
+
+    .services-hero-content > p {
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+    }
+
+
+    .services-overview-page {
+        padding: 64px 0;
+    }
+
+    .services-overview-page .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .services-overview-page .section-heading h2 {
+        font-size: 1.9rem;
+    }
+
 
     .services-page-grid {
         grid-template-columns: 1fr;
+
+        gap: 14px;
     }
 
     .service-page-card:last-child {
@@ -422,47 +538,199 @@ body.dark-theme .service-page-link:hover {
     }
 
     .service-page-card {
-        padding: 32px 26px;
+        padding: 26px 22px;
+
+        border-radius: 14px;
     }
 
-    .services-page-cta-content .final-cta-buttons {
+
+    .services-page-cta {
+        padding: 64px 0;
+    }
+
+    .services-page-cta-content h2 {
+        font-size: 1.9rem;
+    }
+
+    .services-page-cta-content > p {
+        font-size: 0.9rem;
+    }
+
+    .final-cta-buttons {
         flex-direction: column;
+
+        width: 100%;
     }
 
-    .services-page-cta-content .final-cta-buttons .btn {
+    .final-cta-buttons .btn {
         width: 100%;
         max-width: 320px;
+
+        justify-content: center;
     }
 }
 
 
-/* Smaller phones. */
+/* =========================================================
+   RESPONSIVE — SMALL PHONES
+========================================================= */
+
 @media (max-width: 480px) {
+
     .services-hero {
-        padding: 82px 0 65px;
+        padding: 56px 0 46px;
+    }
+
+    .services-hero-content h1 {
+        font-size: 1.85rem;
     }
 
     .services-hero-content > p {
-        font-size: 0.98rem;
-    }
-
-    .service-page-card {
-        padding: 28px 22px;
-    }
-
-    .service-page-icon {
-        width: 58px;
-        height: 58px;
-        margin-bottom: 24px;
-        font-size: 1.35rem;
-    }
-
-    .service-page-number {
-        top: 28px;
-        right: 22px;
+        font-size: 0.88rem;
     }
 
     .breadcrumb {
-        font-size: 0.86rem;
+        margin-top: 20px;
+
+        font-size: 0.78rem;
     }
+
+
+    .services-overview-page {
+        padding: 56px 0;
+    }
+
+    .services-overview-page .section-heading h2 {
+        font-size: 1.7rem;
+    }
+
+    .service-page-card {
+        padding: 24px 20px;
+    }
+
+    .service-page-icon {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 20px;
+
+        font-size: 1.2rem;
+    }
+
+    .service-page-number {
+        top: 24px;
+        right: 20px;
+    }
+
+
+    .services-page-cta {
+        padding: 56px 0;
+    }
+
+    .services-page-cta-content h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* =========================================================
+   SERVICES OVERVIEW — HORIZONTAL SPACING
+========================================================= */
+
+.services-overview-page > .container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* =========================================================
+   SERVICES CTA BUTTONS
+========================================================= */
+
+.services-page-cta .final-cta-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 48px;
+    padding: 13px 22px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
+.services-page-cta .final-whatsapp-btn {
+    background: #22c55e;
+    color: #ffffff;
+    border-color: #22c55e;
+}
+
+.services-page-cta .final-whatsapp-btn:hover {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.22);
+}
+
+
+/* =========================================================
+   START PROJECT BUTTON
+========================================================= */
+
+.services-page-cta .final-email-btn {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+.services-page-cta .final-email-btn:hover {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BUTTON ICONS
+========================================================= */
+
+.services-page-cta .final-cta-buttons .btn i {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .services-page-cta .final-cta-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
 }

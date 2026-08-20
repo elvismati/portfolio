@@ -1,171 +1,222 @@
-/* ==================================================
+/* =========================================================
    VIRTUAL ASSISTANT PAGE
-   Page-specific styles for virtual-assistant.html
-================================================== */
+========================================================= */
 
-/* ==================================================
+/* =========================================================
    HERO
-================================================== */
+========================================================= */
 
 .virtual-assistant-hero {
     position: relative;
     overflow: hidden;
-    padding: 150px 0 100px;
-    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 52%, #ecfdf5 100%);
+    padding: 110px 0 90px;
+    background:
+        radial-gradient(circle at 85% 25%, rgba(37, 99, 235, 0.10), transparent 30%),
+        linear-gradient(135deg, #f8fbff 0%, #ffffff 55%, #f4f8ff 100%);
 }
 
 .virtual-assistant-hero::before {
     content: "";
     position: absolute;
-    inset: 0;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.05);
+    top: -160px;
+    right: -100px;
     pointer-events: none;
-    background:
-        radial-gradient(circle at 90% 15%, rgba(16, 185, 129, 0.11), transparent 28%),
-        radial-gradient(circle at 10% 90%, rgba(20, 184, 166, 0.08), transparent 30%);
-}
-
-.virtual-assistant-hero .container {
-    position: relative;
-    z-index: 1;
 }
 
 .virtual-assistant-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
     align-items: center;
     gap: 70px;
 }
 
 .virtual-assistant-hero-content {
-    max-width: 660px;
+    position: relative;
+    z-index: 2;
 }
 
 .virtual-assistant-hero-content .section-label {
     display: inline-flex;
+    align-items: center;
     margin-bottom: 18px;
 }
 
 .virtual-assistant-hero-content h1 {
-    margin: 0;
-    color: #0f172a;
-    font-size: clamp(2.35rem, 4vw, 4.3rem);
-    line-height: 1.12;
-    letter-spacing: -0.04em;
+    max-width: 760px;
+    margin: 0 0 24px;
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    color: #10213f;
 }
 
 .virtual-assistant-hero-content h1 span {
-    color: #059669;
+    display: block;
+    color: #2563eb;
 }
 
 .virtual-assistant-hero-content > p {
-    max-width: 610px;
-    margin: 24px 0 30px;
-    color: #475569;
+    max-width: 650px;
+    margin: 0 0 32px;
     font-size: 1.08rem;
     line-height: 1.8;
+    color: #5f6f86;
 }
 
 .virtual-assistant-hero-actions {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 14px;
-    margin-bottom: 28px;
+    margin-bottom: 34px;
 }
 
 .virtual-assistant-hero-actions .btn {
-    min-width: 190px;
-    justify-content: center;
+    min-height: 52px;
 }
 
-.virtual-assistant-hero .btn-primary {
-    background-color: #059669;
-    border-color: #059669;
+.virtual-assistant-hero-content .breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    font-size: 0.9rem;
+    color: #7a8799;
 }
 
-.virtual-assistant-hero .btn-primary:hover {
-    background-color: #047857;
-    border-color: #047857;
+.virtual-assistant-hero-content .breadcrumb a {
+    color: #526174;
+    text-decoration: none;
+    transition: color 0.25s ease;
 }
 
-.virtual-assistant-hero .breadcrumb {
-    justify-content: flex-start;
-    margin-top: 0;
+.virtual-assistant-hero-content .breadcrumb a:hover {
+    color: #2563eb;
 }
 
-/* ==================================================
-   HERO VISUAL / DASHBOARD CARD
-================================================== */
+.virtual-assistant-hero-content .breadcrumb i {
+    font-size: 0.7rem;
+    color: #a4afbf;
+}
+
+.virtual-assistant-hero-content .breadcrumb .active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HERO DASHBOARD VISUAL
+========================================================= */
 
 .virtual-assistant-hero-visual {
     position: relative;
-    min-height: 470px;
+    min-height: 530px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
+    isolation: isolate;
 }
+
+.virtual-assistant-hero-visual::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.06);
+    z-index: -2;
+}
+
+.virtual-assistant-hero-visual::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(37, 99, 235, 0.10);
+    z-index: -1;
+}
+
+
+/* =========================================================
+   DASHBOARD CARD
+========================================================= */
 
 .va-dashboard-card {
     position: relative;
+    width: min(100%, 490px);
+    padding: 25px;
+    border: 1px solid rgba(30, 64, 175, 0.10);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+        0 25px 70px rgba(30, 64, 175, 0.12),
+        0 8px 25px rgba(15, 23, 42, 0.05);
     z-index: 2;
-    width: min(100%, 470px);
-    overflow: hidden;
-    border: 1px solid #bbf7d0;
-    border-radius: 24px;
-    background-color: #ffffff;
-    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.14);
 }
 
 .va-dashboard-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 22px;
-    border-bottom: 1px solid #e2e8f0;
-    background-color: #f8fafc;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #edf1f6;
 }
 
 .va-dashboard-profile {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 13px;
 }
 
 .va-profile-avatar {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    color: #047857;
-    background-color: #d1fae5;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: #eff6ff;
+    color: #2563eb;
     font-size: 1rem;
 }
 
-.va-dashboard-profile div:last-child {
-    display: grid;
-    gap: 3px;
+.va-dashboard-profile strong,
+.va-dashboard-profile span {
+    display: block;
 }
 
 .va-dashboard-profile strong {
-    color: #0f172a;
+    margin-bottom: 4px;
+    color: #182943;
     font-size: 0.98rem;
 }
 
 .va-dashboard-profile span {
-    color: #64748b;
+    color: #8a96a8;
     font-size: 0.76rem;
 }
 
 .va-dashboard-top > i {
-    color: #94a3b8;
+    color: #8b97a8;
     font-size: 1rem;
 }
 
+
+/* =========================================================
+   TASK LIST
+========================================================= */
+
 .va-task-list {
     display: grid;
-    gap: 12px;
-    padding: 22px;
+    gap: 10px;
+    padding: 22px 0;
 }
 
 .va-task-item {
@@ -173,66 +224,90 @@
     align-items: center;
     gap: 12px;
     padding: 13px 14px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #edf1f6;
     border-radius: 13px;
-    background-color: #ffffff;
+    background: #fbfcfe;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.va-task-item:hover {
+    transform: translateY(-2px);
+    border-color: #dce7f8;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
 }
 
 .va-task-check {
-    display: grid;
-    place-items: center;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    border: 2px solid #cbd5e1;
-    border-radius: 50%;
+    border: 1.5px solid #cdd6e2;
+    border-radius: 9px;
     color: #ffffff;
-    font-size: 0.68rem;
 }
 
 .va-task-item.completed .va-task-check {
-    border-color: #10b981;
-    background-color: #10b981;
+    border-color: #2563eb;
+    background: #2563eb;
 }
 
-.va-task-item div {
-    display: grid;
-    gap: 3px;
+.va-task-check i {
+    font-size: 0.7rem;
+}
+
+.va-task-item strong,
+.va-task-item span {
+    display: block;
 }
 
 .va-task-item strong {
-    color: #1e293b;
-    font-size: 0.9rem;
+    margin-bottom: 3px;
+    color: #26364f;
+    font-size: 0.87rem;
+    font-weight: 600;
 }
 
-.va-task-item span {
-    color: #64748b;
-    font-size: 0.77rem;
+.va-task-item > div span {
+    color: #929daf;
+    font-size: 0.73rem;
 }
+
+
+/* =========================================================
+   DASHBOARD PROGRESS
+========================================================= */
 
 .va-dashboard-progress {
-    padding: 0 22px 24px;
+    padding-top: 4px;
 }
 
 .va-progress-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
-    color: #64748b;
-    font-size: 0.82rem;
-    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.va-progress-heading span {
+    color: #69778b;
+    font-size: 0.78rem;
 }
 
 .va-progress-heading strong {
-    color: #047857;
+    color: #2563eb;
+    font-size: 0.8rem;
 }
 
 .va-progress-bar {
-    height: 9px;
+    height: 8px;
     overflow: hidden;
-    border-radius: 999px;
-    background-color: #d1fae5;
+    border-radius: 20px;
+    background: #e9eef5;
 }
 
 .va-progress-bar span {
@@ -240,780 +315,487 @@
     width: 75%;
     height: 100%;
     border-radius: inherit;
-    background: linear-gradient(90deg, #059669, #34d399);
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
 }
 
-/* ==================================================
-   FLOATING TAGS
-================================================== */
-/* ==================================================
-   VA HERO VISUAL + FLOATING TAGS
-   Replace your current floating-tag CSS with this
-================================================== */
 
-.virtual-assistant-hero-visual {
-    position: relative;
-    min-height: 430px;
+/* =========================================================
+   FLOATING HERO TAGS
+========================================================= */
+
+.va-floating-tag {
+    position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: visible;
-}
-
-/* Make the dashboard slightly narrower */
-.va-dashboard-card {
-    position: relative;
-    z-index: 2;
-    width: min(100%, 450px);
-}
-
-/* Shared floating tag style */
-.virtual-assistant-hero-visual .va-floating-tag {
-    position: absolute;
-    z-index: 5;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    min-height: 46px;
-    padding: 0 13px;
-
-    border: 1px solid rgba(16, 185, 129, 0.45);
-    border-radius: 13px;
-    background: rgba(255, 255, 255, 0.98);
-
-    color: #047857;
-    font-size: 0.8rem;
-    font-weight: 700;
-    line-height: 1;
+    gap: 9px;
+    padding: 11px 15px;
+    border: 1px solid rgba(37, 99, 235, 0.10);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+    color: #33445d;
+    font-size: 0.78rem;
+    font-weight: 600;
     white-space: nowrap;
-
-    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
-
-    animation: vaFloatingTag 4.2s ease-in-out infinite;
+    z-index: 3;
 }
 
-.virtual-assistant-hero-visual .va-floating-tag i {
-    flex-shrink: 0;
-    color: #10b981;
-    font-size: 0.9rem;
+.va-floating-tag i {
+    color: #2563eb;
 }
 
-/* LEFT SIDE TAGS */
-
-.virtual-assistant-hero-visual .tag-email {
-    top: 48px;
-    left: -72px;
-    animation-delay: 0s;
+.tag-email {
+    top: 70px;
+    left: 0;
 }
 
-.virtual-assistant-hero-visual .tag-research {
-    bottom: 54px;
-    left: -58px;
-    animation-delay: 1.2s;
+.tag-research {
+    right: -5px;
+    top: 150px;
 }
 
-/* RIGHT SIDE TAGS
-   Positioned closer to the card so they do not go off-screen */
-
-.virtual-assistant-hero-visual .tag-calendar {
-    top: 110px;
-    right: -52px;
-    animation-delay: 0.6s;
+.tag-calendar {
+    left: 12px;
+    bottom: 110px;
 }
 
-.virtual-assistant-hero-visual .tag-data-entry {
-    bottom: 60px;
-    right: -48px;
-    animation-delay: 1.8s;
+.tag-data-entry {
+    right: 20px;
+    bottom: 55px;
 }
 
-/* Gentle floating animation */
-@keyframes vaFloatingTag {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
 
-    50% {
-        transform: translateY(-7px);
-    }
-}
-
-/* Dark mode tags */
-body.dark-theme .virtual-assistant-hero-visual .va-floating-tag {
-    border-color: rgba(110, 231, 183, 0.28);
-    color: #d1fae5;
-    background: #1e293b;
-}
-
-body.dark-theme .virtual-assistant-hero-visual .va-floating-tag i {
-    color: #34d399;
-}
-
-/* Tablet: keep tags closer to the card */
-@media (max-width: 1180px) {
-    .virtual-assistant-hero-visual .tag-email {
-        left: -42px;
-    }
-
-    .virtual-assistant-hero-visual .tag-research {
-        left: -34px;
-    }
-
-    .virtual-assistant-hero-visual .tag-calendar {
-        right: -28px;
-    }
-
-    .virtual-assistant-hero-visual .tag-data-entry {
-        right: -24px;
-    }
-}
-
-/* Mobile: hide floating tags to keep the card clean */
-@media (max-width: 900px) {
-    .virtual-assistant-hero-visual {
-        min-height: auto;
-    }
-
-    .virtual-assistant-hero-visual .va-dashboard-card {
-        width: 100%;
-    }
-
-    .virtual-assistant-hero-visual .va-floating-tag {
-        display: none;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .virtual-assistant-hero-visual .va-floating-tag {
-        animation: none;
-    }
-}
-/* ==================================================
+/* =========================================================
    INTRODUCTION
-================================================== */
+========================================================= */
 
 .virtual-assistant-intro {
-    padding: 105px 0;
-    background-color: #ffffff;
+    background: #ffffff;
 }
 
 .virtual-assistant-intro-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
     align-items: center;
-    gap: 70px;
+    gap: 80px;
+}
+
+.virtual-assistant-intro-content .section-label {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .virtual-assistant-intro-content h2 {
-    margin: 18px 0 20px;
-    color: #0f172a;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.22;
+    max-width: 620px;
+    margin: 0 0 22px;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #10213f;
 }
 
 .virtual-assistant-intro-content h2 span {
-    color: #059669;
+    color: #2563eb;
 }
 
-.virtual-assistant-intro-content > p {
-    margin-bottom: 16px;
-    color: #64748b;
+.virtual-assistant-intro-content p {
+    max-width: 650px;
+    margin: 0 0 18px;
+    color: #68778c;
+    font-size: 1rem;
     line-height: 1.8;
 }
 
-.virtual-assistant-intro .text-link {
+.virtual-assistant-intro-content .text-link {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    margin-top: 10px;
-    padding: 12px 17px;
-    border: 1px solid #a7f3d0;
-    border-radius: 10px;
-    color: #047857;
-    background-color: #ecfdf5;
-    font-weight: 700;
-    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    margin-top: 12px;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
 }
 
-.virtual-assistant-intro .text-link:hover {
-    transform: translateY(-3px);
-    color: #ffffff;
-    background-color: #059669;
-    box-shadow: 0 12px 22px rgba(5, 150, 105, 0.2);
-}
-
-.virtual-assistant-intro .text-link i {
+.virtual-assistant-intro-content .text-link i {
     transition: transform 0.25s ease;
 }
 
-.virtual-assistant-intro .text-link:hover i {
-    transform: translateX(4px);
+.virtual-assistant-intro-content .text-link:hover i {
+    transform: translateX(5px);
 }
 
-.va-benefits {
-    display: grid;
-    gap: 16px;
-}
 
-.va-benefit-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px;
-    border: 1px solid #d1fae5;
-    border-radius: 16px;
-    background-color: #f8fffb;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.va-benefit-card:hover {
-    transform: translateX(7px);
-    border-color: #6ee7b7;
-    box-shadow: 0 14px 28px rgba(5, 150, 105, 0.1);
-}
-
-.va-benefit-icon {
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    width: 46px;
-    height: 46px;
-    border-radius: 13px;
-    color: #047857;
-    background-color: #d1fae5;
-    font-size: 1.1rem;
-}
-
-.va-benefit-card h3 {
-    margin-bottom: 6px;
-    color: #0f172a;
-    font-size: 1.05rem;
-}
-
-.va-benefit-card p {
-    color: #64748b;
-    font-size: 0.92rem;
-    line-height: 1.65;
-}
-
-/* Align the VA benefits panel slightly lower with the left content */
-.virtual-assistant-benefits {
-    margin-top: 39px;
-}
-
-/* ==================================================
-   VIRTUAL ASSISTANT BENEFITS
-================================================== */
+/* =========================================================
+   INTRO BENEFITS
+========================================================= */
 
 .virtual-assistant-benefits {
-    position: relative;
     display: grid;
     gap: 15px;
-    padding: 30px;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 24px;
-    background:
-        radial-gradient(circle at 95% 4%, rgba(16, 185, 129, 0.14), transparent 30%),
-        rgba(255, 255, 255, 0.58);
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-    backdrop-filter: blur(10px);
 }
-
-.va-benefits-heading {
-    padding: 0 2px 10px;
-}
-
-.va-benefits-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-    padding: 7px 11px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    border-radius: 999px;
-    color: #047857;
-    background-color: #ecfdf5;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-}
-
-.va-benefits-kicker i {
-    color: #10b981;
-    font-size: 0.8rem;
-}
-
-.va-benefits-heading h3 {
-    margin: 0 0 8px;
-    color: #0f172a;
-    font-size: 1.38rem;
-    line-height: 1.25;
-}
-
-.va-benefits-heading p {
-    max-width: 490px;
-    margin: 0;
-    color: #64748b;
-    font-size: 0.92rem;
-    line-height: 1.65;
-}
-
-/* Individual benefit cards */
 
 .virtual-assistant-benefit-card {
-    position: relative;
     display: flex;
     align-items: flex-start;
-    gap: 15px;
-    padding: 18px;
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    gap: 17px;
+    padding: 22px;
+    border: 1px solid #e8edf4;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.78);
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.035);
     transition:
-        transform 0.28s ease,
-        border-color 0.28s ease,
-        background-color 0.28s ease,
-        box-shadow 0.28s ease;
-}
-
-.virtual-assistant-benefit-card::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -1px;
-    width: 4px;
-    height: 0;
-    border-radius: 0 5px 5px 0;
-    background: linear-gradient(to bottom, #10b981, #14b8a6);
-    transform: translateY(-50%);
-    transition: height 0.28s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .virtual-assistant-benefit-card:hover {
-    transform: translateX(7px);
-    border-color: rgba(16, 185, 129, 0.42);
-    background-color: #ffffff;
-    box-shadow: 0 13px 25px rgba(5, 150, 105, 0.1);
+    transform: translateY(-3px);
+    border-color: #d9e5f8;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.07);
 }
-
-.virtual-assistant-benefit-card:hover::before {
-    height: 58%;
-}
-
-/* Benefit icons */
 
 .virtual-assistant-benefit-icon {
-    display: grid;
-    place-items: center;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    width: 46px;
-    height: 46px;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 14px;
-    color: #047857;
-    background: linear-gradient(135deg, #d1fae5, #ecfdf5);
-    box-shadow: 0 8px 16px rgba(5, 150, 105, 0.1);
-    font-size: 1.05rem;
-    transition:
-        transform 0.28s ease,
-        color 0.28s ease,
-        background-color 0.28s ease;
+    border-radius: 13px;
+    background: #eff6ff;
+    color: #2563eb;
 }
-
-.virtual-assistant-benefit-card:hover .virtual-assistant-benefit-icon {
-    transform: rotate(-7deg) scale(1.06);
-    color: #ffffff;
-    background-color: #059669;
-}
-
-/* Benefit text */
 
 .virtual-assistant-benefit-card h3 {
-    margin: 2px 0 6px;
-    color: #0f172a;
-    font-size: 1.05rem;
-    line-height: 1.3;
+    margin: 2px 0 7px;
+    color: #1c2c45;
+    font-size: 1rem;
 }
 
 .virtual-assistant-benefit-card p {
     margin: 0;
-    color: #64748b;
-    font-size: 0.91rem;
-    line-height: 1.62;
-}
-
-/* Dark theme */
-
-body.dark-theme .virtual-assistant-benefits {
-    border-color: rgba(52, 211, 153, 0.2);
-    background:
-        radial-gradient(circle at 95% 4%, rgba(16, 185, 129, 0.14), transparent 30%),
-        rgba(30, 41, 59, 0.65);
-}
-
-body.dark-theme .va-benefits-kicker {
-    border-color: rgba(52, 211, 153, 0.25);
-    color: #6ee7b7;
-    background-color: rgba(5, 150, 105, 0.15);
-}
-
-body.dark-theme .va-benefits-heading h3,
-body.dark-theme .virtual-assistant-benefit-card h3 {
-    color: #f8fafc;
-}
-
-body.dark-theme .va-benefits-heading p,
-body.dark-theme .virtual-assistant-benefit-card p {
-    color: #cbd5e1;
-}
-
-body.dark-theme .virtual-assistant-benefit-card {
-    border-color: #334155;
-    background: rgba(15, 23, 42, 0.52);
-}
-
-body.dark-theme .virtual-assistant-benefit-card:hover {
-    border-color: rgba(52, 211, 153, 0.42);
-    background-color: #1e293b;
-}
-
-body.dark-theme .virtual-assistant-benefit-icon {
-    border-color: rgba(52, 211, 153, 0.2);
-    color: #6ee7b7;
-    background: rgba(5, 150, 105, 0.18);
-}
-
-/* Mobile */
-
-@media (max-width: 640px) {
-    .virtual-assistant-benefits {
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    .va-benefits-heading h3 {
-        font-size: 1.2rem;
-    }
-
-    .virtual-assistant-benefit-card {
-        padding: 16px;
-    }
-
-    .virtual-assistant-benefit-card:hover {
-        transform: translateY(-4px);
-    }
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.65;
 }
 
 
-/* ==================================================
-   WHAT I CAN HELP WITH
-================================================== */
+/* =========================================================
+   SERVICES
+========================================================= */
 
 .va-services {
-    padding: 105px 0;
-    background-color: #f0fdf4;
+    background: #f7faff;
+}
+
+.va-services .section-heading,
+.virtual-assistant-process .section-heading,
+.virtual-assistant-projects .section-heading {
+    max-width: 720px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.va-services .section-heading h2,
+.virtual-assistant-process .section-heading h2,
+.virtual-assistant-projects .section-heading h2 {
+    margin: 10px 0 16px;
+    color: #10213f;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+}
+
+.va-services .section-heading h2 span,
+.virtual-assistant-process .section-heading h2 span,
+.virtual-assistant-projects .section-heading h2 span {
+    color: #2563eb;
+}
+
+.va-services .section-heading p,
+.virtual-assistant-process .section-heading p,
+.virtual-assistant-projects .section-heading p {
+    margin: 0;
+    color: #718096;
+    line-height: 1.75;
 }
 
 .va-services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 52px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .va-service-card {
-    position: relative;
-    overflow: hidden;
-    padding: 31px 27px;
-    border: 1px solid #d1fae5;
-    border-radius: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.va-service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #059669;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    padding: 30px 27px;
+    border: 1px solid #e6ecf4;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.035);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .va-service-card:hover {
-    transform: translateY(-8px);
-    border-color: #86efac;
-    box-shadow: 0 20px 38px rgba(5, 150, 105, 0.13);
-}
-
-.va-service-card:hover::before {
-    transform: scaleX(1);
+    transform: translateY(-6px);
+    border-color: #d5e2f7;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
 }
 
 .va-service-icon {
-    display: grid;
-    place-items: center;
-    width: 58px;
-    height: 58px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 22px;
-    border-radius: 16px;
-    color: #059669;
-    background-color: #ecfdf5;
-    font-size: 1.4rem;
+    border-radius: 14px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 1.1rem;
 }
 
 .va-service-card h3 {
-    margin-bottom: 12px;
-    color: #0f172a;
-    font-size: 1.18rem;
+    margin: 0 0 10px;
+    color: #1d2e48;
+    font-size: 1.08rem;
 }
 
 .va-service-card p {
-    color: #64748b;
-    line-height: 1.75;
+    margin: 0;
+    color: #718096;
+    font-size: 0.91rem;
+    line-height: 1.7;
 }
 
-/* ==================================================
-   WORK PROCESS
-================================================== */
 
-.va-process {
-    padding: 105px 0;
-    background-color: #ffffff;
+/* =========================================================
+   WORK PROCESS
+========================================================= */
+
+.virtual-assistant-process {
+    background: #ffffff;
 }
 
 .va-process-steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 55px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .va-process-step {
     position: relative;
-    padding: 30px 24px;
-    border: 1px solid #d1fae5;
+    padding: 30px 24px 27px;
+    border: 1px solid #e6ebf2;
     border-radius: 18px;
-    background-color: #ffffff;
+    background: #ffffff;
     text-align: center;
-    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.va-process-step:hover {
+    transform: translateY(-5px);
+    border-color: #d7e3f6;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
 }
 
 .va-process-number {
     position: absolute;
-    top: 18px;
+    top: 17px;
     right: 19px;
-    color: #a7f3d0;
-    font-size: 0.82rem;
+    color: #d9e4f3;
+    font-size: 0.8rem;
     font-weight: 800;
+    letter-spacing: 0.08em;
 }
 
 .va-process-icon {
-    display: grid;
-    place-items: center;
-    width: 56px;
-    height: 56px;
-    margin: 3px auto 19px;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 21px;
     border-radius: 16px;
-    color: #047857;
-    background-color: #d1fae5;
-    font-size: 1.25rem;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 1.15rem;
 }
 
 .va-process-step h3 {
-    margin-bottom: 10px;
-    color: #0f172a;
-    font-size: 1.08rem;
+    margin: 0 0 10px;
+    color: #1c2c45;
+    font-size: 1rem;
 }
 
 .va-process-step p {
-    color: #64748b;
-    font-size: 0.93rem;
+    margin: 0;
+    color: #718096;
+    font-size: 0.87rem;
     line-height: 1.7;
 }
 
-/* ==================================================
-   TOOLS
-================================================== */
 
-.va-tools {
-    padding: 105px 0;
-    background-color: #f8fafc;
+/* =========================================================
+   TOOLS & WORKFLOW
+========================================================= */
+
+.virtual-assistant-tools {
+    background: #f7faff;
 }
 
-.va-tools-grid {
+.virtual-assistant-tools-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
     align-items: center;
-    gap: 70px;
+    gap: 80px;
 }
 
-.va-tools-content h2 {
-    margin: 18px 0 20px;
-    color: #0f172a;
+.virtual-assistant-tools-content .section-label {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.virtual-assistant-tools-content h2 {
+    max-width: 600px;
+    margin: 0 0 18px;
+    color: #10213f;
     font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.22;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
 }
 
-.va-tools-content h2 span {
-    color: #059669;
+.virtual-assistant-tools-content h2 span {
+    color: #2563eb;
 }
 
-.va-tools-content p {
-    max-width: 560px;
-    color: #64748b;
+.virtual-assistant-tools-content p {
+    max-width: 570px;
+    margin: 0;
+    color: #718096;
     line-height: 1.8;
 }
 
 .va-tools-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
 }
 
 .va-tool-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 16px;
-    border: 1px solid #d1fae5;
-    border-radius: 14px;
-    color: #1e293b;
-    background-color: #ffffff;
-    font-weight: 700;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    gap: 13px;
+    min-height: 62px;
+    padding: 14px 17px;
+    border: 1px solid #e4eaf2;
+    border-radius: 13px;
+    background: #ffffff;
+    color: #36465e;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.025);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .va-tool-item:hover {
-    transform: translateY(-5px);
-    border-color: #6ee7b7;
-    box-shadow: 0 12px 22px rgba(5, 150, 105, 0.1);
+    transform: translateY(-3px);
+    border-color: #d4e2f7;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
 }
 
 .va-tool-item i {
-    display: grid;
-    place-items: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    color: #047857;
-    background-color: #d1fae5;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #eff6ff;
+    color: #2563eb;
 }
 
-/* ==================================================
-   SELECTED WORK
-================================================== */
+.va-tool-item span {
+    font-size: 0.84rem;
+    font-weight: 600;
+}
 
-.va-projects {
-    padding: 105px 0;
-    background-color: #ffffff;
+
+/* =========================================================
+   RELATED PROJECTS
+========================================================= */
+
+.virtual-assistant-projects {
+    background: #ffffff;
 }
 
 .va-project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 52px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .va-project-card {
     overflow: hidden;
-    border: 1px solid #d1fae5;
-    border-radius: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5ebf2;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.035);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .va-project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 38px rgba(5, 150, 105, 0.13);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.09);
 }
 
 .va-project-placeholder {
-    display: grid;
-    place-items: center;
-    min-height: 190px;
-    gap: 12px;
-    color: #ffffff;
-    text-align: center;
-}
-
-.va-project-placeholder i {
-    font-size: 2.1rem;
-}
-
-.va-project-placeholder span {
-    font-size: 0.95rem;
-    font-weight: 700;
-}
-
-/* ==================================================
-   VIRTUAL ASSISTANT SELECTED WORK - PROJECT TOP AREAS
-================================================== */
-
-.va-project-placeholder {
+    min-height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 190px;
-    gap: 14px;
+    gap: 13px;
     padding: 25px;
     color: #ffffff;
     text-align: center;
 }
 
 .va-project-placeholder i {
-    display: grid;
-    place-items: center;
-    width: 58px;
-    height: 58px;
-    border-radius: 16px;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.16);
-    font-size: 1.45rem;
+    font-size: 2.2rem;
 }
 
 .va-project-placeholder span {
-    color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
-/* Email organization project */
 .email-project {
-    background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 25%),
+        linear-gradient(135deg, #2563eb, #1d4ed8);
 }
 
-/* Research and records project */
 .research-project {
-    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+    background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.18), transparent 25%),
+        linear-gradient(135deg, #334155, #1e3a5f);
 }
 
-/* Schedule planning project */
 .schedule-project {
-    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-}
-
-/* Small hover effect for the top visual area */
-.va-project-card:hover .va-project-placeholder i {
-    transform: translateY(-5px) rotate(-4deg);
-    background-color: rgba(255, 255, 255, 0.24);
-}
-
-.va-project-placeholder i {
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    background:
+        radial-gradient(circle at 30% 80%, rgba(255,255,255,0.18), transparent 25%),
+        linear-gradient(135deg, #0f766e, #115e59);
 }
 
 .va-project-content {
@@ -1022,45 +804,35 @@ body.dark-theme .virtual-assistant-benefit-icon {
 
 .va-project-content > span {
     display: inline-block;
-    margin-bottom: 10px;
-    color: #059669;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    margin-bottom: 9px;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.07em;
 }
 
 .va-project-content h3 {
-    margin-bottom: 10px;
-    color: #0f172a;
-    font-size: 1.15rem;
+    margin: 0 0 10px;
+    color: #1d2e48;
+    font-size: 1.1rem;
 }
 
 .va-project-content p {
-    margin-bottom: 20px;
-    color: #64748b;
+    margin: 0 0 18px;
+    color: #718096;
+    font-size: 0.88rem;
     line-height: 1.7;
 }
 
 .va-project-content .text-link {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    padding: 10px 14px;
-    border: 1px solid #a7f3d0;
-    border-radius: 9px;
-    color: #047857;
-    background-color: #ecfdf5;
-    font-size: 0.9rem;
-    font-weight: 700;
-    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.va-project-content .text-link:hover {
-    transform: translateY(-3px);
-    color: #ffffff;
-    background-color: #059669;
-    box-shadow: 0 10px 20px rgba(5, 150, 105, 0.18);
+    gap: 8px;
+    color: #2563eb;
+    font-size: 0.86rem;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .va-project-content .text-link i {
@@ -1068,718 +840,1106 @@ body.dark-theme .virtual-assistant-benefit-icon {
 }
 
 .va-project-content .text-link:hover i {
-    transform: translateX(4px);
+    transform: translateX(5px);
 }
 
-/* ==================================================
-   FINAL CTA
-================================================== */
 
-.va-cta {
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.virtual-assistant-cta {
     position: relative;
     overflow: hidden;
-    padding: 95px 0;
+    padding: 90px 0;
     background:
-        radial-gradient(circle at top right, rgba(110, 231, 183, 0.22), transparent 32%),
-        linear-gradient(135deg, #047857 0%, #059669 55%, #10b981 100%);
+        radial-gradient(circle at 10% 20%, rgba(96, 165, 250, 0.15), transparent 28%),
+        radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.16), transparent 30%),
+        #10213f;
 }
 
-.va-cta::before {
+.virtual-assistant-cta::before {
     content: "";
     position: absolute;
-    bottom: -180px;
-    left: -100px;
-    width: 330px;
-    height: 330px;
-    border: 55px solid rgba(255, 255, 255, 0.08);
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 50%;
+    top: -130px;
+    left: -80px;
 }
 
-.va-cta .container {
+.virtual-assistant-cta::after {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    right: -180px;
+    bottom: -200px;
+}
+
+.virtual-assistant-cta-content {
     position: relative;
-    z-index: 1;
-}
-
-.va-cta-content {
+    z-index: 2;
     max-width: 760px;
     margin: 0 auto;
     text-align: center;
 }
 
-.va-cta .section-label {
-    color: #d1fae5;
-    background-color: rgba(255, 255, 255, 0.12);
+.virtual-assistant-cta-content .section-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #93c5fd;
 }
 
-.va-cta h2 {
-    margin: 18px 0;
+.virtual-assistant-cta-content h2 {
+    margin: 0 0 18px;
     color: #ffffff;
-    font-size: clamp(2rem, 4vw, 3.1rem);
-    line-height: 1.2;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
 }
 
-.va-cta h2 span {
-    color: #a7f3d0;
+.virtual-assistant-cta-content h2 span {
+    display: block;
+    color: #60a5fa;
 }
 
-.va-cta p {
+.virtual-assistant-cta-content p {
     max-width: 650px;
-    margin: 0 auto;
-    color: #d1fae5;
+    margin: 0 auto 30px;
+    color: #c5d1e2;
+    font-size: 1rem;
     line-height: 1.8;
 }
 
-.va-cta-actions {
+.virtual-assistant-cta-actions {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.va-cta .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    color: #047857;
-    border-color: #ffffff;
-    background-color: #ffffff;
-}
-
-.va-cta .btn-primary:hover {
-    color: #065f46;
-    border-color: #ecfdf5;
-    background-color: #ecfdf5;
-}
-
-.va-cta .btn-outline {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.65);
-    background-color: transparent;
-}
-
-.va-cta .btn-outline:hover {
-    color: #047857;
-    border-color: #ffffff;
-    background-color: #ffffff;
-}
-
-/* ==================================================
-   DARK THEME
-================================================== */
-
-body.dark-theme .virtual-assistant-hero {
-    background:
-        radial-gradient(circle at top left, rgba(16, 185, 129, 0.14), transparent 34%),
-        #0f172a;
-}
-
-body.dark-theme .virtual-assistant-hero h1,
-body.dark-theme .virtual-assistant-intro-content h2,
-body.dark-theme .va-benefit-card h3,
-body.dark-theme .va-service-card h3,
-body.dark-theme .va-process-step h3,
-body.dark-theme .va-tools-content h2,
-body.dark-theme .va-project-content h3,
-body.dark-theme .va-dashboard-profile strong,
-body.dark-theme .va-task-item strong {
-    color: #f8fafc;
-}
-
-body.dark-theme .virtual-assistant-hero p,
-body.dark-theme .virtual-assistant-intro-content > p,
-body.dark-theme .va-benefit-card p,
-body.dark-theme .va-service-card p,
-body.dark-theme .va-process-step p,
-body.dark-theme .va-tools-content p,
-body.dark-theme .va-project-content p,
-body.dark-theme .va-dashboard-profile span,
-body.dark-theme .va-task-item span,
-body.dark-theme .va-progress-heading {
-    color: #cbd5e1;
-}
-
-body.dark-theme .va-dashboard-card,
-body.dark-theme .va-task-item,
-body.dark-theme .va-benefit-card,
-body.dark-theme .va-service-card,
-body.dark-theme .va-process-step,
-body.dark-theme .va-tool-item,
-body.dark-theme .va-project-card {
-    border-color: #334155;
-    background-color: #162033;
-}
-
-body.dark-theme .va-dashboard-top {
-    border-color: #334155;
-    background-color: #1e293b;
-}
-
-body.dark-theme .va-floating-tag {
-    border-color: #334155;
-    color: #d1fae5;
-    background-color: #1e293b;
-}
-
-body.dark-theme .virtual-assistant-intro,
-body.dark-theme .va-process,
-body.dark-theme .va-projects {
-    background-color: #0f172a;
-}
-
-body.dark-theme .va-services,
-body.dark-theme .va-tools {
-    background-color: #111827;
-}
-
-body.dark-theme .virtual-assistant-intro .text-link,
-body.dark-theme .va-project-content .text-link {
-    border-color: rgba(16, 185, 129, 0.35);
-    color: #6ee7b7;
-    background-color: rgba(5, 150, 105, 0.16);
-}
-
-body.dark-theme .virtual-assistant-intro .text-link:hover,
-body.dark-theme .va-project-content .text-link:hover {
-    color: #ffffff;
-    background-color: #059669;
-}
-
-body.dark-theme .va-tool-item {
-    color: #e2e8f0;
-}
-
-
-/* ==================================================
-   VA INTRO SECTION POLISH
-================================================== */
-
-.virtual-assistant-intro {
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 8% 15%, rgba(16, 185, 129, 0.12), transparent 28%),
-        radial-gradient(circle at 92% 85%, rgba(37, 99, 235, 0.09), transparent 30%),
-        #ffffff;
-}
-
-.virtual-assistant-intro::before {
-    content: "";
-    position: absolute;
-    top: 55px;
-    left: 50%;
-    width: 1px;
-    height: calc(100% - 110px);
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(16, 185, 129, 0.22),
-        transparent
-    );
-}
-
-.virtual-assistant-intro .container {
-    position: relative;
-    z-index: 1;
-}
-
-.virtual-assistant-intro-content {
-    padding-right: 30px;
-}
-
-.virtual-assistant-intro-content .section-label {
-    display: inline-flex;
-    padding: 8px 13px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    border-radius: 999px;
-    color: #059669;
-    background: rgba(236, 253, 245, 0.8);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-}
-
-.virtual-assistant-intro-content h2 {
-    max-width: 570px;
-    margin-top: 20px;
-    letter-spacing: -0.035em;
-}
-
-.virtual-assistant-intro-content > p {
-    max-width: 590px;
-    color: #64748b;
-    font-size: 1rem;
-}
-
-.virtual-assistant-intro .text-link {
-    margin-top: 12px;
-    padding: 14px 19px;
-    border: 1px solid rgba(16, 185, 129, 0.45);
-    border-radius: 12px;
-    color: #047857;
-    background: rgba(236, 253, 245, 0.7);
-    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.08);
-}
-
-.virtual-assistant-intro .text-link:hover {
-    transform: translateY(-4px);
-    border-color: #059669;
-    color: #ffffff;
-    background: #059669;
-    box-shadow: 0 15px 28px rgba(5, 150, 105, 0.22);
-}
-
-/* Right-side benefit cards */
-
-.va-benefits {
-    position: relative;
-    gap: 18px;
-}
-
-.va-benefit-card {
-    position: relative;
-    overflow: hidden;
-    padding: 23px 24px;
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.72);
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
-    backdrop-filter: blur(8px);
-}
-
-.va-benefit-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, #10b981, #14b8a6);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.3s ease;
-}
-
-.va-benefit-card:hover {
-    transform: translateX(9px);
-    border-color: rgba(16, 185, 129, 0.42);
-    box-shadow: 0 18px 34px rgba(5, 150, 105, 0.13);
-}
-
-.va-benefit-card:hover::before {
-    transform: scaleY(1);
-}
-
-.va-benefit-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
-    color: #047857;
-    background: linear-gradient(135deg, #d1fae5, #ecfdf5);
-    box-shadow: 0 8px 18px rgba(5, 150, 105, 0.12);
-}
-
-.va-benefit-card h3 {
-    margin-bottom: 7px;
-    font-size: 1.1rem;
-}
-
-.va-benefit-card p {
-    max-width: 480px;
-    font-size: 0.94rem;
-}
-
-/* Dark theme version */
-
-body.dark-theme .virtual-assistant-intro {
-    background:
-        radial-gradient(circle at 8% 15%, rgba(16, 185, 129, 0.12), transparent 28%),
-        radial-gradient(circle at 92% 85%, rgba(37, 99, 235, 0.1), transparent 30%),
-        #0f172a;
-}
-
-body.dark-theme .virtual-assistant-intro::before {
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(52, 211, 153, 0.25),
-        transparent
-    );
-}
-
-body.dark-theme .virtual-assistant-intro-content .section-label {
-    border-color: rgba(52, 211, 153, 0.25);
-    color: #6ee7b7;
-    background: rgba(5, 150, 105, 0.12);
-}
-
-body.dark-theme .va-benefit-card {
-    border-color: #334155;
-    background: rgba(30, 41, 59, 0.78);
-}
-
-body.dark-theme .va-benefit-card:hover {
-    border-color: rgba(52, 211, 153, 0.4);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-theme .va-benefit-icon {
-    color: #6ee7b7;
-    background: rgba(5, 150, 105, 0.18);
-}
-
-/* Tablet and mobile adjustments */
-
-@media (max-width: 992px) {
-    .virtual-assistant-intro::before {
-        display: none;
-    }
-
-    .virtual-assistant-intro-content {
-        padding-right: 0;
-    }
-
-    .va-benefits {
-        max-width: 720px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 640px) {
-    .virtual-assistant-intro-content .section-label {
-        font-size: 0.68rem;
-    }
-
-    .va-benefit-card {
-        padding: 19px;
-    }
-
-    .va-benefit-card:hover {
-        transform: translateY(-5px);
-    }
-}
-
-
-/* ==================================================
-   VIRTUAL ASSISTANT HERO BREADCRUMB
-================================================== */
-
-.virtual-assistant-hero .breadcrumb {
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 9px;
-    margin-top: 4px;
-    color: #64748b;
-    font-size: 0.88rem;
-    font-weight: 600;
+    gap: 14px;
 }
 
-.virtual-assistant-hero .breadcrumb a {
-    position: relative;
-    color: #64748b;
-    text-decoration: none;
-    transition: color 0.25s ease;
+.virtual-assistant-cta-actions .btn {
+    min-height: 52px;
 }
 
-.virtual-assistant-hero .breadcrumb a::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -4px;
-    left: 0;
-    height: 2px;
-    border-radius: 999px;
-    background-color: #059669;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.25s ease;
+.virtual-assistant-cta-actions .btn-outline {
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
 }
 
-.virtual-assistant-hero .breadcrumb a:hover {
-    color: #047857;
+.virtual-assistant-cta-actions .btn-outline:hover {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: #10213f;
 }
 
-.virtual-assistant-hero .breadcrumb a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
 
-.virtual-assistant-hero .breadcrumb > i {
-    color: #94a3b8;
-    font-size: 0.72rem;
-}
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
 
-/* Current page: Virtual Assistant */
-.virtual-assistant-hero .breadcrumb .active {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 10px;
-    border: 1px solid rgba(16, 185, 129, 0.28);
-    border-radius: 999px;
-    color: #047857;
-    background-color: #d1fae5;
-    font-size: 0.78rem;
-    font-weight: 800;
-}
+@media (max-width: 1100px) {
 
-/* ==================================================
-   RESPONSIVE DESIGN
-================================================== */
-
-@media (max-width: 1180px) {
-    .tag-email {
-        left: -45px;
-    }
-
-    .tag-research {
-        left: -38px;
-    }
-
-    .tag-calendar {
-        right: -45px;
-    }
-
-    .tag-data-entry {
-        right: -38px;
-    }
-}
-
-@media (max-width: 992px) {
-    .virtual-assistant-hero {
-        padding: 135px 0 85px;
-    }
-
-    .virtual-assistant-hero-grid,
-    .virtual-assistant-intro-grid,
-    .va-tools-grid {
+    .virtual-assistant-hero-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .virtual-assistant-hero-content,
-    .virtual-assistant-intro-content,
-    .va-tools-content {
-        max-width: 720px;
-        margin: 0 auto;
+        gap: 45px;
     }
 
     .virtual-assistant-hero-content {
+        max-width: 780px;
+        margin: 0 auto;
         text-align: center;
     }
 
-    .virtual-assistant-hero-content > p {
-        margin-right: auto;
-        margin-left: auto;
+    .virtual-assistant-hero-content .section-label {
+        justify-content: center;
     }
 
-    .virtual-assistant-hero-actions,
-    .virtual-assistant-hero .breadcrumb {
+    .virtual-assistant-hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .virtual-assistant-hero-actions {
+        justify-content: center;
+    }
+
+    .virtual-assistant-hero-content .breadcrumb {
         justify-content: center;
     }
 
     .virtual-assistant-hero-visual {
-        min-height: 420px;
+        min-height: 500px;
+        max-width: 650px;
+        width: 100%;
+        margin: 0 auto;
     }
 
-    .va-floating-tag {
-        display: none;
+    .virtual-assistant-intro-grid,
+    .virtual-assistant-tools-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
     }
 
-    .va-services-grid,
-    .va-project-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .virtual-assistant-intro-content,
+    .virtual-assistant-tools-content {
+        max-width: 750px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .virtual-assistant-intro-content h2,
+    .virtual-assistant-tools-content h2,
+    .virtual-assistant-intro-content p,
+    .virtual-assistant-tools-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .va-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .va-process-steps {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .va-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .va-project-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 500px;
+        width: 100%;
+        justify-self: center;
     }
 }
 
-@media (max-width: 640px) {
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
     .virtual-assistant-hero {
-        padding: 120px 0 75px;
+        padding: 75px 0 65px;
+    }
+
+    .virtual-assistant-hero-grid {
+        gap: 25px;
     }
 
     .virtual-assistant-hero-content h1 {
-        font-size: 2.25rem;
+        font-size: clamp(2.2rem, 10vw, 3.1rem);
     }
 
     .virtual-assistant-hero-content > p {
-        font-size: 0.98rem;
+        font-size: 0.96rem;
+        line-height: 1.7;
     }
 
     .virtual-assistant-hero-actions {
         flex-direction: column;
-        align-items: stretch;
+        width: 100%;
     }
 
     .virtual-assistant-hero-actions .btn {
         width: 100%;
-        min-width: 0;
-    }
-
-    .virtual-assistant-intro,
-    .va-services,
-    .va-process,
-    .va-tools,
-    .va-projects {
-        padding: 75px 0;
+        justify-content: center;
     }
 
     .virtual-assistant-hero-visual {
-        min-height: auto;
+        min-height: 430px;
     }
 
     .va-dashboard-card {
-        width: 100%;
+        width: calc(100% - 30px);
+        padding: 18px;
         border-radius: 18px;
     }
 
-    .va-dashboard-top {
-        padding: 17px;
-    }
-
-    .va-task-list {
-        padding: 17px;
-    }
-
-    .va-dashboard-progress {
-        padding: 0 17px 19px;
-    }
-
     .va-task-item {
-        padding: 12px;
+        padding: 11px;
+    }
+
+    .va-task-item strong {
+        font-size: 0.8rem;
+    }
+
+    .va-floating-tag {
+        padding: 9px 11px;
+        font-size: 0.7rem;
+    }
+
+    .tag-email {
+        top: 20px;
+        left: 0;
+    }
+
+    .tag-research {
+        right: 0;
+        top: 95px;
+    }
+
+    .tag-calendar {
+        left: 0;
+        bottom: 45px;
+    }
+
+    .tag-data-entry {
+        right: 0;
+        bottom: 10px;
+    }
+
+    .virtual-assistant-intro-grid,
+    .virtual-assistant-tools-grid {
+        gap: 35px;
+    }
+
+    .virtual-assistant-benefit-card {
+        padding: 18px;
     }
 
     .va-services-grid,
     .va-process-steps,
-    .va-project-grid,
+    .va-project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .va-project-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
     .va-tools-list {
         grid-template-columns: 1fr;
     }
 
-    .va-services-grid,
-    .va-project-grid {
-        margin-top: 38px;
-    }
-
-    .va-process-steps {
-        gap: 18px;
-        margin-top: 38px;
-    }
-
     .va-service-card {
-        padding: 27px 23px;
+        padding: 25px 22px;
     }
 
-    .va-cta {
-        padding: 75px 0;
+    .va-process-step {
+        padding: 27px 20px 24px;
     }
 
-    .va-cta-actions {
+    .va-project-placeholder {
+        min-height: 190px;
+    }
+
+    .virtual-assistant-cta {
+        padding: 70px 0;
+    }
+
+    .virtual-assistant-cta-content h2 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .virtual-assistant-cta-actions {
         flex-direction: column;
-        align-items: stretch;
+        width: 100%;
     }
 
-    .va-cta-actions .btn {
+    .virtual-assistant-cta-actions .btn {
         width: 100%;
         justify-content: center;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .virtual-assistant-hero {
+        padding-top: 60px;
+    }
+
+    .virtual-assistant-hero-visual {
+        min-height: 390px;
+    }
+
+    .va-dashboard-card {
+        width: calc(100% - 10px);
+    }
+
+    .va-dashboard-top {
+        padding-bottom: 15px;
+    }
+
+    .va-task-list {
+        padding: 16px 0;
+        gap: 7px;
+    }
+
+    .va-task-item {
+        gap: 9px;
+    }
+
+    .va-task-check {
+        width: 25px;
+        height: 25px;
+        border-radius: 7px;
+    }
+
+    .va-task-item strong {
+        font-size: 0.75rem;
+    }
+
+    .va-task-item > div span {
+        font-size: 0.67rem;
+    }
+
     .va-floating-tag {
-        animation: none;
+        transform: scale(0.9);
     }
-}
 
+    .tag-email {
+        left: -8px;
+    }
 
-/* ==================================================
-   FINAL CTA BUTTON SPACING
-================================================== */
+    .tag-research {
+        right: -8px;
+    }
 
-.virtual-assistant-cta-actions {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 30px;
-    padding: 12px 0;
-}
+    .tag-calendar {
+        left: -8px;
+    }
 
-.virtual-assistant-cta-actions .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 54px;
-    padding: 0 25px;
-}
+    .tag-data-entry {
+        right: -8px;
+    }
 
-.virtual-assistant-cta-actions .btn i {
-    flex-shrink: 0;
-    margin: 0;
-    font-size: 1.05rem;
-}
-
-@media (max-width: 640px) {
-    .virtual-assistant-cta-actions {
-        flex-direction: column;
-        align-items: stretch;
+    .virtual-assistant-benefit-card {
         gap: 12px;
-        margin-top: 24px;
-        padding: 10px 0;
     }
 
-    .virtual-assistant-cta-actions .btn {
-        width: 100%;
+    .virtual-assistant-benefit-icon {
+        width: 42px;
+        height: 42px;
     }
 }
 
 
-/* ==================================================
-   WORK PROCESS CARD HOVER EFFECT
-================================================== */
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .va-service-card,
+    .va-process-step,
+    .va-project-card,
+    .va-tool-item,
+    .va-task-item,
+    .virtual-assistant-benefit-card,
+    .virtual-assistant-intro-content .text-link i,
+    .va-project-content .text-link i {
+        transition: none;
+    }
+}
+
+.container {
+    width: min(100% - 48px, 1200px);
+    margin-inline: auto;
+}
+
+/* =========================================================
+   VIRTUAL ASSISTANT — DARK PAGE THEME
+========================================================= */
+
+.virtual-assistant-hero,
+.virtual-assistant-intro,
+.va-services,
+.virtual-assistant-process,
+.virtual-assistant-tools,
+.virtual-assistant-projects,
+.virtual-assistant-cta {
+    background: var(--dark-bg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.virtual-assistant-hero {
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(37, 99, 235, 0.16),
+            transparent 30%
+        ),
+        var(--dark-bg);
+}
+
+.virtual-assistant-hero-content h1 {
+    color: #ffffff;
+}
+
+.virtual-assistant-hero-content > p {
+    color: #b8c4d6;
+}
+
+.virtual-assistant-hero-content .breadcrumb {
+    color: #8290a5;
+}
+
+.virtual-assistant-hero-content .breadcrumb a {
+    color: #aebacd;
+}
+
+.virtual-assistant-hero-content .breadcrumb a:hover,
+.virtual-assistant-hero-content .breadcrumb .active {
+    color: #60a5fa;
+}
+
+.virtual-assistant-hero-content .breadcrumb i {
+    color: #536174;
+}
+
+
+/* =========================================================
+   HERO DECORATION
+========================================================= */
+
+.virtual-assistant-hero::before {
+    background: rgba(37, 99, 235, 0.08);
+}
+
+.virtual-assistant-hero-visual::before {
+    background: rgba(37, 99, 235, 0.08);
+}
+
+.virtual-assistant-hero-visual::after {
+    border-color: rgba(96, 165, 250, 0.14);
+}
+
+
+/* =========================================================
+   DASHBOARD CARD
+========================================================= */
+
+.va-dashboard-card {
+    background: #111c2f;
+    border-color: rgba(148, 163, 184, 0.14);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.28),
+        0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.va-dashboard-top {
+    border-bottom-color: rgba(148, 163, 184, 0.12);
+}
+
+.va-dashboard-profile strong {
+    color: #ffffff;
+}
+
+.va-dashboard-profile span {
+    color: #8795aa;
+}
+
+.va-dashboard-top > i {
+    color: #8391a6;
+}
+
+.va-profile-avatar {
+    background: rgba(37, 99, 235, 0.14);
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   TASK ITEMS
+========================================================= */
+
+.va-task-item {
+    border-color: rgba(148, 163, 184, 0.12);
+    background: #172338;
+}
+
+.va-task-item:hover {
+    border-color: rgba(96, 165, 250, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.va-task-item strong {
+    color: #e8eef7;
+}
+
+.va-task-item > div span {
+    color: #8492a7;
+}
+
+.va-task-check {
+    border-color: #526177;
+}
+
+.va-task-item.completed .va-task-check {
+    border-color: #3b82f6;
+    background: #2563eb;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.va-progress-heading span {
+    color: #9aa8bb;
+}
+
+.va-progress-heading strong {
+    color: #60a5fa;
+}
+
+.va-progress-bar {
+    background: #253247;
+}
+
+.va-progress-bar span {
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+}
+
+
+/* =========================================================
+   FLOATING TAGS
+========================================================= */
+
+.va-floating-tag {
+    background: #172338;
+    border-color: rgba(96, 165, 250, 0.16);
+    color: #d7e0ed;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.va-floating-tag i {
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.virtual-assistant-intro {
+    background:
+        linear-gradient(
+            180deg,
+            var(--dark-bg) 0%,
+            #0d1728 100%
+        );
+}
+
+.virtual-assistant-intro-content h2 {
+    color: #ffffff;
+}
+
+.virtual-assistant-intro-content p {
+    color: #aebacd;
+}
+
+.virtual-assistant-intro-content .text-link {
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   BENEFIT CARDS
+========================================================= */
+
+.virtual-assistant-benefit-card {
+    background: #111c2f;
+    border-color: rgba(148, 163, 184, 0.13);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.virtual-assistant-benefit-card:hover {
+    border-color: rgba(96, 165, 250, 0.22);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.virtual-assistant-benefit-icon {
+    background: rgba(37, 99, 235, 0.14);
+    color: #60a5fa;
+}
+
+.virtual-assistant-benefit-card h3 {
+    color: #eef3fa;
+}
+
+.virtual-assistant-benefit-card p {
+    color: #9eacbf;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.va-services {
+    background: #0d1728;
+}
+
+.va-services .section-heading h2,
+.virtual-assistant-process .section-heading h2,
+.virtual-assistant-projects .section-heading h2 {
+    color: #ffffff;
+}
+
+.va-services .section-heading p,
+.virtual-assistant-process .section-heading p,
+.virtual-assistant-projects .section-heading p {
+    color: #9eacbf;
+}
+
+.va-services .section-heading h2 span,
+.virtual-assistant-process .section-heading h2 span,
+.virtual-assistant-projects .section-heading h2 span {
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.va-service-card {
+    background: #111c2f;
+    border-color: rgba(148, 163, 184, 0.12);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.va-service-card:hover {
+    border-color: rgba(96, 165, 250, 0.23);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.va-service-icon {
+    background: rgba(37, 99, 235, 0.14);
+    color: #60a5fa;
+}
+
+.va-service-card h3 {
+    color: #edf3fa;
+}
+
+.va-service-card p {
+    color: #9eacbf;
+}
+
+
+/* =========================================================
+   WORK PROCESS
+========================================================= */
+
+.virtual-assistant-process {
+    background: var(--dark-bg);
+}
 
 .va-process-step {
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.va-process-step::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #059669;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    background: #111c2f;
+    border-color: rgba(148, 163, 184, 0.12);
 }
 
 .va-process-step:hover {
-    transform: translateY(-8px);
-    border-color: #86efac;
-    box-shadow: 0 20px 38px rgba(5, 150, 105, 0.13);
+    border-color: rgba(96, 165, 250, 0.22);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
-.va-process-step:hover::before {
-    transform: scaleX(1);
-}
-
-.va-process-step:hover .va-process-icon {
-    color: #ffffff;
-    background-color: #059669;
-    transform: rotate(-5deg) scale(1.06);
+.va-process-number {
+    color: #34445b;
 }
 
 .va-process-icon {
-    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    background: rgba(37, 99, 235, 0.14);
+    color: #60a5fa;
 }
 
-.va-process-step:hover .va-process-number {
-    color: #059669;
+.va-process-step h3 {
+    color: #edf3fa;
+}
+
+.va-process-step p {
+    color: #9eacbf;
+}
+
+
+/* =========================================================
+   TOOLS
+========================================================= */
+
+.virtual-assistant-tools {
+    background: #0d1728;
+}
+
+.virtual-assistant-tools-content h2 {
+    color: #ffffff;
+}
+
+.virtual-assistant-tools-content p {
+    color: #9eacbf;
+}
+
+.virtual-assistant-tools-content h2 span {
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   TOOL ITEMS
+========================================================= */
+
+.va-tool-item {
+    background: #111c2f;
+    border-color: rgba(148, 163, 184, 0.12);
+    color: #dce5f0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.va-tool-item:hover {
+    border-color: rgba(96, 165, 250, 0.22);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.va-tool-item i {
+    background: rgba(37, 99, 235, 0.14);
+    color: #60a5fa;
+}
+
+.va-tool-item span {
+    color: #dce5f0;
+}
+
+
+/* =========================================================
+   RELATED PROJECTS
+========================================================= */
+
+.virtual-assistant-projects {
+    background: var(--dark-bg);
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+========================================================= */
+
+.va-project-card {
+    background: #111c2f;
+    border-color: rgba(148, 163, 184, 0.12);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.va-project-card:hover {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+.va-project-content {
+    background: #111c2f;
+}
+
+.va-project-content > span {
+    color: #60a5fa;
+}
+
+.va-project-content h3 {
+    color: #edf3fa;
+}
+
+.va-project-content p {
+    color: #9eacbf;
+}
+
+.va-project-content .text-link {
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.virtual-assistant-cta {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(96, 165, 250, 0.15),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(37, 99, 235, 0.16),
+            transparent 30%
+        ),
+        #08111f;
+}
+
+/* =========================================================
+   VIRTUAL ASSISTANT — CONTENT SPACING
+========================================================= */
+
+/* Give every major section comfortable vertical spacing */
+.virtual-assistant-intro,
+.va-services,
+.virtual-assistant-process,
+.virtual-assistant-tools,
+.virtual-assistant-projects {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+/* =========================================================
+   HERO SPACING
+========================================================= */
+
+.virtual-assistant-hero {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.virtual-assistant-hero-content .section-label {
+    margin-bottom: 22px;
+}
+
+.virtual-assistant-hero-content h1 {
+    margin-bottom: 28px;
+}
+
+.virtual-assistant-hero-content > p {
+    margin-bottom: 35px;
+}
+
+.virtual-assistant-hero-actions {
+    margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   INTRO SPACING
+========================================================= */
+
+.virtual-assistant-intro-content .section-label {
+    margin-bottom: 20px;
+}
+
+.virtual-assistant-intro-content h2 {
+    margin-bottom: 25px;
+}
+
+.virtual-assistant-intro-content p {
+    margin-bottom: 22px;
+}
+
+.virtual-assistant-intro-content .text-link {
+    margin-top: 18px;
+}
+
+.virtual-assistant-benefits {
+    gap: 20px;
+}
+
+.virtual-assistant-benefit-card {
+    padding: 25px;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.va-services .section-heading,
+.virtual-assistant-process .section-heading,
+.virtual-assistant-projects .section-heading {
+    margin-bottom: 55px;
+}
+
+.va-services .section-heading .section-label,
+.virtual-assistant-process .section-heading .section-label,
+.virtual-assistant-projects .section-heading .section-label {
+    margin-bottom: 18px;
+}
+
+.va-services .section-heading h2,
+.virtual-assistant-process .section-heading h2,
+.virtual-assistant-projects .section-heading h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.va-services-grid {
+    gap: 24px;
+}
+
+.va-service-card {
+    padding: 32px 28px;
+}
+
+.va-service-icon {
+    margin-bottom: 24px;
+}
+
+.va-service-card h3 {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.va-process-steps {
+    gap: 22px;
+}
+
+.va-process-step {
+    padding: 34px 26px 30px;
+}
+
+.va-process-icon {
+    margin-bottom: 23px;
+}
+
+.va-process-step h3 {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   TOOLS
+========================================================= */
+
+.virtual-assistant-tools-content .section-label {
+    margin-bottom: 20px;
+}
+
+.virtual-assistant-tools-content h2 {
+    margin-bottom: 22px;
+}
+
+.virtual-assistant-tools-content p {
+    margin-bottom: 10px;
+}
+
+.va-tools-list {
+    gap: 16px;
+}
+
+.va-tool-item {
+    min-height: 68px;
+    padding: 16px 19px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.va-project-grid {
+    gap: 25px;
+}
+
+.va-project-content {
+    padding: 28px;
+}
+
+.va-project-content > span {
+    margin-bottom: 11px;
+}
+
+.va-project-content h3 {
+    margin-bottom: 12px;
+}
+
+.va-project-content p {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.virtual-assistant-cta {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.virtual-assistant-cta-content .section-label {
+    margin-bottom: 20px;
+}
+
+.virtual-assistant-cta-content h2 {
+    margin-bottom: 22px;
+}
+
+.virtual-assistant-cta-content p {
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   MOBILE SPACING
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .virtual-assistant-intro,
+    .va-services,
+    .virtual-assistant-process,
+    .virtual-assistant-tools,
+    .virtual-assistant-projects {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .virtual-assistant-hero {
+        padding-top: 75px;
+        padding-bottom: 70px;
+    }
+
+    .va-services .section-heading,
+    .virtual-assistant-process .section-heading,
+    .virtual-assistant-projects .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .va-services-grid,
+    .va-process-steps,
+    .va-project-grid {
+        gap: 18px;
+    }
+
+    .virtual-assistant-benefits {
+        gap: 15px;
+    }
+
+    .va-tools-list {
+        gap: 12px;
+    }
+
+    .virtual-assistant-cta {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
 }

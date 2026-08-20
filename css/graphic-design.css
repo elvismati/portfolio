@@ -1,839 +1,1133 @@
-/* ==================================================
+/* ==========================================================
    GRAPHIC DESIGN PAGE
-   Page-specific styles for graphic-design.html
-================================================== */
+   ========================================================== */
 
-/* ==================================================
+
+/* ==========================================================
+   SHARED SECTION SPACING
+   ========================================================== */
+
+.graphic-design-hero,
+.graphic-design-intro,
+.design-services,
+.graphic-design-process,
+.graphic-design-tools,
+.graphic-design-projects,
+.graphic-design-cta {
+    position: relative;
+}
+
+.graphic-design-intro,
+.design-services,
+.graphic-design-process,
+.graphic-design-tools,
+.graphic-design-projects {
+    padding: 100px 0;
+}
+
+.graphic-design-hero .container,
+.graphic-design-intro .container,
+.design-services .container,
+.graphic-design-process .container,
+.graphic-design-tools .container,
+.graphic-design-projects .container,
+.graphic-design-cta .container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+/* ==========================================================
    GRAPHIC DESIGN HERO
-================================================== */
+   ========================================================== */
 
 .graphic-design-hero {
     position: relative;
     overflow: hidden;
-    padding: 145px 0 100px;
+    padding: 150px 0 100px;
     background:
-        linear-gradient(135deg, #fff7ed 0%, #ffffff 52%, #fff1f2 100%);
+        radial-gradient(
+            circle at 85% 18%,
+            rgba(59, 109, 240, 0.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 8% 85%,
+            rgba(59, 109, 240, 0.07),
+            transparent 28%
+        ),
+        var(--bg);
 }
 
 .graphic-design-hero::before {
     content: "";
     position: absolute;
-    inset: 0;
+    top: -180px;
+    right: -120px;
+    width: 440px;
+    height: 440px;
+    border: 1px solid rgba(59, 109, 240, 0.12);
+    border-radius: 50%;
     pointer-events: none;
-    background:
-        radial-gradient(circle at 88% 18%, rgba(244, 63, 94, 0.10), transparent 25%),
-        radial-gradient(circle at 72% 75%, rgba(249, 115, 22, 0.10), transparent 26%);
 }
 
-.graphic-design-hero .container {
-    position: relative;
-    z-index: 1;
+.graphic-design-hero::after {
+    content: "";
+    position: absolute;
+    left: -180px;
+    bottom: -220px;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(59, 109, 240, 0.07);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .graphic-design-hero-grid {
+    position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+    grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
     align-items: center;
-    gap: 70px;
+    gap: 80px;
 }
 
+
+/* ==========================================================
+   HERO CONTENT
+   ========================================================== */
+
 .graphic-design-hero-content {
-    max-width: 660px;
+    max-width: 720px;
 }
 
 .graphic-design-hero-content .section-label {
-    display: inline-flex;
-    margin-bottom: 18px;
-    color: #be123c;
-    background-color: #fff1f2;
+    margin-bottom: 22px;
 }
 
 .graphic-design-hero-content h1 {
-    margin: 0;
-    color: #0f172a;
-    font-size: clamp(2.35rem, 4vw, 4.3rem);
-    line-height: 1.12;
-    letter-spacing: -0.04em;
+    max-width: 720px;
+    margin: 0 0 25px;
+    color: var(--text);
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
 }
 
-.graphic-design-hero-content h1 span {
-    color: #e11d48;
+.graphic-design-hero-content h1 span,
+.graphic-design-intro-content h2 span,
+.design-services .section-heading h2 span,
+.graphic-design-process .section-heading h2 span,
+.graphic-design-tools-content h2 span,
+.graphic-design-projects .section-heading h2 span,
+.graphic-design-cta-content h2 span {
+    display: inline;
+    color: var(--accent);
 }
 
 .graphic-design-hero-content > p {
-    max-width: 610px;
-    margin: 24px 0 30px;
-    color: #475569;
-    font-size: 1.08rem;
+    max-width: 650px;
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 1.05rem;
     line-height: 1.8;
 }
 
 .graphic-design-hero-actions {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 14px;
-    margin-bottom: 28px;
-}
-
-.graphic-design-hero-actions .btn {
-    min-width: 190px;
-    justify-content: center;
-}
-
-.graphic-design-hero-actions .btn-primary {
-    background-color: #e11d48;
-    border-color: #e11d48;
-}
-
-.graphic-design-hero-actions .btn-primary:hover {
-    background-color: #be123c;
-    border-color: #be123c;
+    margin-top: 34px;
 }
 
 
-/* ==================================================
-   GRAPHIC DESIGN BREADCRUMB
-================================================== */
-
-.graphic-design-hero .breadcrumb {
-    justify-content: flex-start;
-    margin-top: 0;
-}
-
-.graphic-design-hero .breadcrumb .active {
-    color: #e11d48;
-    font-weight: 700;
-}
+/* ==========================================================
+   HERO BREADCRUMB
+   ========================================================== */
 
 .graphic-design-hero .breadcrumb {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 28px;
-    color: #64748b;
-    font-size: 0.92rem;
+    min-height: 0;
+    margin-top: 38px;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
 }
 
 .graphic-design-hero .breadcrumb a {
-    position: relative;
-    color: #64748b;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.25s ease;
-}
-
-/* Small underline that appears on hover */
-.graphic-design-hero .breadcrumb a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 2px;
-    border-radius: 10px;
-    background-color: #2563eb;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.25s ease;
+    color: var(--text-dim);
+    transition: color 0.2s ease;
 }
 
 .graphic-design-hero .breadcrumb a:hover {
-    color: #2563eb;
-}
-
-.graphic-design-hero .breadcrumb a:hover::after {
-    transform: scaleX(1);
+    color: var(--accent);
 }
 
 .graphic-design-hero .breadcrumb i {
-    color: #94a3b8;
-    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.62rem;
 }
 
 .graphic-design-hero .breadcrumb .active {
-    color: #2563eb;
-    font-weight: 700;
+    color: var(--text);
+    font-weight: 600;
 }
 
-/* Dark theme */
-body.dark-theme .graphic-design-hero .breadcrumb {
-    color: #cbd5e1;
-}
 
-body.dark-theme .graphic-design-hero .breadcrumb a {
-    color: #cbd5e1;
-}
-
-body.dark-theme .graphic-design-hero .breadcrumb a:hover {
-    color: #93c5fd;
-}
-
-body.dark-theme .graphic-design-hero .breadcrumb a::after {
-    background-color: #60a5fa;
-}
-
-body.dark-theme .graphic-design-hero .breadcrumb i {
-    color: #64748b;
-}
-
-body.dark-theme .graphic-design-hero .breadcrumb .active {
-    color: #93c5fd;
-}
-
-/* ==================================================
-   HERO DESIGN BOARD
-================================================== */
+/* ==========================================================
+   HERO VISUAL
+   ========================================================== */
 
 .graphic-design-hero-visual {
     position: relative;
-    min-height: 430px;
+    min-width: 0;
+    min-height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.graphic-design-hero-visual::before {
-    content: "";
-    position: absolute;
-    width: 315px;
-    height: 315px;
-    right: 15px;
-    bottom: 5px;
-    border-radius: 50%;
-    background: linear-gradient(
-        135deg,
-        rgba(244, 63, 94, 0.15),
-        rgba(249, 115, 22, 0.14)
-    );
-}
+
+/* ==========================================================
+   DESIGN BOARD
+   ========================================================== */
 
 .design-board {
     position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 500px;
+    width: min(100%, 560px);
     overflow: hidden;
-    border: 1px solid #fed7aa;
+    padding: 12px;
+    border: 1px solid var(--border);
     border-radius: 24px;
-    background-color: #ffffff;
-    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.14);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 109, 240, 0.08),
+            transparent 45%
+        ),
+        rgba(255, 255, 255, 0.025);
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.015);
+    transform: rotate(1.2deg);
 }
 
+.design-board::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(59, 109, 240, 0.12);
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   DESIGN BOARD TOP BAR
+   ========================================================== */
+
 .design-board-top {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     gap: 7px;
-    height: 48px;
-    padding: 0 18px;
-    border-bottom: 1px solid #ffedd5;
-    background-color: #fffaf7;
+    height: 38px;
+    padding: 0 12px;
+    border-bottom: 1px solid var(--border);
 }
 
 .design-board-top span {
-    width: 10px;
-    height: 10px;
+    display: block;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .design-board-top span:nth-child(1) {
-    background-color: #fb7185;
+    background: rgba(59, 109, 240, 0.8);
 }
 
 .design-board-top span:nth-child(2) {
-    background-color: #fbbf24;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .design-board-top span:nth-child(3) {
-    background-color: #4ade80;
+    background: rgba(255, 255, 255, 0.14);
 }
 
+
+/* ==========================================================
+   BOARD CONTENT
+   ========================================================== */
+
 .design-board-content {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
-    gap: 18px;
-    min-height: 300px;
-    padding: 24px;
-    background: linear-gradient(145deg, #ffffff, #fff7ed);
+    gap: 14px;
+    min-height: 430px;
+    padding: 18px;
 }
+
+
+/* ==========================================================
+   DESIGN POSTER
+   ========================================================== */
 
 .design-poster {
     position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 245px;
-    padding: 24px;
+    justify-content: flex-end;
+    min-height: 390px;
+    overflow: hidden;
+    padding: 30px;
     border-radius: 18px;
-    color: #ffffff;
-    background: linear-gradient(145deg, #e11d48, #f97316);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 109, 240, 0.95),
+            rgba(36, 64, 140, 0.85)
+        );
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+.design-poster::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 210px;
+    height: 210px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+}
+
+.design-poster::after {
+    content: "";
+    position: absolute;
+    right: -45px;
+    bottom: -60px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .design-poster-label {
     position: relative;
     z-index: 2;
-    margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 0.7rem;
+    margin-bottom: auto;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.68rem;
     font-weight: 800;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.16em;
 }
 
 .design-poster strong {
     position: relative;
     z-index: 2;
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    line-height: 1.05;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 0.9;
     letter-spacing: -0.05em;
 }
 
 .design-poster-shape {
     position: absolute;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
-    pointer-events: none;
 }
 
 .shape-one {
+    top: 75px;
+    right: -35px;
     width: 150px;
     height: 150px;
-    right: -65px;
-    top: -45px;
-    border: 24px solid rgba(255, 255, 255, 0.18);
 }
 
 .shape-two {
-    width: 110px;
-    height: 110px;
-    left: -45px;
-    bottom: -45px;
-    background-color: rgba(255, 255, 255, 0.12);
+    top: 125px;
+    right: 35px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.08);
 }
+
+
+/* ==========================================================
+   MINI DESIGN CARDS
+   ========================================================== */
 
 .design-mini-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+    align-content: center;
 }
 
 .design-mini-card {
-    min-height: 112px;
+    position: relative;
+    min-height: 185px;
+    overflow: hidden;
+    border: 1px solid var(--border);
     border-radius: 15px;
+    background: var(--card-bg);
+}
+
+.design-mini-card::before,
+.design-mini-card::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
 }
 
 .mini-card-one {
     background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent),
-        #f97316;
+        linear-gradient(
+            145deg,
+            rgba(59, 109, 240, 0.25),
+            var(--card-bg)
+        );
+}
+
+.mini-card-one::before {
+    width: 85px;
+    height: 85px;
+    top: 25px;
+    left: 20px;
+    background: rgba(59, 109, 240, 0.18);
+}
+
+.mini-card-one::after {
+    width: 45px;
+    height: 45px;
+    right: 18px;
+    bottom: 20px;
+    background: rgba(59, 109, 240, 0.35);
 }
 
 .mini-card-two {
     background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent),
-        #e11d48;
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.06),
+            var(--card-bg)
+        );
+}
+
+.mini-card-two::before {
+    top: 30px;
+    left: 20px;
+    width: 100px;
+    height: 12px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.mini-card-two::after {
+    top: 58px;
+    left: 20px;
+    width: 70px;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.09);
 }
 
 .mini-card-three {
     background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent),
-        #7c3aed;
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(59, 109, 240, 0.3),
+            transparent 35%
+        ),
+        var(--card-bg);
+}
+
+.mini-card-three::before {
+    left: 20px;
+    bottom: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    background: rgba(59, 109, 240, 0.15);
+    transform: rotate(15deg);
 }
 
 .mini-card-four {
     background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent),
-        #0f766e;
+        linear-gradient(
+            135deg,
+            rgba(59, 109, 240, 0.16),
+            rgba(255, 255, 255, 0.02)
+        );
 }
+
+.mini-card-four::before {
+    top: 28px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(59, 109, 240, 0.35);
+}
+
+.mini-card-four::after {
+    bottom: 24px;
+    left: 20px;
+    width: 90px;
+    height: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ==========================================================
+   FLOATING DESIGN TAGS
+   ========================================================== */
 
 .design-floating-tag {
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    padding: 12px 16px;
-    border: 1px solid #fed7aa;
-    border-radius: 14px;
-    color: #9f1239;
-    background-color: #ffffff;
-    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.10);
-    font-size: 0.86rem;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(14, 18, 32, 0.92);
+    color: var(--text);
+    font-size: 0.72rem;
     font-weight: 700;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
 }
 
 .design-floating-tag i {
-    color: #e11d48;
+    color: var(--accent);
 }
 
 .tag-branding {
-    top: 22px;
-    left: -12px;
+    top: 12%;
+    right: -25px;
 }
 
 .tag-social {
-    right: -15px;
-    bottom: 85px;
+    right: -35px;
+    bottom: 19%;
 }
 
 .tag-creative {
-    left: 28px;
-    bottom: 8px;
+    left: -28px;
+    bottom: 9%;
 }
 
-/* ==================================================
+
+/* ==========================================================
    INTRODUCTION
-================================================== */
+   ========================================================== */
 
 .graphic-design-intro {
-    padding: 105px 0;
-    background-color: #ffffff;
+    background: var(--bg);
 }
 
 .graphic-design-intro-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     align-items: center;
-    gap: 75px;
+    gap: 90px;
 }
 
-.graphic-design-intro-content h2,
-.graphic-design-tools-content h2 {
-    margin: 18px 0 20px;
-    color: #0f172a;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.22;
+.graphic-design-intro-content {
+    max-width: 650px;
 }
 
-.graphic-design-intro-content h2 span,
-.graphic-design-tools-content h2 span {
-    color: #e11d48;
+.graphic-design-intro-content .section-label {
+    margin-bottom: 18px;
 }
 
-.graphic-design-intro-content p,
-.graphic-design-tools-content p {
-    margin-bottom: 16px;
-    color: #64748b;
+.graphic-design-intro-content h2 {
+    margin: 0 0 22px;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.graphic-design-intro-content p {
+    margin: 0 0 17px;
+    color: var(--text-dim);
     line-height: 1.8;
 }
 
-/* Introduction CTA button */
 .graphic-design-intro-content .text-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
     margin-top: 12px;
-    padding: 13px 18px;
-    border: 1px solid #2563eb;
-    border-radius: 10px;
-    color: #2563eb;
-    background-color: #ffffff;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.08);
-    transition: transform 0.25s ease, background-color 0.25s ease,
-        color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.graphic-design-intro-content .text-link i {
-    transition: transform 0.25s ease;
-}
 
-.graphic-design-intro-content .text-link:hover {
-    transform: translateY(-3px);
-    color: #ffffff;
-    background-color: #2563eb;
-    box-shadow: 0 14px 26px rgba(37, 99, 235, 0.22);
-}
+/* ==========================================================
+   INTRO BENEFITS
+   ========================================================== */
 
-.graphic-design-intro-content .text-link:hover i {
-    transform: translateX(4px);
-}
 .graphic-design-benefits {
     display: grid;
-    gap: 16px;
+    gap: 14px;
 }
 
-body.dark-theme .graphic-design-intro-content .text-link {
-    border-color: #60a5fa;
-    color: #93c5fd;
-    background-color: #162033;
-}
-
-body.dark-theme .graphic-design-intro-content .text-link:hover {
-    color: #0f172a;
-    background-color: #93c5fd;
-    box-shadow: 0 14px 26px rgba(96, 165, 250, 0.2);
-}
 .graphic-design-benefit-card {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: center;
     gap: 18px;
-    padding: 23px;
-    border: 1px solid #ffe4e6;
-    border-radius: 18px;
-    background-color: #fffafb;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.018);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
 }
 
 .graphic-design-benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 32px rgba(225, 29, 72, 0.10);
+    transform: translateX(5px);
+    border-color: rgba(59, 109, 240, 0.3);
+    background: rgba(59, 109, 240, 0.035);
 }
 
 .graphic-design-benefit-icon {
     display: grid;
+    width: 52px;
+    height: 52px;
     place-items: center;
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
     border-radius: 14px;
-    color: #e11d48;
-    background-color: #ffe4e6;
-    font-size: 1.1rem;
+    background: rgba(59, 109, 240, 0.11);
+    color: var(--accent);
 }
 
 .graphic-design-benefit-card h3 {
-    margin-bottom: 7px;
-    color: #0f172a;
-    font-size: 1.06rem;
+    margin: 0 0 6px;
+    font-size: 0.98rem;
 }
 
 .graphic-design-benefit-card p {
     margin: 0;
-    color: #64748b;
-    font-size: 0.93rem;
-    line-height: 1.7;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    line-height: 1.65;
 }
 
-/* ==================================================
+
+/* ==========================================================
+   SECTION HEADINGS
+   ========================================================== */
+
+.design-services .section-heading,
+.graphic-design-process .section-heading,
+.graphic-design-projects .section-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.design-services .section-heading h2,
+.graphic-design-process .section-heading h2,
+.graphic-design-projects .section-heading h2 {
+    margin: 15px 0 18px;
+}
+
+.design-services .section-heading p,
+.graphic-design-process .section-heading p,
+.graphic-design-projects .section-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--text-dim);
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
    DESIGN SERVICES
-================================================== */
+   ========================================================== */
 
 .design-services {
-    padding: 105px 0;
-    background-color: #fff7f8;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .design-services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 52px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .design-service-card {
     position: relative;
+    min-width: 0;
+    padding: 30px;
     overflow: hidden;
-    padding: 32px 28px;
-    border: 1px solid #ffe4e6;
+    border: 1px solid var(--border);
     border-radius: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.018);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .design-service-card::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #e11d48, #f97316);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    top: -80px;
+    right: -80px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(59, 109, 240, 0.06);
+    transition: background 0.25s ease;
 }
 
 .design-service-card:hover {
-    transform: translateY(-8px);
-    border-color: #fecdd3;
-    box-shadow: 0 20px 38px rgba(225, 29, 72, 0.12);
+    transform: translateY(-5px);
+    border-color: rgba(59, 109, 240, 0.3);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
 }
 
 .design-service-card:hover::before {
-    transform: scaleX(1);
+    background: rgba(59, 109, 240, 0.12);
 }
 
 .design-service-icon {
+    position: relative;
+    z-index: 1;
     display: grid;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 23px;
     place-items: center;
-    width: 58px;
-    height: 58px;
-    margin-bottom: 22px;
-    border-radius: 16px;
-    color: #e11d48;
-    background-color: #fff1f2;
-    font-size: 1.4rem;
+    border-radius: 14px;
+    background: rgba(59, 109, 240, 0.11);
+    color: var(--accent);
 }
 
 .design-service-card h3 {
-    margin-bottom: 12px;
-    color: #0f172a;
-    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 11px;
+    font-size: 1.02rem;
 }
 
 .design-service-card p {
-    color: #64748b;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.84rem;
     line-height: 1.75;
 }
 
-/* ==================================================
+
+/* ==========================================================
    DESIGN PROCESS
-================================================== */
+   ========================================================== */
 
 .graphic-design-process {
-    padding: 105px 0;
-    background-color: #ffffff;
+    background: var(--bg);
 }
 
 .design-process-steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    margin-top: 55px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .design-process-step {
     position: relative;
-    padding: 32px 24px 28px;
-    border: 1px solid #ffe4e6;
+    min-width: 0;
+    padding: 30px 26px;
+    border: 1px solid var(--border);
     border-radius: 20px;
-    background-color: #ffffff;
-    text-align: center;
-    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--card-bg);
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .design-process-step:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 18px 36px rgba(225, 29, 72, 0.11);
+    transform: translateY(-5px);
+    border-color: rgba(59, 109, 240, 0.3);
 }
 
 .design-process-number {
     position: absolute;
-    top: 16px;
-    right: 18px;
-    color: #fda4af;
-    font-size: 0.8rem;
+    top: 12px;
+    right: 17px;
+    color: rgba(255, 255, 255, 0.035);
+    font-size: 4.5rem;
     font-weight: 800;
+    line-height: 1;
 }
 
 .design-process-icon {
+    position: relative;
+    z-index: 1;
     display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 22px;
     place-items: center;
-    width: 58px;
-    height: 58px;
-    margin: 0 auto 20px;
-    border-radius: 17px;
-    color: #e11d48;
-    background-color: #fff1f2;
-    font-size: 1.3rem;
+    border-radius: 13px;
+    background: rgba(59, 109, 240, 0.11);
+    color: var(--accent);
 }
 
 .design-process-step h3 {
-    margin-bottom: 10px;
-    color: #0f172a;
-    font-size: 1.08rem;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 10px;
+    font-size: 0.98rem;
 }
 
 .design-process-step p {
-    color: #64748b;
-    font-size: 0.93rem;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.8rem;
     line-height: 1.7;
 }
 
-/* ==================================================
-   DESIGN TOOLS
-================================================== */
+
+/* ==========================================================
+   TOOLS
+   ========================================================== */
 
 .graphic-design-tools {
-    padding: 105px 0;
-    background-color: #fff7f8;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .graphic-design-tools-grid {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
-    gap: 75px;
+    gap: 90px;
+}
+
+.graphic-design-tools-content {
+    max-width: 620px;
+}
+
+.graphic-design-tools-content .section-label {
+    margin-bottom: 18px;
+}
+
+.graphic-design-tools-content h2 {
+    margin: 0 0 20px;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.graphic-design-tools-content p {
+    margin: 0;
+    color: var(--text-dim);
+    line-height: 1.8;
 }
 
 .design-tools-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 }
 
 .design-tool-item {
     display: flex;
     align-items: center;
     gap: 13px;
-    padding: 18px;
-    border: 1px solid #ffe4e6;
-    border-radius: 15px;
-    color: #334155;
-    background-color: #ffffff;
-    font-weight: 700;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.018);
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
 .design-tool-item:hover {
-    transform: translateY(-5px);
-    border-color: #fda4af;
-    box-shadow: 0 14px 26px rgba(225, 29, 72, 0.10);
+    transform: translateY(-2px);
+    border-color: rgba(59, 109, 240, 0.3);
+    background: rgba(59, 109, 240, 0.04);
 }
 
 .design-tool-item i {
-    display: grid;
-    place-items: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 11px;
-    color: #e11d48;
-    background-color: #fff1f2;
+    width: 20px;
+    color: var(--accent);
+    text-align: center;
 }
 
-/* ==================================================
+
+/* ==========================================================
    RELATED PROJECTS
-================================================== */
+   ========================================================== */
 
 .graphic-design-projects {
-    padding: 105px 0;
-    background-color: #ffffff;
+    background: var(--bg);
 }
 
 .graphic-design-project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 52px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .graphic-design-project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
     overflow: hidden;
-    border: 1px solid #ffe4e6;
+    border: 1px solid var(--border);
     border-radius: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--card-bg);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .graphic-design-project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 38px rgba(225, 29, 72, 0.12);
+    transform: translateY(-5px);
+    border-color: rgba(59, 109, 240, 0.3);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
 }
 
+
+/* ==========================================================
+   PROJECT PLACEHOLDERS
+   ========================================================== */
+
 .graphic-design-project-placeholder {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    min-height: 205px;
-    color: #ffffff;
-    font-size: 0.96rem;
-    font-weight: 700;
-}
-
-.graphic-design-project-placeholder i {
-    font-size: 2.1rem;
-}
-
-.poster-project {
-    background: linear-gradient(135deg, #e11d48, #fb7185);
-}
-
-.social-project {
-    background: linear-gradient(135deg, #f97316, #fbbf24);
-}
-
-.brand-project {
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
-}
-
-.graphic-design-project-content {
-    padding: 25px;
-}
-
-.graphic-design-project-content > span {
-    display: inline-block;
-    margin-bottom: 10px;
-    color: #e11d48;
-    font-size: 0.78rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.graphic-design-project-content h3 {
-    margin-bottom: 10px;
-    color: #0f172a;
-    font-size: 1.15rem;
-}
-
-.graphic-design-project-content p {
-    margin-bottom: 18px;
-    color: #64748b;
-    line-height: 1.7;
-}
-
-/* ==================================================
-   FINAL CTA
-================================================== */
-
-.graphic-design-cta {
-    position: relative;
+    min-height: 240px;
+    gap: 13px;
     overflow: hidden;
-    padding: 95px 0;
-    background:
-        radial-gradient(circle at top right, rgba(251, 113, 133, 0.26), transparent 30%),
-        linear-gradient(135deg, #be123c 0%, #e11d48 55%, #f97316 100%);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
 }
 
-.graphic-design-cta::before {
+.graphic-design-project-placeholder::before {
     content: "";
     position: absolute;
-    width: 330px;
-    height: 330px;
-    bottom: -180px;
-    left: -100px;
-    border: 55px solid rgba(255, 255, 255, 0.08);
+    top: -90px;
+    right: -70px;
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 50%;
 }
 
-.graphic-design-cta .container {
+.graphic-design-project-placeholder::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -70px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.poster-project {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 109, 240, 0.55),
+            rgba(24, 31, 55, 0.95)
+        );
+}
+
+.social-project {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 109, 240, 0.32),
+            rgba(24, 31, 55, 0.95)
+        );
+}
+
+.brand-project {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 109, 240, 0.22),
+            rgba(24, 31, 55, 0.98)
+        );
+}
+
+.graphic-design-project-placeholder i {
     position: relative;
     z-index: 1;
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+.graphic-design-project-placeholder span {
+    position: relative;
+    z-index: 1;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   PROJECT CONTENT
+   ========================================================== */
+
+.graphic-design-project-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 27px;
+}
+
+.graphic-design-project-content > span {
+    margin-bottom: 9px;
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.graphic-design-project-content h3 {
+    margin: 0 0 11px;
+    font-size: 1.08rem;
+    line-height: 1.3;
+}
+
+.graphic-design-project-content p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.83rem;
+    line-height: 1.75;
+}
+
+.project-view-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.project-view-btn i {
+    color: var(--accent);
+    transition: transform 0.2s ease;
+}
+
+.project-view-btn:hover {
+    color: var(--accent);
+}
+
+.project-view-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   FINAL CTA
+   ========================================================== */
+
+.graphic-design-cta {
+    overflow: hidden;
+    padding: 110px 0;
+    border-top: 1px solid var(--border);
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(59, 109, 240, 0.16),
+            transparent 45%
+        ),
+        var(--bg);
+}
+
+.graphic-design-cta::before,
+.graphic-design-cta::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(59, 109, 240, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.graphic-design-cta::before {
+    top: -220px;
+    left: -130px;
+    width: 370px;
+    height: 370px;
+}
+
+.graphic-design-cta::after {
+    right: -130px;
+    bottom: -220px;
+    width: 330px;
+    height: 330px;
 }
 
 .graphic-design-cta-content {
-    max-width: 760px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-.graphic-design-cta .section-label {
-    color: #fff1f2;
-    background-color: rgba(255, 255, 255, 0.13);
+.graphic-design-cta-content h2 {
+    margin: 16px 0 18px;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
 }
 
-.graphic-design-cta h2 {
-    margin: 18px 0;
-    color: #ffffff;
-    font-size: clamp(2rem, 4vw, 3.1rem);
-    line-height: 1.2;
-}
-
-.graphic-design-cta h2 span {
-    color: #ffe4e6;
-}
-
-.graphic-design-cta p {
-    max-width: 650px;
+.graphic-design-cta-content > p {
+    max-width: 680px;
     margin: 0 auto;
-    color: #fff1f2;
+    color: var(--text-dim);
     line-height: 1.8;
 }
 
@@ -841,196 +1135,141 @@ body.dark-theme .graphic-design-intro-content .text-link:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
+    gap: 14px;
+    margin-top: 32px;
 }
 
-.graphic-design-cta .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #be123c;
-    background-color: #ffffff;
-    border-color: #ffffff;
-}
 
-.graphic-design-cta .btn-primary:hover {
-    color: #9f1239;
-    background-color: #fff1f2;
-    border-color: #fff1f2;
-}
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
 
-.graphic-design-cta .btn-outline {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.70);
-    background-color: transparent;
-}
 
-.graphic-design-cta .btn-outline:hover {
-    color: #be123c;
-    border-color: #ffffff;
-    background-color: #ffffff;
-}
+/* ----------------------------------------------------------
+   LARGE TABLET / SMALL DESKTOP
+---------------------------------------------------------- */
 
-/* ==================================================
-   DARK THEME
-================================================== */
+@media (max-width: 1200px) {
 
-body.dark-theme .graphic-design-hero {
-    background:
-        radial-gradient(circle at top right, rgba(225, 29, 72, 0.15), transparent 32%),
-        #0f172a;
-}
-
-body.dark-theme .graphic-design-hero::before {
-    background:
-        radial-gradient(circle at 88% 18%, rgba(244, 63, 94, 0.12), transparent 25%),
-        radial-gradient(circle at 72% 75%, rgba(249, 115, 22, 0.10), transparent 26%);
-}
-
-body.dark-theme .graphic-design-hero-content h1,
-body.dark-theme .graphic-design-intro-content h2,
-body.dark-theme .graphic-design-tools-content h2,
-body.dark-theme .design-service-card h3,
-body.dark-theme .design-process-step h3,
-body.dark-theme .graphic-design-benefit-card h3,
-body.dark-theme .graphic-design-project-content h3 {
-    color: #f8fafc;
-}
-
-body.dark-theme .graphic-design-hero-content > p,
-body.dark-theme .graphic-design-intro-content p,
-body.dark-theme .graphic-design-tools-content p,
-body.dark-theme .design-service-card p,
-body.dark-theme .design-process-step p,
-body.dark-theme .graphic-design-benefit-card p,
-body.dark-theme .graphic-design-project-content p {
-    color: #cbd5e1;
-}
-
-body.dark-theme .graphic-design-hero-content .section-label {
-    color: #fecdd3;
-    background-color: rgba(225, 29, 72, 0.18);
-}
-
-body.dark-theme .graphic-design-hero .breadcrumb .active {
-    color: #fda4af;
-}
-
-body.dark-theme .design-board {
-    border-color: #475569;
-    background-color: #162033;
-    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
-}
-
-body.dark-theme .design-board-top {
-    border-color: #334155;
-    background-color: #1e293b;
-}
-
-body.dark-theme .design-board-content {
-    background: linear-gradient(145deg, #162033, #111827);
-}
-
-body.dark-theme .design-floating-tag {
-    border-color: #475569;
-    color: #fecdd3;
-    background-color: #1e293b;
-}
-
-body.dark-theme .graphic-design-intro,
-body.dark-theme .graphic-design-process,
-body.dark-theme .graphic-design-projects {
-    background-color: #0f172a;
-}
-
-body.dark-theme .design-services,
-body.dark-theme .graphic-design-tools {
-    background-color: #111827;
-}
-
-body.dark-theme .graphic-design-benefit-card,
-body.dark-theme .design-service-card,
-body.dark-theme .design-process-step,
-body.dark-theme .design-tool-item,
-body.dark-theme .graphic-design-project-card {
-    border-color: #334155;
-    background-color: #162033;
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.20);
-}
-
-body.dark-theme .graphic-design-benefit-icon,
-body.dark-theme .design-service-icon,
-body.dark-theme .design-process-icon,
-body.dark-theme .design-tool-item i {
-    color: #fda4af;
-    background-color: rgba(225, 29, 72, 0.18);
-}
-
-body.dark-theme .design-tool-item {
-    color: #e2e8f0;
-}
-
-/* ==================================================
-   RESPONSIVE DESIGN
-================================================== */
-
-@media (max-width: 992px) {
-    .graphic-design-hero {
-        padding: 130px 0 85px;
+    .graphic-design-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
     }
 
-    .graphic-design-hero-grid,
+    .graphic-design-hero-content {
+        max-width: 850px;
+    }
+
+    .graphic-design-hero-visual {
+        width: 100%;
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
     .graphic-design-intro-grid,
     .graphic-design-tools-grid {
         grid-template-columns: 1fr;
         gap: 55px;
     }
 
-    .graphic-design-hero-content {
-        max-width: 720px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .graphic-design-hero-content > p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .graphic-design-hero-actions,
-    .graphic-design-hero .breadcrumb {
-        justify-content: center;
-    }
-
-    .graphic-design-intro-content,
-    .graphic-design-tools-content {
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    .design-services-grid,
-    .graphic-design-project-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .design-process-steps {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .design-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 640px) {
+
+/* ----------------------------------------------------------
+   TABLET
+---------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
     .graphic-design-hero {
-        padding: 115px 0 75px;
+        padding: 120px 0 80px;
+    }
+
+    .graphic-design-intro,
+    .design-services,
+    .graphic-design-process,
+    .graphic-design-tools,
+    .graphic-design-projects {
+        padding: 80px 0;
+    }
+
+    .graphic-design-hero-grid {
+        gap: 50px;
+    }
+
+    .graphic-design-hero-visual {
+        min-height: 450px;
+    }
+
+    .design-board-content {
+        min-height: 380px;
+    }
+
+    .design-poster {
+        min-height: 340px;
+    }
+
+    .design-mini-card {
+        min-height: 160px;
+    }
+
+    .graphic-design-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .graphic-design-tools-grid {
+        gap: 40px;
+    }
+
+    .graphic-design-cta {
+        padding: 85px 0;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   MOBILE
+---------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .graphic-design-hero .container,
+    .graphic-design-intro .container,
+    .design-services .container,
+    .graphic-design-process .container,
+    .graphic-design-tools .container,
+    .graphic-design-projects .container,
+    .graphic-design-cta .container {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .graphic-design-hero {
+        padding: 105px 0 65px;
+    }
+
+    .graphic-design-intro,
+    .design-services,
+    .graphic-design-process,
+    .graphic-design-tools,
+    .graphic-design-projects {
+        padding: 65px 0;
     }
 
     .graphic-design-hero-content h1 {
-        font-size: 2.25rem;
+        font-size: clamp(2.45rem, 11vw, 3.5rem);
     }
 
     .graphic-design-hero-content > p {
-        font-size: 1rem;
-        line-height: 1.7;
+        font-size: 0.92rem;
+        line-height: 1.75;
     }
 
     .graphic-design-hero-actions {
@@ -1040,95 +1279,104 @@ body.dark-theme .design-tool-item {
 
     .graphic-design-hero-actions .btn {
         width: 100%;
-        min-width: 0;
+        justify-content: center;
+    }
+
+    .graphic-design-hero .breadcrumb {
+        margin-top: 30px;
     }
 
     .graphic-design-hero-visual {
-        min-height: 330px;
+        min-height: 360px;
     }
 
     .design-board {
-        border-radius: 18px;
+        width: 100%;
+        transform: none;
     }
 
     .design-board-content {
-        gap: 12px;
-        min-height: 240px;
-        padding: 16px;
+        grid-template-columns: 1fr;
+        min-height: 0;
     }
 
     .design-poster {
-        min-height: 205px;
-        padding: 17px;
-        border-radius: 14px;
-    }
-
-    .design-poster strong {
-        font-size: 1.55rem;
+        min-height: 290px;
     }
 
     .design-mini-cards {
-        gap: 8px;
-    }
-
-    .design-mini-card {
-        min-height: 96px;
-        border-radius: 11px;
+        display: none;
     }
 
     .design-floating-tag {
-        gap: 6px;
-        padding: 9px 11px;
-        border-radius: 11px;
-        font-size: 0.72rem;
+        font-size: 0.66rem;
+        padding: 8px 11px;
     }
 
     .tag-branding {
-        top: 5px;
-        left: -4px;
+        top: 5%;
+        right: -8px;
     }
 
     .tag-social {
-        right: -4px;
-        bottom: 55px;
+        right: -8px;
+        bottom: 13%;
     }
 
     .tag-creative {
-        left: 8px;
-        bottom: -3px;
+        left: -8px;
+        bottom: 3%;
     }
 
-    .graphic-design-intro,
-    .design-services,
-    .graphic-design-process,
-    .graphic-design-tools,
-    .graphic-design-projects {
-        padding: 75px 0;
+    .graphic-design-intro-grid,
+    .graphic-design-tools-grid {
+        gap: 40px;
+    }
+
+    .graphic-design-intro-content h2,
+    .graphic-design-tools-content h2 {
+        font-size: 1.9rem;
+    }
+
+    .graphic-design-benefit-card {
+        grid-template-columns: 45px 1fr;
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .graphic-design-benefit-icon {
+        width: 45px;
+        height: 45px;
     }
 
     .design-services-grid,
     .design-process-steps,
-    .design-tools-list,
     .graphic-design-project-grid {
         grid-template-columns: 1fr;
     }
 
-    .design-services-grid,
-    .graphic-design-project-grid {
-        margin-top: 38px;
+    .design-service-card {
+        padding: 25px;
     }
 
-    .design-process-steps {
-        margin-top: 38px;
-        gap: 18px;
+    .design-process-step {
+        padding: 25px;
     }
 
-    .graphic-design-benefit-card {
-        padding: 19px;
+    .design-tools-list {
+        grid-template-columns: 1fr;
+    }
+
+    .graphic-design-project-content {
+        padding: 24px;
     }
 
     .graphic-design-cta {
         padding: 75px 0;
+    }
+
+    .graphic-design-cta-content h2 {
+        font-size: 2rem;
     }
 
     .graphic-design-cta-actions {
@@ -1143,66 +1391,55 @@ body.dark-theme .design-tool-item {
 }
 
 
-/* ==================================================
-   FORCE STYLE: SELECTED WORK - VIEW DESIGN WORK BUTTONS
+/* ----------------------------------------------------------
+   SMALL MOBILE
+---------------------------------------------------------- */
 
-================================================== */
+@media (max-width: 400px) {
 
+    .graphic-design-hero .container,
+    .graphic-design-intro .container,
+    .design-services .container,
+    .graphic-design-process .container,
+    .graphic-design-tools .container,
+    .graphic-design-projects .container,
+    .graphic-design-cta .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
 
-/* ==================================================
-   SELECTED WORK - PROJECT BUTTONS
-================================================== */
+    .graphic-design-hero {
+        padding-top: 95px;
+    }
 
-.project-view-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    margin-top: 10px;
-    padding: 11px 16px;
-    border: 1px solid #bfdbfe;
-    border-radius: 10px;
-    color: #1d4ed8;
-    background-color: #eff6ff;
-    font-size: 0.9rem;
-    font-weight: 700;
-    line-height: 1.2;
-    text-decoration: none;
-    transition: transform 0.25s ease, background-color 0.25s ease,
-        color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
+    .graphic-design-hero-content h1 {
+        font-size: 2.35rem;
+    }
 
-.project-view-btn i {
-    font-size: 0.8rem;
-    transition: transform 0.25s ease;
-}
+    .design-board {
+        padding: 8px;
+        border-radius: 19px;
+    }
 
-.project-view-btn:hover {
-    transform: translateY(-3px);
-    border-color: #2563eb;
-    color: #ffffff;
-    background-color: #2563eb;
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
-}
+    .design-board-content {
+        padding: 12px;
+    }
 
-.project-view-btn:hover i {
-    transform: translateX(4px);
-}
+    .design-poster {
+        min-height: 260px;
+        padding: 24px;
+    }
 
-.project-view-btn:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.35);
-    outline-offset: 3px;
-}
+    .graphic-design-benefit-card {
+        padding: 16px;
+    }
 
-/* Dark theme */
-body.dark-theme .project-view-btn {
-    border-color: #334155;
-    color: #bfdbfe;
-    background-color: #1e3a5f;
-}
+    .design-service-card,
+    .design-process-step {
+        padding: 22px;
+    }
 
-body.dark-theme .project-view-btn:hover {
-    border-color: #3b82f6;
-    color: #ffffff;
-    background-color: #2563eb;
+    .graphic-design-project-content {
+        padding: 21px;
+    }
 }

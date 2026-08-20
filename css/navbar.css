@@ -1,13 +1,18 @@
 /* =========================================================
    PREMIUM STICKY NAVIGATION
+   Desktop + Tablet + Mobile
 ========================================================= */
 
 .header {
   position: sticky;
+  position: -webkit-sticky;
+
   top: 0;
-  z-index: 1000;
+  left: 0;
 
   width: 100%;
+
+  z-index: 9999;
 
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -15,6 +20,11 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar {
   min-height: 76px;
@@ -26,19 +36,23 @@
   padding: 0 32px;
 }
 
-/* -------------------------
+
+/* =========================================================
    LOGO
-------------------------- */
+========================================================= */
 
 .logo {
   font-size: 22px;
   font-weight: 800;
+
   letter-spacing: -0.04em;
 
   text-decoration: none;
   color: var(--text);
 
   white-space: nowrap;
+
+  flex-shrink: 0;
 }
 
 .logo span {
@@ -46,9 +60,9 @@
 }
 
 
-/* -------------------------
-   MAIN NAV LINKS
-------------------------- */
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
 
 .nav-links {
   display: flex;
@@ -62,19 +76,26 @@
   list-style: none;
 }
 
+.nav-links > li {
+  position: relative;
+}
+
 .nav-links > li > a,
 .dropdown-link {
   display: inline-flex;
   align-items: center;
 
   min-height: 42px;
+
   padding: 0 13px;
 
   font-size: 15px;
   font-weight: 600;
+
   letter-spacing: -0.01em;
 
   color: var(--text-faint);
+
   text-decoration: none;
 
   border-radius: 8px;
@@ -90,21 +111,35 @@
   background: var(--surface);
 }
 
-.nav-links > li > a.active {
+
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
+
+.nav-links > li > a.active,
+.dropdown-link.active {
   color: #2563eb;
+
   background: rgba(37, 99, 235, 0.08);
+
   font-weight: 700;
 }
 
-.nav-links > li > a.active:hover {
+.nav-links > li > a.active:hover,
+.dropdown-link.active:hover {
   color: #2563eb;
+
   background: rgba(37, 99, 235, 0.12);
 }
 
 
-/* -------------------------
-   DROPDOWN TRIGGER
-------------------------- */
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.dropdown {
+  position: relative;
+}
 
 .dropdown-trigger {
   display: flex;
@@ -122,6 +157,7 @@
   padding: 0;
 
   border: none;
+
   background: transparent;
 
   color: var(--text-faint);
@@ -135,6 +171,8 @@
 
 .dropdown-toggle i {
   font-size: 11px;
+
+  transition: transform 0.2s ease;
 }
 
 .dropdown-toggle:hover {
@@ -142,13 +180,9 @@
 }
 
 
-/* -------------------------
-   DROPDOWN MENU
-------------------------- */
-
-.dropdown {
-  position: relative;
-}
+/* =========================================================
+   DROPDOWN MENU — DESKTOP
+========================================================= */
 
 .dropdown-menu {
   position: absolute;
@@ -164,14 +198,17 @@
   list-style: none;
 
   background: var(--bg);
+
   border: 1px solid var(--border);
 
   border-radius: 12px;
 
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.10);
 
   opacity: 0;
   visibility: hidden;
+
   transform: translate(-50%, -8px);
 
   transition:
@@ -192,6 +229,7 @@
   font-weight: 500;
 
   color: var(--text-faint);
+
   text-decoration: none;
 
   border-radius: 7px;
@@ -207,14 +245,16 @@
 }
 
 
-/* Desktop dropdown on hover */
+/* Desktop dropdown */
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
 
   .dropdown:hover .dropdown-menu,
   .dropdown:focus-within .dropdown-menu {
+
     opacity: 1;
     visibility: visible;
+
     transform: translate(-50%, 0);
   }
 
@@ -224,13 +264,14 @@
 }
 
 
-/* -------------------------
+/* =========================================================
    NAV ACTIONS
-------------------------- */
+========================================================= */
 
 .nav-actions {
   display: flex;
   align-items: center;
+
   gap: 10px;
 }
 
@@ -252,7 +293,8 @@
   padding: 0 12px;
 
   border: 1px solid var(--border);
-  background: transarent;
+
+  background: transparent;
 
   color: var(--text-faint);
 
@@ -269,7 +311,8 @@
 
   padding: 0 16px;
 
-  background: #25D366;;
+  background: #25D366;
+
   color: var(--bg);
 
   text-decoration: none;
@@ -281,13 +324,14 @@
 
 .whatsapp-btn:hover {
   transform: translateY(-1px);
+
   opacity: 0.9;
 }
 
 
-/* -------------------------
+/* =========================================================
    MOBILE ELEMENTS
-------------------------- */
+========================================================= */
 
 .mobile-whatsapp-btn,
 .hamburger,
@@ -295,19 +339,17 @@
   display: none;
 }
 
-/* =========================================================
-   RESPONSIVE PREMIUM NAVIGATION
-========================================================= */
 
-/* ---------------------------------------------------------
+/* =========================================================
    TABLET
-   769px - 1024px
---------------------------------------------------------- */
+   769px — 1024px
+========================================================= */
 
 @media (max-width: 1024px) {
 
   .navbar {
     min-height: 72px;
+
     padding: 0 24px;
   }
 
@@ -315,97 +357,18 @@
     font-size: 21px;
   }
 
-  .nav-links {
-    gap: 2px;
-  }
 
-  .nav-links > li > a,
-  .dropdown-link {
-    min-height: 42px;
-    padding: 0 9px;
-
-    font-size: 14px;
-  }
-
-  .dropdown-toggle {
-    width: 26px;
-    height: 42px;
-  }
-
-  .dropdown-toggle i {
-    font-size: 10px;
-  }
-
-  .nav-actions {
-    gap: 8px;
-  }
-
-  .whatsapp-btn {
-    min-height: 40px;
-    padding: 0 12px;
-
-    font-size: 13px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-   768px AND BELOW
-========================================================= */
-
-@media (max-width: 768px) {
-
-  /* -------------------------------------------------------
-     HEADER
-  ------------------------------------------------------- */
-
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    width: 100%;
-  }
-
-  .navbar {
-    position: relative;
-
-    min-height: 68px;
-
-    padding: 0 20px;
-
-    display: flex;
-    align-items: center;
-  }
-
-
-  /* -------------------------------------------------------
-     LOGO
-  ------------------------------------------------------- */
-
-  .logo {
-    font-size: 21px;
-
-    flex-shrink: 0;
-  }
-
-
-  /* -------------------------------------------------------
-     DESKTOP NAVIGATION
-  ------------------------------------------------------- */
+  /* Hide desktop navigation */
 
   .nav-links {
-
     position: fixed;
 
-    top: 68px;
+    top: 72px;
     left: 0;
 
     width: 100%;
-    height: auto;
 
-    max-height: calc(100vh - 68px);
+    max-height: calc(100vh - 72px);
 
     display: flex;
     flex-direction: column;
@@ -414,7 +377,8 @@
     gap: 3px;
 
     margin: 0;
-    padding: 14px 20px 24px;
+
+    padding: 14px 24px 24px;
 
     overflow-y: auto;
 
@@ -423,9 +387,9 @@
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+    box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.12);
 
-    /* Hidden initially */
     opacity: 0;
     visibility: hidden;
 
@@ -440,10 +404,11 @@
   }
 
 
-  /* OPEN MOBILE MENU */
+  /* Open menu */
 
   .nav-links.active {
     opacity: 1;
+
     visibility: visible;
 
     transform: translateY(0);
@@ -452,18 +417,15 @@
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE MAIN LINKS
-  ------------------------------------------------------- */
-
   .nav-links > li {
     width: 100%;
   }
 
+
   .nav-links > li > a,
   .dropdown-link {
-
     width: 100%;
+
     min-height: 50px;
 
     display: flex;
@@ -477,13 +439,8 @@
     color: var(--text-faint);
 
     border-radius: 9px;
-
-    text-decoration: none;
-
-    transition:
-      color 0.2s ease,
-      background 0.2s ease;
   }
+
 
   .nav-links > li > a:hover,
   .dropdown-link:hover {
@@ -493,9 +450,7 @@
   }
 
 
-  /* -------------------------------------------------------
-     ACTIVE PAGE
-  ------------------------------------------------------- */
+  /* Active */
 
   .nav-links > li > a.active,
   .nav-links > li > a.active:hover,
@@ -510,12 +465,9 @@
   }
 
 
-  /* -------------------------------------------------------
-     DROPDOWN TRIGGER
-  ------------------------------------------------------- */
+  /* Dropdown trigger */
 
   .dropdown-trigger {
-
     width: 100%;
 
     display: flex;
@@ -527,14 +479,12 @@
   }
 
 
-  /* -------------------------------------------------------
-     DROPDOWN BUTTON
-  ------------------------------------------------------- */
+  /* Dropdown button */
 
   .dropdown-toggle {
-
     width: 50px;
     min-width: 50px;
+
     height: 50px;
 
     display: flex;
@@ -552,10 +502,6 @@
     cursor: pointer;
 
     border-radius: 8px;
-
-    transition:
-      color 0.2s ease,
-      background 0.2s ease;
   }
 
   .dropdown-toggle:hover {
@@ -570,20 +516,14 @@
     transition: transform 0.25s ease;
   }
 
-
-  /* Rotate arrow when dropdown is open */
-
   .dropdown.open .dropdown-toggle i {
     transform: rotate(180deg);
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE DROPDOWN
-  ------------------------------------------------------- */
+  /* Mobile dropdown */
 
   .dropdown-menu {
-
     position: static;
 
     width: 100%;
@@ -592,6 +532,7 @@
     display: none;
 
     margin: 2px 0 6px;
+
     padding: 4px 0 4px 12px;
 
     background: transparent;
@@ -611,14 +552,11 @@
   }
 
 
-  /* Dropdown child links */
-
   .dropdown-menu li {
     width: 100%;
   }
 
   .dropdown-menu li a {
-
     min-height: 44px;
 
     display: flex;
@@ -627,53 +565,28 @@
     padding: 0 14px;
 
     font-size: 14px;
-    font-weight: 500;
 
     color: var(--text-faint);
 
-    text-decoration: none;
-
     border-radius: 7px;
-
-    transition:
-      color 0.2s ease,
-      background 0.2s ease;
-  }
-
-  .dropdown-menu li a:hover {
-    color: var(--text);
-
-    background: var(--surface);
-  }
-
-  .dropdown-menu li a.active {
-    color: #2563eb;
-
-    background: rgba(37, 99, 235, 0.07);
-
-    font-weight: 600;
   }
 
 
-  /* -------------------------------------------------------
-     DESKTOP WHATSAPP
-  ------------------------------------------------------- */
+  /* Hide desktop actions */
 
   .nav-actions {
     display: none;
   }
 
 
-  /* -------------------------------------------------------
-     MOBILE WHATSAPP
-  ------------------------------------------------------- */
+  /* Mobile WhatsApp */
 
   .mobile-whatsapp-btn {
 
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
     justify-content: center;
@@ -686,34 +599,19 @@
     border-radius: 50%;
 
     background: #25D366;
+
     color: #ffffff;
 
-    font-size: 18px;
+    font-size: 20px;
 
     text-decoration: none;
 
-    box-shadow: 0 5px 14px rgba(37, 211, 102, 0.18);
-
-    transition:
-      background 0.2s ease,
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .mobile-whatsapp-btn:hover {
-    background: #20bd5a;
-
-    color: #ffffff;
-
-    transform: translateY(-1px);
-
-    box-shadow: 0 7px 18px rgba(37, 211, 102, 0.25);
+    box-shadow:
+      0 4px 14px rgba(37, 211, 102, 0.20);
   }
 
 
-  /* -------------------------------------------------------
-     HAMBURGER
-  ------------------------------------------------------- */
+  /* Hamburger */
 
   .hamburger {
 
@@ -742,15 +640,13 @@
     color: var(--text);
 
     cursor: pointer;
-
-    transition:
-      background 0.2s ease,
-      border-color 0.2s ease;
   }
+
 
   .hamburger:hover {
     background: var(--surface);
   }
+
 
   .hamburger span {
 
@@ -769,7 +665,7 @@
   }
 
 
-  /* Hamburger -> X */
+  /* Hamburger → X */
 
   .hamburger.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
@@ -802,6 +698,7 @@
     font-size: 20px;
   }
 
+
   .nav-links {
     top: 64px;
 
@@ -811,19 +708,22 @@
     padding-right: 16px;
   }
 
+
   .mobile-whatsapp-btn {
     width: 38px;
     height: 38px;
 
     margin-right: 8px;
 
-    font-size: 17px;
+    font-size: 19px;
   }
+
 
   .hamburger {
     width: 40px;
     height: 40px;
   }
+
 
   .nav-links > li > a,
   .dropdown-link {
@@ -832,11 +732,22 @@
     font-size: 15px;
   }
 
+
   .dropdown-toggle {
     width: 48px;
     min-width: 48px;
+
     height: 48px;
   }
+}
+
+
+/* =========================================================
+   MOBILE MENU SCROLL LOCK
+========================================================= */
+
+body.menu-open {
+  overflow: hidden;
 }
 
 
@@ -854,96 +765,56 @@
   }
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
 /* =========================================================
-   MOBILE WHATSAPP BUTTON
+   FORCE STICKY NAVBAR — ALL DEVICES
 ========================================================= */
 
-.mobile-whatsapp-btn {
-  display: none;
-}
+header.header {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0;
+    right: 0;
 
+    width: 100%;
+    z-index: 9999;
 
-/* =========================================================
-   TABLET + MOBILE
-========================================================= */
+    /* Keep the navbar visible while scrolling */
+    background: var(--bg);
 
-@media (max-width: 1024px) {
+    /* Prevent content from showing through */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
-  .mobile-whatsapp-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background: #25D366;
-    color: #ffffff;
-
-    font-size: 21px;
-    text-decoration: none;
-
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.20);
-
-    transition:
-      transform 0.25s ease,
-      background 0.25s ease,
-      box-shadow 0.25s ease;
-  }
-
-  .mobile-whatsapp-btn:hover {
-    background: #20bd5a;
-    color: #ffffff;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.30);
-  }
-
-  .mobile-whatsapp-btn i {
-    display: block;
-    line-height: 1;
-  }
-
+    border-bottom: 1px solid var(--border);
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* Keep navbar sticky on desktop */
+@media (min-width: 1025px) {
+    header.header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 9999;
+    }
+}
 
+
+/* Keep navbar sticky on tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header.header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 9999;
+    }
+}
+
+
+/* Keep navbar sticky on mobile */
 @media (max-width: 768px) {
-
-  .mobile-whatsapp-btn {
-    width: 40px;
-    height: 40px;
-
-    font-size: 20px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 420px) {
-
-  .mobile-whatsapp-btn {
-    width: 38px;
-    height: 38px;
-
-    font-size: 19px;
-  }
-
+    header.header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 9999;
+    }
 }
 
