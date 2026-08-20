@@ -786,3 +786,222 @@
   font-size: 13px;
   color: var(--text-dim);
 }
+
+/* ==========================================================
+   PROJECT THUMBNAILS
+   ========================================================== */
+
+.project-thumb {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    background: var(--card-bg);
+}
+
+.project-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-thumb img {
+    transform: scale(1.04);
+}
+
+/* ==========================================================
+   PROJECT GRID
+   ========================================================== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* ==========================================================
+   PROJECT CARD
+   ========================================================== */
+
+.project-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--card-bg);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 109, 240, 0.35);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================
+   PROJECT IMAGE / THUMBNAIL
+   ========================================================== */
+
+.project-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Your project images */
+
+.thumb-gagi {
+    background-image: url("../images/project\ images/gagi.png");
+}
+
+.thumb-kivex {
+    background-image: url("../images/project\ images/kivex.png");
+}
+
+.thumb-stanleys {
+    background-image: url("../images/project\ images/stanleys.png");
+}
+
+.thumb-pashio {
+    background-image: url("../images/project\ images/pashio.png");
+}
+
+
+/* ==========================================================
+   PROJECT BODY
+   ========================================================== */
+
+.project-body {
+    padding: 20px;
+}
+
+.project-body h3 {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.project-body p {
+    margin: 12px 0 20px;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   PROJECT TAG
+   ========================================================== */
+
+.project-card .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid rgba(59, 109, 240, 0.55);
+    border-radius: 999px;
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   PROJECT LINK
+   ========================================================== */
+
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+
+.link-arrow:hover {
+    gap: 12px;
+}
+
+.link-arrow svg {
+    flex: 0 0 auto;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) {
+
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .project-thumb {
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-body {
+        padding: 20px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 450px) {
+
+    .project-grid {
+        gap: 16px;
+    }
+
+    .project-body {
+        padding: 18px;
+    }
+
+    .project-body h3 {
+        font-size: 0.95rem;
+    }
+
+    .project-body p {
+        font-size: 0.8rem;
+    }
+
+}
