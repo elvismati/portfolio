@@ -16,9 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Shared CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsiveness.css">
 
     <!-- About page CSS -->
     <link rel="stylesheet" href="css/about.css">
@@ -35,26 +36,44 @@
 </head>
 
 <body>
-
-    <!-- ==================================================
-         HEADER / NAVIGATION
+     <!-- ==================================================
+        HEADER / NAVIGATION
     =================================================== -->
+
     <header class="header">
+
         <div class="container">
+
             <nav class="navbar">
 
-                <!-- Logo -->
+                <!-- LOGO -->
                 <a href="index.html" class="logo">
                     Elvis<span>Mati</span>
                 </a>
 
-                <!-- Main navigation -->
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
 
-                    
-                    <!--services dropdown-->
+                <!-- =========================================
+                    NAVIGATION LINKS
+                ========================================== -->
+
+                <ul class="nav-links">
+
+                    <!-- HOME -->
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+
+                    <!-- ABOUT -->
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+
+                    <!-- =====================================
+                        SERVICES DROPDOWN
+                    ====================================== -->
+
                     <li class="dropdown">
 
                         <div class="dropdown-trigger">
@@ -63,21 +82,47 @@
                                 Services
                             </a>
 
-                            <button class="dropdown-toggle" type="button" aria-label="Toggle Services">
+                            <button
+                                class="dropdown-toggle"
+                                type="button"
+                                aria-label="Toggle Services menu"
+                                aria-expanded="false"
+                            >
                                 <i class="fa-solid fa-chevron-down"></i>
                             </button>
 
                         </div>
 
+
                         <ul class="dropdown-menu">
-                            <li><a href="web-development.html">Web Development</a></li>
-                            <li><a href="graphic-design.html">Graphic Design</a></li>
-                            <li><a href="virtual-assistant.html">Virtual Assistant</a></li>
+
+                            <li>
+                                <a href="web-development.html">
+                                    Web Development
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="graphic-design.html">
+                                    Graphic Design
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="virtual-assistant.html">
+                                    Virtual Assistant
+                                </a>
+                            </li>
+
                         </ul>
 
                     </li>
 
-                    <!--portfolio dropdown-->
+
+                    <!-- =====================================
+                        PORTFOLIO DROPDOWN
+                    ====================================== -->
+
                     <li class="dropdown">
 
                         <div class="dropdown-trigger">
@@ -86,67 +131,122 @@
                                 Portfolio
                             </a>
 
-                            <button class="dropdown-toggle" type="button" aria-label="Toggle Portfolio">
+                            <button
+                                class="dropdown-toggle"
+                                type="button"
+                                aria-label="Toggle Portfolio menu"
+                                aria-expanded="false"
+                            >
                                 <i class="fa-solid fa-chevron-down"></i>
                             </button>
 
                         </div>
 
+
                         <ul class="dropdown-menu">
-                            <li><a href="web-development-portfolio.html">Web Development</a></li>
-                            <li><a href="graphic-design-portfolio.html">Graphic Design</a></li>
-                            <li><a href="virtual-assistant-portfolio.html">Virtual Assistant</a></li>
+
+                            <li>
+                                <a href="web-development-portfolio.html">
+                                    Web Development
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="graphic-design-portfolio.html">
+                                    Graphic Design
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="virtual-assistant-portfolio.html">
+                                    Virtual Assistant
+                                </a>
+                            </li>
+
                         </ul>
 
                     </li>
 
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
 
-                    <!-- Theme option shown inside opened mobile menu -->
-                    <li class="mobile-theme-item">
-                        <button class="theme-btn mobile-theme-btn" type="button" aria-label="Switch to dark theme">
-                            <i class="fa-solid fa-moon"></i>
-                            <span class="theme-btn-text">Dark</span>
-                        </button>
+                    <!-- PRICING -->
+                    <li>
+                        <a href="pricing.html">Pricing</a>
                     </li>
+
+
+                    <!-- CONTACT -->
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
                 </ul>
 
-                <!-- My existing desktop theme and WhatsApp buttons stay here -->
-                <div class="nav-actions">
-                    <button class="theme-btn desktop-theme-btn" type="button" aria-label="Switch to dark theme">
-                        <i class="fa-solid fa-moon"></i>
-                        <span class="theme-btn-text">Dark</span>
-                    </button>
 
+                <!-- =========================================
+                    DESKTOP ACTIONS
+                ========================================== -->
+
+                <div class="nav-actions">
+
+
+                    <!-- WHATSAPP -->
                     <a
                         href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services.%20I'd%20love%20to%20discuss%20my%20project."
                         class="whatsapp-btn"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span>WhatsApp</span>
+
+                        <span>
+                            WhatsApp
+                        </span>
+
                     </a>
+
                 </div>
 
-                 <!-- Mobile WhatsApp button -->
-                <a href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services."
-                class="mobile-whatsapp-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat with Elvis on WhatsApp">
+
+                <!-- =========================================
+                    MOBILE WHATSAPP
+                ========================================== -->
+
+                <a
+                    href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services."
+                    class="mobile-whatsapp-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with Elvis on WhatsApp"
+                >
+
                     <i class="fa-brands fa-whatsapp"></i>
+
                 </a>
-                <!-- End of Mobile WhatsApp button -->
-                 <!-- Hamburger menu on mobile -->
-                <div class="hamburger" role="button" tabindex="0" aria-label="Open navigation menu">
+
+
+                <!-- =========================================
+                    HAMBURGER
+                ========================================== -->
+
+                <button
+                    class="hamburger"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="main-navigation"
+                >
+
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+
+                </button>
+
             </nav>
+
         </div>
+
     </header>
 
     <main>
@@ -190,7 +290,7 @@
                 <div class="about-intro-grid">
                         <div class="about-image-wrap">
                               <img
-                                    src="assets/images/about/elvis-mati-about.png"
+                                    src="assets/images/Elvis Photos/elvis-mati-about.png"
                                     alt="Elvis Mati, web developer, graphic designer, and virtual assistant"
                                     class="about-profile-image">
 
@@ -473,58 +573,246 @@
         </section>
 
         <!-- ==================================================
-             GALLERY
-             New items should be added at the top of gallery-grid.
+     LIFE & WORK GALLERY
+================================================== -->
+<section class="about-gallery section-padding">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">Life & Work Gallery</span>
+
+            <h2>
+                Moments That Shape
+                <span>My Journey.</span>
+            </h2>
+
+            <p>
+                A collection of my work, learning experiences, events,
+                collaborations, and personal moments.
+            </p>
+        </div>
+
+
+        <!-- ==================================================
+             GALLERY FILTERS
         =================================================== -->
-        <section class="about-gallery section-padding">
-            <div class="container">
+        <div class="gallery-filters" aria-label="Gallery categories">
 
-                <div class="section-heading">
-                    <span class="section-label">Life and Work Gallery</span>
+            <button class="gallery-filter-btn active" type="button">
+                All
+            </button>
 
-                    <h2>
-                        Moments That Shape
-                        <span>My Journey.</span>
-                    </h2>
+            <button class="gallery-filter-btn" type="button">
+                Work
+            </button>
 
-                    <p>
-                        A growing collection of work, learning, events, collaborations,
-                        and personal moments. New items will be added here over time.
-                    </p>
-                </div>
+            <button class="gallery-filter-btn" type="button">
+                Events
+            </button>
 
-                <!-- Gallery filters can be activated later with js/about.js -->
-                <div class="gallery-filters" aria-label="Gallery categories">
-                    <button class="gallery-filter-btn active" type="button" data-filter="all">All</button>
-                    <button class="gallery-filter-btn" type="button" data-filter="work">Work</button>
-                    <button class="gallery-filter-btn" type="button" data-filter="events">Events</button>
-                    <button class="gallery-filter-btn" type="button" data-filter="personal">Personal</button>
-                    <button class="gallery-filter-btn" type="button" data-filter="video">Videos</button>
-                </div>
+            <button class="gallery-filter-btn" type="button">
+                Personal
+            </button>
 
-                <div class="gallery-grid">
+            <button class="gallery-filter-btn" type="button">
+                Videos
+            </button>
 
-                    <!-- Add future photos and videos above this placeholder item. -->
-                    <article class="gallery-item gallery-placeholder" data-category="work">
-                        <div class="gallery-placeholder-icon">
-                            <i class="fa-solid fa-images"></i>
-                        </div>
+        </div>
 
-                        <!--<p class="gallery-note">
-                        <i class="fa-solid fa-circle-info"></i>
-                        New photos and videos will be added at the top, so the newest moments appear first.
-                        </p>-->
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-category">Coming Soon</span>
-                            <h3>My Gallery Will Grow Here</h3>
-                            <p>Adding new photos, videos, events, and professional moments anytime.</p>
-                        </div>
-                    </article>
 
-                </div>
+        <!-- ==================================================
+             FEATURED GALLERY
+        =================================================== -->
+        <div class="gallery-showcase">
+
+            <!-- ==========================
+                 TWO LARGE FEATURE CARDS
+            =========================== -->
+
+            <div class="gallery-feature-column">
+
+                <article class="gallery-card gallery-card-large">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Featured Photo</span>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Work</span>
+                        <h3>Creative Work</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-large">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Featured Photo</span>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Personal</span>
+                        <h3>Behind the Scenes</h3>
+                    </div>
+                </article>
 
             </div>
-        </section>
+
+
+            <!-- ==========================
+                 8 SMALL CARDS
+                 2 COLUMNS × 4 ROWS
+            =========================== -->
+
+            <div class="gallery-small-grid">
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Work</span>
+                        <h3>Project</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Work</span>
+                        <h3>Design</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Events</span>
+                        <h3>Event</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Personal</span>
+                        <h3>Moment</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Work</span>
+                        <h3>Workspace</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Events</span>
+                        <h3>Experience</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Personal</span>
+                        <h3>Life</h3>
+                    </div>
+                </article>
+
+
+                <article class="gallery-card gallery-card-small">
+                    <div class="gallery-placeholder">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="gallery-card-overlay">
+                        <span>Work</span>
+                        <h3>Latest Work</h3>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             BOTTOM ROW
+        =================================================== -->
+        <div class="gallery-bottom-grid">
+
+            <article class="gallery-card gallery-bottom-card">
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+            </article>
+
+            <article class="gallery-card gallery-bottom-card">
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+            </article>
+
+            <article class="gallery-card gallery-bottom-card">
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+            </article>
+
+            <article class="gallery-card gallery-bottom-card">
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+            </article>
+
+        </div>
+
+
+        <!-- ==================================================
+             VIEW ALL
+        =================================================== -->
+        <div class="gallery-view-all">
+
+            <a href="gallery.html" class="btn btn-outline">
+                View All Gallery
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+</section>
 
         <!-- ==================================================
              ABOUT PAGE CTA
@@ -583,24 +871,30 @@
                     </p>
 
                     <div class="footer-social-links">
-                        <a href="https://www.linkedin.com/in/elvismati/"
-                           aria-label="Visit my LinkedIn profile"
-                           target="_blank"
-                           rel="noopener">
+                        <a
+                            href="https://www.linkedin.com/in/elvismati/"
+                            aria-label="Visit my LinkedIn profile"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
 
-                        <a href="https://www.instagram.com/elvismati1/"
-                           aria-label="Visit my Instagram profile"
-                           target="_blank"
-                           rel="noopener">
+                        <a
+                            href="https://www.instagram.com/elvismati1/"
+                            aria-label="Visit my Instagram profile"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <i class="fa-brands fa-instagram"></i>
                         </a>
 
-                        <a href="https://github.com/sonraz"
-                           aria-label="Visit my GitHub profile"
-                           target="_blank"
-                           rel="noopener">
+                        <a
+                            href="https://github.com/sonraz"
+                            aria-label="Visit my GitHub profile"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
@@ -631,32 +925,34 @@
                 <div class="footer-contact">
                     <h3>Get in Touch</h3>
 
-                    <a href="https://wa.me/254700531854?text=Hello%20Elvis%2C%20I%20would%20like%20to%20discuss%20a%20project."
-                       target="_blank"
-                       rel="noopener">
+                    <a
+                        href="https://wa.me/254700531854?text=Hello%20Elvis%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i class="fa-brands fa-whatsapp"></i>
                         Chat on WhatsApp
                     </a>
 
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=elvismati.work@gmail.com&su=Project%20Inquiry"
-                       target="_blank"
-                       rel="noopener">
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=elvismati.work@gmail.com&su=Project%20Inquiry"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i class="fa-solid fa-envelope"></i>
                         Send an Email
                     </a>
 
                     <p class="footer-availability">
                         <i class="fa-solid fa-circle"></i>
-                        Available for freelance projects
+                        Available for freelance work
                     </p>
                 </div>
 
             </div>
 
             <div class="footer-bottom">
-                <p>
-                    © <span id="currentYear"></span> Elvis Mati. All rights reserved.
-                </p>
+                <p>© <span id="currentYear"></span> Elvis Mati. All rights reserved.</p>
 
                 <p>
                     Designed and built with <i class="fa-solid fa-heart"></i> by Elvis Mati.
@@ -664,19 +960,17 @@
             </div>
 
         </div>
-
-        <!-- Back-to-top button -->
-        <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
-            <i class="fa-solid fa-arrow-up"></i>
-        </button>
     </footer>
 
-    <!-- Shared JavaScript -->
-    <script src="js/script.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/back-to-top.js"></script>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
+
+  <!--All js Script files-->
+  
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
 </body>
 </html>

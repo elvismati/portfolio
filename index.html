@@ -1,723 +1,681 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elvis Mati — Full-Stack Developer &amp; Designer</title>
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512-nobg.png">
 
-    <title>Elvis Mati | Web Developer, Graphic Designer & Virtual Assistant</title>
+<!-- Google Fonts: Inter for body/UI, used across the whole page -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 
-    <meta
-        name="description"
-        content="Professional web development, graphic design, and virtual assistant services by Elvis Mati."
-    >
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-   <!-- Font Awesome icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Shared website styles -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Navbar styles, dropdowns, mobile menu, and mobile WhatsApp button -->
-    <link rel="stylesheet" href="css/navbar.css">
-
-    <!-- Shared responsive styles -->
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- Homepage-specific styles -->
-    <link rel="stylesheet" href="css/home.css">
-
-    <!-- Google analytics tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR5QVNDVCK"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YR5QVNDVCK');
-    </script>
+<!-- Base styles first, then responsive overrides -->
+ <link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/responsiveness.css">
+<link rel="stylesheet" href="css/footer.css">
 </head>
-
 <body>
 
-    <!-- ==================================================
+  <!-- ==================================================
     HEADER / NAVIGATION
-    =================================================== -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-
-                <a href="index.html" class="logo">
-                    Elvis<span>Mati</span>
-                </a>
-
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-
-                    <!--services dropdown-->
-                    <li class="dropdown">
-
-                        <div class="dropdown-trigger">
-
-                            <a href="services.html" class="dropdown-link">
-                                Services
-                            </a>
-
-                            <button class="dropdown-toggle" type="button" aria-label="Toggle Services">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </button>
-
-                        </div>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="web-development.html">Web Development</a></li>
-                            <li><a href="graphic-design.html">Graphic Design</a></li>
-                            <li><a href="virtual-assistant.html">Virtual Assistant</a></li>
-                        </ul>
-
-                    </li>
-
-                    <!--portfolio dropdown-->
-                    <li class="dropdown">
-
-                        <div class="dropdown-trigger">
-
-                            <a href="portfolio.html" class="dropdown-link">
-                                Portfolio
-                            </a>
-
-                            <button class="dropdown-toggle" type="button" aria-label="Toggle Portfolio">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </button>
-
-                        </div>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="web-development-portfolio.html">Web Development</a></li>
-                            <li><a href="graphic-design-portfolio.html">Graphic Design</a></li>
-                            <li><a href="virtual-assistant-portfolio.html">Virtual Assistant</a></li>
-                        </ul>
-
-                    </li>
-
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-
-                    <li class="mobile-theme-item">
-                        <button class="theme-btn mobile-theme-btn" type="button" aria-label="Switch to dark theme">
-                            <i class="fa-solid fa-moon"></i>
-                            <span class="theme-btn-text">Dark</span>
-                        </button>
-                    </li>
-                </ul>
-
-                <!-- My existing desktop theme and WhatsApp buttons stay here -->
-                <div class="nav-actions">
-                    <button class="theme-btn desktop-theme-btn" type="button" aria-label="Switch to dark theme">
-                        <i class="fa-solid fa-moon"></i>
-                        <span class="theme-btn-text">Dark</span>
-                    </button>
-
-                    <a
-                        href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services.%20I'd%20love%20to%20discuss%20my%20project."
-                        class="whatsapp-btn"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                </div>
-
-                 <!-- Mobile WhatsApp button -->
-                <a href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services."
-                class="mobile-whatsapp-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat with Elvis on WhatsApp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <!-- End of Mobile WhatsApp button -->
-                 <!-- Hamburger menu on mobile -->
-                <div class="hamburger" role="button" tabindex="0" aria-label="Open navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-            </nav>
-        </div>
-    </header>
-
-    <main>
-
-        <!-- ==================================================
-             HERO SECTION
-        =================================================== -->
-        <section class="hero">
-            <div class="hero-bg-circle circle-1"></div>
-            <div class="hero-bg-circle circle-2"></div>
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-                    <div class="availability-badge fade-up delay-1">
-                        <span class="status-dot"></span>
-                        Available for Freelance Projects
-                    </div>
-
-                    <h1 class="hero-title fade-up delay-2">
-                        Helping Businesses Grow Through
-                        <span>
-                            Modern Websites, Creative Branding &
-                            Reliable Virtual Assistance
-                        </span>
-                    </h1>
-
-                    <h2 class="typing-text fade-up delay-3">
-                        I build <span id="typing"></span>
-                    </h2>
-
-                    <p class="hero-description fade-up delay-4">
-                        I help businesses, restaurants, schools, organizations, and
-                        personal brands build a strong digital presence through modern
-                        web development, professional graphic design, and reliable
-                        virtual assistance.
-                    </p>
-
-                    <div class="hero-buttons fade-up delay-5">
-                        <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
-                        <a href="order.html" class="btn btn-outline">Get a Quote</a>
-                    </div>
-
-                    <div class="trust-badges fade-up delay-6">
-                        <span><i class="fa-solid fa-circle-check"></i> Responsive Websites</span>
-                        <span><i class="fa-solid fa-circle-check"></i> Fast Delivery</span>
-                        <span><i class="fa-solid fa-circle-check"></i> SEO Friendly</span>
-                        <span><i class="fa-solid fa-circle-check"></i> Ongoing Support</span>
-                    </div>
-
-                    <div class="hero-stats fade-up delay-7">
-                        <div class="stat-card">
-                            <h3 class="counter" data-target="20">0</h3>
-                            <p>Projects</p>
-                        </div>
-
-                        <div class="stat-card">
-                            <h3 class="counter" data-target="10">0</h3>
-                            <p>Happy Clients</p>
-                        </div>
-
-                        <div class="stat-card">
-                            <h3>3+</h3>
-                            <p>Core Services</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero-image-area fade-right delay-5">
-                    <div class="tech-icon html">HTML</div>
-                    <div class="tech-icon css">CSS</div>
-                    <div class="tech-icon js">JS</div>
-                    <div class="tech-icon php">PHP</div>
-
-                    <div class="profile-card">
-                        <img src="assets/images/profile/profile.png" alt="Elvis Mati">
-
-                        <div class="profile-info">
-                            <h3>Elvis Mati</h3>
-                            <p>Digital Solutions Specialist</p>
-                            <span>★ Available for Work</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================================================
-             SERVICES OVERVIEW
-        =================================================== -->
-        <section class="services-section" id="services">
-            <div class="container">
-
-                <div class="section-heading">
-                    <span class="section-label">What I Offer</span>
-
-                    <h2>
-                        Digital Services Built Around
-                        <span>Your Business Goals</span>
-                    </h2>
-
-                    <p>
-                        Whether you need a professional website, strong visual branding,
-                        or reliable support with daily online tasks, I provide practical
-                        digital solutions that help your business move forward.
-                    </p>
-                </div>
-
-                <div class="services-grid">
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-
-                        <span class="service-number">01</span>
-
-                        <h3>Web Design &amp; Development</h3>
-
-                        <p>
-                            Modern, responsive websites designed to help your business
-                            look professional, attract customers, and grow online.
-                        </p>
-
-                        <div class="service-tags">
-                            <span>Business Websites</span>
-                            <span>Portfolio Websites</span>
-                            <span>Restaurant Websites</span>
-                            <span>School Websites</span>
-                        </div>
-
-                        <a href="web-development.html" class="service-link">
-                            Explore Web Development
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fa-solid fa-pen-ruler"></i>
-                        </div>
-
-                        <span class="service-number">02</span>
-
-                        <h3>Graphic Design</h3>
-
-                        <p>
-                            Creative visual designs that help your brand stand out and
-                            communicate clearly with the people you want to reach.
-                        </p>
-
-                        <div class="service-tags">
-                            <span>Logos</span>
-                            <span>Posters</span>
-                            <span>Flyers</span>
-                            <span>Business Cards</span>
-                        </div>
-
-                        <a href="graphic-design.html" class="service-link">
-                            Explore Graphic Design
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-
-                        <span class="service-number">03</span>
-
-                        <h3>Virtual Assistant</h3>
-
-                        <p>
-                            Reliable remote support that helps you stay organized,
-                            manage tasks efficiently, and focus on your priorities.
-                        </p>
-
-                        <div class="service-tags">
-                            <span>Email Management</span>
-                            <span>Data Entry</span>
-                            <span>Research</span>
-                            <span>Scheduling</span>
-                        </div>
-
-                        <a href="virtual-assistant.html" class="service-link">
-                            Explore Virtual Assistance
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                </div>
-
-                <div class="services-cta">
-                    <p>Not sure which service fits your project?</p>
-                    <a href="order.html" class="btn btn-primary">Request a Free Quote</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================================================
-             FEATURED PORTFOLIO
-        =================================================== -->
-        <section class="featured-portfolio-section" id="portfolio">
-            <div class="container">
-
-                <div class="portfolio-heading-row">
-                    <div class="section-heading portfolio-heading">
-                        <span class="section-label">Selected Work</span>
-
-                        <h2>
-                            Featured Projects That Show
-                            <span>What I Can Create</span>
-                        </h2>
-
-                        <p>
-                            A selection of website and design projects created to help
-                            brands look professional and communicate clearly online.
-                        </p>
-                    </div>
-
-                    <a href="portfolio.html" class="portfolio-view-all">
-                        View All Projects
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="featured-projects-grid">
-
-                    <article class="featured-project-card">
-                        <div class="project-image">
-                            <img
-                                src="assets/images/portfolio/websites/project-one.png"
-                                alt="Preview of a modern business website project"
-                            >
-
-                            <div class="project-overlay">
-                                <a href="portfolio.html#web-projects" class="project-preview-link" aria-label="View business website project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <span class="project-category">Web Development</span>
-                            <h3>Modern Business Website</h3>
-
-                            <p>
-                                A responsive website concept designed to help a growing
-                                business build trust and attract more customers online.
-                            </p>
-
-                            <div class="project-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>Responsive Design</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="featured-project-card">
-                        <div class="project-image">
-                            <img
-                                src="assets/images/portfolio/graphics/project-two.png"
-                                alt="Preview of a brand identity and logo design project"
-                            >
-
-                            <div class="project-overlay">
-                                <a href="portfolio.html#graphic-projects" class="project-preview-link" aria-label="View brand identity project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <span class="project-category">Graphic Design</span>
-                            <h3>Brand Identity Design</h3>
-
-                            <p>
-                                A clean visual identity concept including a logo and
-                                supporting graphics for a modern business brand.
-                            </p>
-
-                            <div class="project-tags">
-                                <span>Logo Design</span>
-                                <span>Branding</span>
-                                <span>Social Media</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="featured-project-card">
-                        <div class="project-image">
-                            <img
-                                src="assets/images/portfolio/websites/project-three.png"
-                                alt="Preview of a restaurant website project"
-                            >
-
-                            <div class="project-overlay">
-                                <a href="portfolio.html#web-projects" class="project-preview-link" aria-label="View restaurant website project">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-                            <span class="project-category">Web Development</span>
-                            <h3>Restaurant Website</h3>
-
-                            <p>
-                                A visually engaging restaurant website concept with a
-                                menu section, booking call to action, and mobile layout.
-                            </p>
-
-                            <div class="project-tags">
-                                <span>UI Design</span>
-                                <span>Mobile First</span>
-                                <span>Landing Page</span>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-
-                <div class="portfolio-bottom-cta">
-                    <p>Have a project idea you would like to bring to life?</p>
-                    <a href="order.html" class="btn btn-primary">Start Your Project</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================================================
-             PROCESS SECTION
-        =================================================== -->
-        <section class="process-section" id="process">
-            <div class="container">
-
-                <div class="section-heading">
-                    <span class="section-label">Simple Process</span>
-
-                    <h2>
-                        From Your Idea to a
-                        <span>Finished Project</span>
-                    </h2>
-
-                    <p>
-                        I keep every project clear, collaborative, and organized so you
-                        always know what is happening at each stage.
-                    </p>
-                </div>
-
-                <div class="process-grid">
-
-                    <article class="process-card">
-                        <div class="process-number">01</div>
-
-                        <div class="process-icon">
-                            <i class="fa-solid fa-comments"></i>
-                        </div>
-
-                        <h3>Tell Me About Your Project</h3>
-
-                        <p>
-                            Send me a message through WhatsApp or email and explain what
-                            you need, your goals, and any ideas you already have.
-                        </p>
-                    </article>
-
-                    <article class="process-card">
-                        <div class="process-number">02</div>
-
-                        <div class="process-icon">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </div>
-
-                        <h3>Plan and Design</h3>
-
-                        <p>
-                            I organize the project requirements, create the design
-                            direction, and share progress with you for feedback.
-                        </p>
-                    </article>
-
-                    <article class="process-card">
-                        <div class="process-number">03</div>
-
-                        <div class="process-icon">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-
-                        <h3>Build and Refine</h3>
-
-                        <p>
-                            I create your website, design assets, or support workflow,
-                            then make agreed revisions to improve the final result.
-                        </p>
-                    </article>
-
-                    <article class="process-card">
-                        <div class="process-number">04</div>
-
-                        <div class="process-icon">
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-
-                        <h3>Review and Deliver</h3>
-
-                        <p>
-                            After your final review, I deliver the completed work and
-                            make sure you have everything needed to use it confidently.
-                        </p>
-                    </article>
-
-                </div>
-
-                <div class="process-cta">
-                    <p>Ready to turn your idea into something professional?</p>
-                    <a href="order.html" class="btn btn-primary">Start a Project</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================================================
-             TRUST SECTION
-        =================================================== -->
-        <section class="trust-section" id="why-choose-me">
-            <div class="container">
-
-                <div class="trust-layout">
-
-                    <div class="trust-intro">
-                        <span class="section-label">Why Work With Me</span>
-
-                        <h2>
-                            Professional Support for
-                            <span>Every Stage of Your Project</span>
-                        </h2>
-
-                        <p>
-                            I focus on creating work that is clear, useful, and aligned
-                            with your goals. Whether you need a website, design work, or
-                            virtual support, you will always know what is happening.
-                        </p>
-
-                        <a href="order.html" class="btn btn-primary">Discuss Your Project</a>
-                    </div>
-
-                    <div class="trust-points">
-
-                        <article class="trust-card">
-                            <div class="trust-icon">
-                                <i class="fa-solid fa-comments"></i>
-                            </div>
-
-                            <div>
-                                <h3>Clear Communication</h3>
-                                <p>You receive updates, can ask questions, and share feedback throughout the project.</p>
-                            </div>
-                        </article>
-
-                        <article class="trust-card">
-                            <div class="trust-icon">
-                                <i class="fa-solid fa-gem"></i>
-                            </div>
-
-                            <div>
-                                <h3>Quality-Focused Work</h3>
-                                <p>Every project is handled with attention to detail, usability, and a professional final presentation.</p>
-                            </div>
-                        </article>
-
-                        <article class="trust-card">
-                            <div class="trust-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-
-                            <div>
-                                <h3>Organized Delivery</h3>
-                                <p>I plan tasks carefully, keep work organized, and deliver agreed project files clearly.</p>
-                            </div>
-                        </article>
-
-                        <article class="trust-card">
-                            <div class="trust-icon">
-                                <i class="fa-solid fa-handshake"></i>
-                            </div>
-
-                            <div>
-                                <h3>Client-Centered Approach</h3>
-                                <p>Your goals, ideas, and feedback guide the work from the first message to final delivery.</p>
-                            </div>
-                        </article>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================================================
-             FINAL CTA
-        =================================================== -->
-        <section class="final-cta-section">
-            <div class="container">
-
-                <div class="final-cta-content">
-                    <span class="final-cta-label">Let’s Work Together</span>
-
-                    <h2>
-                        Have a Project in Mind?
-                        <span>Let’s Make It Happen.</span>
-                    </h2>
-
-                    <p>
-                        Whether you need a website, creative design, or reliable virtual
-                        support, send a message and let’s discuss the best solution for
-                        your project.
-                    </p>
-
-                    <div class="final-cta-buttons">
-                        <a
-                            href="https://wa.me/254700531854?text=Hello%20Elvis%2C%20I%20would%20like%20to%20discuss%20a%20project."
-                            class="btn final-whatsapp-btn"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                            Chat on WhatsApp
-                        </a>
-
-                        <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=elvismati.work@gmail.com&su=Project%20Inquiry"
-                            class="btn final-email-btn"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-solid fa-envelope"></i>
-                            Send an Email
-                        </a>
-                    </div>
-
-                    <p class="final-cta-note">
-                        I’ll respond as soon as possible and help you choose the right service.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
+  =================================================== -->
 
+  <header class="header">
+
+      <div class="container">
+
+          <nav class="navbar">
+
+              <!-- LOGO -->
+              <a href="index.html" class="logo">
+                  Elvis<span>Mati</span>
+              </a>
+
+
+              <!-- =========================================
+                  NAVIGATION LINKS
+              ========================================== -->
+
+              <ul class="nav-links">
+
+                  <!-- HOME -->
+                  <li>
+                      <a href="index.html">Home</a>
+                  </li>
+
+
+                  <!-- ABOUT -->
+                  <li>
+                      <a href="about.html">About</a>
+                  </li>
+
+
+                  <!-- =====================================
+                      SERVICES DROPDOWN
+                  ====================================== -->
+
+                  <li class="dropdown">
+
+                      <div class="dropdown-trigger">
+
+                          <a href="services.html" class="dropdown-link">
+                              Services
+                          </a>
+
+                          <button
+                              class="dropdown-toggle"
+                              type="button"
+                              aria-label="Toggle Services menu"
+                              aria-expanded="false"
+                          >
+                              <i class="fa-solid fa-chevron-down"></i>
+                          </button>
+
+                      </div>
+
+
+                      <ul class="dropdown-menu">
+
+                          <li>
+                              <a href="web-development.html">
+                                  Web Development
+                              </a>
+                          </li>
+
+                          <li>
+                              <a href="graphic-design.html">
+                                  Graphic Design
+                              </a>
+                          </li>
+
+                          <li>
+                              <a href="virtual-assistant.html">
+                                  Virtual Assistant
+                              </a>
+                          </li>
+
+                      </ul>
+
+                  </li>
+
+
+                  <!-- =====================================
+                      PORTFOLIO DROPDOWN
+                  ====================================== -->
+
+                  <li class="dropdown">
+
+                      <div class="dropdown-trigger">
+
+                          <a href="portfolio.html" class="dropdown-link">
+                              Portfolio
+                          </a>
+
+                          <button
+                              class="dropdown-toggle"
+                              type="button"
+                              aria-label="Toggle Portfolio menu"
+                              aria-expanded="false"
+                          >
+                              <i class="fa-solid fa-chevron-down"></i>
+                          </button>
+
+                      </div>
+
+
+                      <ul class="dropdown-menu">
+
+                          <li>
+                              <a href="web-development-portfolio.html">
+                                  Web Development
+                              </a>
+                          </li>
+
+                          <li>
+                              <a href="graphic-design-portfolio.html">
+                                  Graphic Design
+                              </a>
+                          </li>
+
+                          <li>
+                              <a href="virtual-assistant-portfolio.html">
+                                  Virtual Assistant
+                              </a>
+                          </li>
+
+                      </ul>
+
+                  </li>
+
+
+                  <!-- PRICING -->
+                  <li>
+                      <a href="pricing.html">Pricing</a>
+                  </li>
+
+
+                  <!-- CONTACT -->
+                  <li>
+                      <a href="contact.html">Contact</a>
+                  </li>
+
+              </ul>
+
+
+              <!-- =========================================
+                  DESKTOP ACTIONS
+              ========================================== -->
+
+              <div class="nav-actions">
+
+
+                  <!-- WHATSAPP -->
+                  <a
+                      href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services.%20I'd%20love%20to%20discuss%20my%20project."
+                      class="whatsapp-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  >
+
+                      <i class="fa-brands fa-whatsapp"></i>
+
+                      <span>
+                          WhatsApp
+                      </span>
+
+                  </a>
+
+              </div>
+
+
+              <!-- =========================================
+                  MOBILE WHATSAPP
+              ========================================== -->
+
+              <a
+                  href="https://wa.me/254700531854?text=Hello%20Elvis,%20I%20came%20across%20your%20portfolio%20website%20and%20I'm%20interested%20in%20your%20services."
+                  class="mobile-whatsapp-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with Elvis on WhatsApp"
+              >
+
+                  <i class="fa-brands fa-whatsapp"></i>
+
+              </a>
+
+
+              <!-- =========================================
+                  HAMBURGER
+              ========================================== -->
+
+              <button
+                  class="hamburger"
+                  type="button"
+                  aria-label="Open navigation menu"
+                  aria-expanded="false"
+                  aria-controls="main-navigation"
+              >
+
+                  <span></span>
+                  <span></span>
+                  <span></span>
+
+              </button>
+
+          </nav>
+
+      </div>
+
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <header class="hero" id="top">
+  <div class="hero-inner">
+
+  <!-- Left column: headline, copy, CTAs, socials -->
+  <div class="hero-content">
+
+  <span class="badge">
+    <span class="badge-dot"></span>
+    Available for work
+  </span>
+
+  <h1 class="hero-title">
+I Create <span class="accent">Websites</span> & <span class="accent">Graphic Designs</span> That Make Your Business Stand Out Online. 
+  </h1>
+
+  <p class="hero-text">
+    I'm Elvis Mati, I build professional websites and create logos, posters, flyers, banners and more to help your business stand out.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#projects" class="btn btn-primary">
+      View My Work
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <a href="#contact" class="btn btn-secondary">
+      Get In Touch
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+
+  <div class="hero-social">
+    <span class="social-label">Follow Me On</span>
+    <div class="social-icons">
+      <a href="#" class="social-icon" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Behance">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.14h-6.4V5.5H22v1.64zM8.86 12.1c1.1-.55 1.72-1.42 1.72-2.75 0-2.63-1.96-3.5-4.27-3.5H0v16.3h6.6c2.5 0 5-1.16 5-4.05 0-1.8-.87-3.34-2.74-4zM3.1 8.35h2.94c1.02 0 1.94.29 1.94 1.5 0 1.13-.78 1.6-1.83 1.6H3.1V8.35zm3.36 9.85H3.1v-3.75h3.45c1.25 0 2.13.55 2.13 1.9 0 1.36-1 1.85-2.22 1.85zM24 15.65c0-3.35-1.94-6.1-5.5-6.1-3.4 0-5.75 2.55-5.75 5.95 0 3.5 2.2 5.9 5.8 5.9 2.66 0 4.6-1.2 5.35-3.75h-2.65c-.25.8-1.24 1.4-2.63 1.4-1.83 0-2.87-1.05-2.98-2.9H24v-.5zm-8.36-1.6c.17-1.5 1.1-2.45 2.8-2.45 1.55 0 2.5 1.08 2.55 2.45h-5.35z"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Dribbble">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12S5.65 23.5 12 23.5 23.5 18.35 23.5 12 18.35.5 12 .5zm7.6 5.4a9.9 9.9 0 0 1 2.15 6.1c-.31-.06-3.4-.69-6.53-.3-.14-.32-.27-.65-.42-.98-.19-.43-.4-.87-.61-1.3 3.44-1.4 5-3.42 5.41-4.52zm-7.6-3.6c2.42 0 4.63.9 6.32 2.38-.36 1-1.75 2.8-4.99 4.06a45.7 45.7 0 0 0-3.93-6.16c.84-.19 1.7-.28 2.6-.28zm-4.34.98a44 44 0 0 1 3.93 6.13c-4.96 1.32-9.34 1.3-9.81 1.3a9.98 9.98 0 0 1 5.88-7.43zM2.1 12.02v-.29c.44.01 5.55.08 10.85-1.5.3.59.58 1.19.85 1.79-.14.04-.28.09-.42.14-5.5 1.78-8.42 6.65-8.67 7.08a9.94 9.94 0 0 1-2.61-7.22zm4.14 8.19c.2-.42 2.53-4.9 8.4-6.8.03-.01.05-.02.08-.02a37.8 37.8 0 0 1 2.09 7.34 9.94 9.94 0 0 1-10.57-.52zm12.35-.85a41.1 41.1 0 0 0-1.94-6.93c2.9-.46 5.44.3 5.75.4a10.03 10.03 0 0 1-3.81 6.53z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ WHAT I DESIGN & CREATE ============ -->
+  <div class="create-strip">
+    <p class="create-text">
+      <span class="create-title"> Services I Offer :</span>
+      <span class="create-dynamic" id="createDynamic"></span>
+      <span class="typing-cursor"></span>
+    </p>
+  </div>
+
+  </div>
+
+  <!-- Right column: portrait, floating badge, signature -->
+  <div class="hero-media">
+  <div class="hero-media-glow"></div>
+  <!--<span class="bg-monogram" aria-hidden="true">&lt;M</span>-->
+
+  <!-- Portrait placeholder: stock photo standing in for the real headshot.
+        Swap the src below for Elvis's own photo when it's ready — everything
+        else (glow, floating card, signature) is positioned around this image. -->
+  <img
+    class="hero-portrait"
+    src="assets/Images/Elvis Photos/current-dp.png"
+    alt=" Elvis Mati's photo">
+
+
+  <div class="floating-card">
+    <span class="floating-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    </span>
+    <span class="floating-text">
+      Clean Code<br>
+      Creative Design<br>
+      Real Impact
+    </span>
+  </div>
+
+  <div class="signature">
+    <img
+      src="assets/Images/logos/logo-icon.png"
+      alt="EM logo"
+      class="signature-logo"
+    >
+    <span class="signature-name">Elvis Mati</span>
+    <span class="signature-tag">
+      BUILDING DIGITAL SOLUTIONS
+    </span>
+  </div>
+  </div>
+
+  </div>
+
+  <!-- Trusted-by strip -->
+  <div class="trusted">
+
+  <div class="trusted-heading">
+  <span class="trusted-line"></span>
+
+  <p class="trusted-label">
+    Trusted By Brands And Entrepreneurs
+  </p>
+
+  <span class="trusted-line"></span>
+  </div>
+
+  <div class="trusted-marquee">
+  <div class="trusted-track">
+
+    <!-- SET 1 -->
+
+    <!-- GAGI SACCO -->
+    <span class="trusted-logo">
+      <img src="assets/Images/logos/gagi-logo.png" alt="GAGI SACCO logo">
+      <span>
+        GAGI<br>
+        <small>SACCO</small>
+      </span>
+    </span>
+
+    <!-- Kivex -->
+    <span class="trusted-logo">
+      <img src="assets/Images/logos/kivex-logo.png" alt="Kivex logo">
+      <span>Kivex</span>
+    </span>
+
+    <!-- Stanley's -->
+    <span class="trusted-logo">
+      <span class="trusted-icon circle">S</span>
+      <span>
+        Stanley's<br>
+        <small>Haven Hotel</small>
+      </span>
+    </span>
+
+    <!-- Marion Nafula -->
+    <span class="trusted-logo">
+      <img src="assets/Images/logos/marion-logo.png" alt="Marion Nafula logo">
+      <span>Marion Nafula</span>
+    </span>
+
+    <!-- Nafaka -->
+    <span class="trusted-logo">
+      <span class="trusted-icon square">N</span>
+      <span>Nafaka</span>
+    </span>
+
+
+    <!-- SET 2 — duplicate for seamless marquee -->
+
+    <span class="trusted-logo" aria-hidden="true">
+      <img src="assets/Images/logos/gagi-logo.png" alt="">
+      <span>
+        GAGI<br>
+        <small>SACCO</small>
+      </span>
+    </span>
+
+    <span class="trusted-logo" aria-hidden="true">
+      <img src="assets/Images/logos/kivex-logo.png">
+      <span>Kivex</span>
+    </span>
+
+    <span class="trusted-logo" aria-hidden="true">
+      <span class="trusted-icon circle">S</span>
+      <span>
+        Stanley's<br>
+        <small>Haven Hotel</small>
+      </span>
+    </span>
+
+    <span class="trusted-logo" aria-hidden="true">
+      <img src="assets/Images/logos/marion-logo.png" alt="">
+      <span>Marion Nafula</span>
+    </span>
+
+    <span class="trusted-logo" aria-hidden="true">
+      <span class="trusted-icon square">N</span>
+      <span>Nafaka</span>
+    </span>
+
+  </div>
+  </div>
+
+  </div>
+  </header>
+
+  <main>
+
+  <!-- ============ LATEST PROJECTS ============ -->
+  <section class="section" id="projects">
+  <div class="section-head">
+  <div>
+    <p class="eyebrow">Recent Work</p>
+    <h2 class="section-title">Latest <span class="accent">Projects</span></h2>
+  </div>
+  <a href="#" class="btn btn-outline">
+    Explore All Projects
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+  </a>
+  </div>
+
+  <div class="project-grid">
+
+  <article class="project-card">
+    <div class="project-thumb thumb-gagi"></div>
+    <div class="project-body">
+      <h3>GAGI SACCO Website</h3>
+      <span class="tag">Web Development</span>
+      <p>Corporate website for a concrete products company with catalog and inquiry system.</p>
+      <a href="#" class="link-arrow">View Project
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-thumb thumb-kivex"></div>
+    <div class="project-body">
+      <h3>Kivex Platform (MVP)</h3>
+      <span class="tag">Web Development</span>
+      <p>Vacant house hunting platform with marketplace and verification system.</p>
+      <a href="#" class="link-arrow">View Project
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-thumb thumb-stanleys"></div>
+    <div class="project-body">
+      <h3>Stanley's Haven Hotel</h3>
+      <span class="tag">Web Design</span>
+      <p>Hotel website redesign to improve brand presence and online bookings.</p>
+      <a href="#" class="link-arrow">View Project
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-thumb thumb-pashio"></div>
+    <div class="project-body">
+      <h3>Pashio E-Commerce</h3>
+      <span class="tag">Web Development</span>
+      <p>E-commerce store with cart, checkout and secure payment integration.</p>
+      <a href="#" class="link-arrow">View Project
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </article>
+
+  </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section" id="services">
+  <div class="section-head">
+  <div>
+    <p class="eyebrow">What I Do</p>
+    <h2 class="section-title">Services That <span class="accent">Solve Real</span> Problems</h2>
+  </div>
+  <p class="section-desc">I help businesses and individuals grow through modern web solutions, stunning designs and reliable support.</p>
+  <a href="#" class="btn btn-outline">
+    Explore All Services
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+  </a>
+  </div>
+
+  <div class="service-grid">
+
+  <article class="service-card">
+    <span class="service-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    </span>
+    <h3>Web Development</h3>
+    <p>I build fast, responsive and scalable websites using modern technologies.</p>
+    <a href="#" class="link-arrow">Learn Project
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </article>
+
+  <article class="service-card">
+    <span class="service-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+    </span>
+    <h3>Graphic Design</h3>
+    <p>I create visual identities and marketing materials that make brands stand out.</p>
+    <a href="#" class="link-arrow">Learn Project
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </article>
+
+  <article class="service-card">
+    <span class="service-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><circle cx="12" cy="12" r="9"></circle></svg>
+    </span>
+    <h3>Virtual Assistance</h3>
+    <p>I provide reliable admin support so you can focus on growing your business.</p>
+    <a href="#" class="link-arrow">Learn Project
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </article>
+
+  <article class="service-card">
+    <span class="service-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+    </span>
+    <h3>Tech Solutions</h3>
+    <p>I turn ideas into innovative digital products that drive impact.</p>
+    <a href="#" class="link-arrow">Learn Project
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </article>
+
+  </div>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+  <div class="stat">
+    <span class="stat-icon">🙂</span>
+    <div>
+      <span class="stat-num">25+</span>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+  </div>
+  <div class="stat">
+    <span class="stat-icon">👤</span>
+    <div>
+      <span class="stat-num">15+</span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+  </div>
+  <div class="stat">
+    <span class="stat-icon">🎖️</span>
+    <div>
+      <span class="stat-num">2+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+  </div>
+  <div class="stat">
+    <span class="stat-icon">&lt;/&gt;</span>
+    <div>
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Client Satisfaction</span>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section" id="testimonials">
+  <div class="section-head">
+  <div>
+    <p class="eyebrow">What Clients Say</p>
+    <h2 class="section-title">Words From <span class="accent">Happy</span> Clients</h2>
+  </div>
+  <div class="carousel-controls">
+    <button class="carousel-btn" id="prevBtn" aria-label="Previous testimonial">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </button>
+    <button class="carousel-btn active" id="nextBtn" aria-label="Next testimonial">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </button>
+  </div>
+  </div>
+
+  <div class="testimonial-grid" id="testimonialGrid">
+
+  <article class="testimonial-card">
+    <span class="quote-mark">&ldquo;</span>
+    <p>Elvis did an amazing job redesigning our website. The new design is modern, fast and perfectly represents our brand.</p>
+    <div class="testimonial-person">
+      <span class="avatar avatar-1"></span>
+      <div>
+        <span class="person-name">Mary Wanjiku</span>
+        <span class="person-role">CEO, Nafaka Essentials</span>
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="testimonial-card">
+    <span class="quote-mark">&ldquo;</span>
+    <p>Professional, responsive and easy to work with. He understood our needs and delivered beyond our expectations.</p>
+    <div class="testimonial-person">
+      <span class="avatar avatar-2"></span>
+      <div>
+        <span class="person-name">Brian Otieno</span>
+        <span class="person-role">Founder, Kivex Platform</span>
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="testimonial-card">
+    <span class="quote-mark">&ldquo;</span>
+    <p>Great creativity and attention to detail. Our business materials now look premium and outstanding.</p>
+    <div class="testimonial-person">
+      <span class="avatar avatar-3"></span>
+      <div>
+        <span class="person-name">Diana Achieng</span>
+        <span class="person-role">Marketing Lead, GAGI SACCO</span>
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+  </article>
+
+  </div>
+  </section>
+
+  <!-- ============ CTA / CONTACT ============ -->
+  <section class="cta" id="contact">
+  <div class="cta-inner">
+  <span class="cta-icon">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+  </span>
+  <div class="cta-text">
+    <h3>Have a Project in Mind?</h3>
+    <p>Let's build something amazing together.</p>
+  </div>
+  <a href="mailto:hello@elvismati.dev" class="btn btn-primary">
+    Let's Work Together
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+  </a>
+  </div>
+  </section>
+
+  </main>
+
+  
     <!-- ==================================================
          FOOTER
     =================================================== -->
@@ -812,7 +770,7 @@
 
                     <p class="footer-availability">
                         <i class="fa-solid fa-circle"></i>
-                        Available for freelance projects
+                        Available for freelance work
                     </p>
                 </div>
 
@@ -833,13 +791,12 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/back-to-top.js"></script>
 
+  <!--All js Script files-->
+  
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/home.js"> </script>
+  <script src="js/footer.js"></script>
 </body>
 </html>

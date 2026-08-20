@@ -1,889 +1,949 @@
-/* ==================================================
-   HEADER AND NAVIGATION
-   Shared navigation across the entire website.
-================================================== */
+/* =========================================================
+   PREMIUM STICKY NAVIGATION
+========================================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.navbar {
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+}
+
+/* -------------------------
+   LOGO
+------------------------- */
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+
+  text-decoration: none;
+  color: var(--text);
+
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--accent);
+}
 
 
-/* ==================================================
-   HEADER
-================================================== */
+/* -------------------------
+   MAIN NAV LINKS
+------------------------- */
 
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
+.nav-links {
+  display: flex;
+  align-items: center;
 
-    background:rgba(248,250,252,.92);
-    backdrop-filter:blur(12px);
+  gap: 6px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.nav-links > li > a,
+.dropdown-link {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 42px;
+  padding: 0 13px;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+
+  color: var(--text-faint);
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-links > li > a:hover,
+.dropdown-link:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.nav-links > li > a.active {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  font-weight: 700;
+}
+
+.nav-links > li > a.active:hover {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+
+/* -------------------------
+   DROPDOWN TRIGGER
+------------------------- */
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  width: 28px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: var(--text-faint);
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dropdown-toggle i {
+  font-size: 11px;
+}
+
+.dropdown-toggle:hover {
+  color: var(--text);
+}
+
+
+/* -------------------------
+   DROPDOWN MENU
+------------------------- */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 50%;
+
+  min-width: 220px;
+
+  margin: 0;
+  padding: 8px;
+
+  list-style: none;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+
+  min-height: 42px;
+
+  padding: 0 13px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: var(--text-faint);
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+
+/* Desktop dropdown on hover */
+
+@media (min-width: 769px) {
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  .dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+  }
+}
+
+
+/* -------------------------
+   NAV ACTIONS
+------------------------- */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-btn,
+.whatsapp-btn {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.theme-btn {
+  padding: 0 12px;
+
+  border: 1px solid var(--border);
+  background: transarent;
+
+  color: var(--text-faint);
+
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.whatsapp-btn {
+  gap: 8px;
+
+  padding: 0 16px;
+
+  background: #25D366;;
+  color: var(--bg);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+
+/* -------------------------
+   MOBILE ELEMENTS
+------------------------- */
+
+.mobile-whatsapp-btn,
+.hamburger,
+.mobile-theme-item {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE PREMIUM NAVIGATION
+========================================================= */
+
+/* ---------------------------------------------------------
+   TABLET
+   769px - 1024px
+--------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+  .navbar {
+    min-height: 72px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-links > li > a,
+  .dropdown-link {
+    min-height: 42px;
+    padding: 0 9px;
+
+    font-size: 14px;
+  }
+
+  .dropdown-toggle {
+    width: 26px;
+    height: 42px;
+  }
+
+  .dropdown-toggle i {
+    font-size: 10px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .whatsapp-btn {
+    min-height: 40px;
+    padding: 0 12px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   768px AND BELOW
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* -------------------------------------------------------
+     HEADER
+  ------------------------------------------------------- */
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+  }
+
+  .navbar {
+    position: relative;
+
+    min-height: 68px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+  }
+
+
+  /* -------------------------------------------------------
+     LOGO
+  ------------------------------------------------------- */
+
+  .logo {
+    font-size: 21px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* -------------------------------------------------------
+     DESKTOP NAVIGATION
+  ------------------------------------------------------- */
+
+  .nav-links {
+
+    position: fixed;
+
+    top: 68px;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    max-height: calc(100vh - 68px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 3px;
+
+    margin: 0;
+    padding: 14px 20px 24px;
+
+    overflow-y: auto;
+
+    background: var(--bg);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+
+    /* Hidden initially */
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-12px);
+
+    pointer-events: none;
 
     transition:
-        background-color .3s ease,
-        box-shadow .3s ease;
-}
-
-.header.scrolled{
-    background:rgba(255,255,255,.96);
-    box-shadow:var(--shadow-sm);
-}
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
 
 
-/* ==================================================
-   NAVBAR LAYOUT
-================================================== */
+  /* OPEN MOBILE MENU */
 
-.navbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
 
-    min-height:80px;
-}
+    transform: translateY(0);
 
-.logo{
-    font-family:var(--heading-font);
-    font-size:1.8rem;
-    font-weight:700;
-
-    color:var(--secondary-color);
-
-    transition:transform .3s ease;
-}
-
-.logo:hover{
-    transform:scale(1.05);
-}
-
-.logo span{
-    color:var(--primary-color);
-}
+    pointer-events: auto;
+  }
 
 
-/* ==================================================
-   DESKTOP NAVIGATION
-================================================== */
+  /* -------------------------------------------------------
+     MOBILE MAIN LINKS
+  ------------------------------------------------------- */
 
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:1.7rem;
+  .nav-links > li {
+    width: 100%;
+  }
 
-    margin:0;
-    padding:0;
-}
+  .nav-links > li > a,
+  .dropdown-link {
 
-.nav-links li{
-    position:relative;
-    list-style:none;
-}
+    width: 100%;
+    min-height: 50px;
 
-/* ==========================================
-   Regular Navigation Links
-========================================== */
+    display: flex;
+    align-items: center;
 
-.nav-links a{
-    position:relative;
+    padding: 0 14px;
 
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
+    font-size: 16px;
+    font-weight: 600;
 
-    padding:8px 0;
+    color: var(--text-faint);
 
-    color:var(--text);
+    border-radius: 9px;
 
-    font-size:.94rem;
-    font-weight:500;
-
-    transition:color .3s ease;
-}
-
-.nav-links a::after{
-    content:"";
-
-    position:absolute;
-    left:0;
-    bottom:0;
-
-    width:0;
-    height:2px;
-
-    background:var(--primary-color);
-
-    transition:width .3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-    color:var(--primary-color);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after{
-    width:100%;
-}
-
-
-/* ==================================================
-   SPLIT DROPDOWN TRIGGER
-================================================== */
-
-/* ==========================================
-   Split Dropdown
-========================================== */
-
-.dropdown-trigger{
-    display:flex;
-    align-items:center;
-    width:100%;
-}
-
-.dropdown-link{
-
-    display:flex;
-    align-items:center;
-
-    flex:1;
-
-    padding:15px 20px 15px 20px;
-
-    color:var(--text);
-
-    font-size:1rem;
-
-    text-decoration:none;
-
-    margin-left: 16px;
-}
-
-.dropdown-toggle{
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:34px;
-    height:34px;
-
-    border:none;
-    background:transparent;
-
-    cursor:pointer;
-
-    color:var(--text);
-
-    transition:.3s;
-}
-
-.dropdown-toggle i{
-    font-size:.72rem;
-    transition:.3s;
-}
-
-.dropdown.active .dropdown-toggle i,
-.dropdown:hover .dropdown-toggle i{
-    transform:rotate(180deg);
-}
-
-.dropdown-toggle:hover{
-    color:var(--primary-color);
-}
-
-/* ==================================================
-   DESKTOP DROPDOWN MENU
-================================================== */
-
-.dropdown-menu{
-    position:absolute;
-
-    top:calc(100% + 14px);
-    left:-18px;
-
-    z-index:1001;
-
-    width:235px;
-
-    padding:8px;
-
-    overflow:hidden;
-
-    border:1px solid rgba(15,23,42,.08);
-    border-radius:12px;
-
-    background:var(--white);
-
-    box-shadow:var(--shadow-md);
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(12px);
+    text-decoration: none;
 
     transition:
-        opacity .25s ease,
-        transform .25s ease,
-        visibility .25s ease;
-}
+      color 0.2s ease,
+      background 0.2s ease;
+  }
 
-.dropdown:hover .dropdown-menu,
-.dropdown.active .dropdown-menu{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-}
+  .nav-links > li > a:hover,
+  .dropdown-link:hover {
+    color: var(--text);
 
-.dropdown-menu li{
-    border-bottom:1px solid var(--border);
-}
-
-.dropdown-menu li:last-child{
-    border-bottom:none;
-}
-
-.dropdown-menu a{
-    display:block;
-
-    padding:11px 12px;
-
-    border-radius:8px;
-
-    color:var(--text);
-}
-
-.dropdown-menu a::after{
-    display:none;
-}
-
-.dropdown-menu a:hover{
-    background:#eff6ff;
-    color:var(--primary-color);
-}
+    background: var(--surface);
+  }
 
 
-/* ==================================================
-   NAVBAR ACTIONS
-================================================== */
+  /* -------------------------------------------------------
+     ACTIVE PAGE
+  ------------------------------------------------------- */
 
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
+  .nav-links > li > a.active,
+  .nav-links > li > a.active:hover,
+  .dropdown-link.active,
+  .dropdown-link.active:hover {
 
-/* ==================================================
-   THEME BUTTON
-================================================== */
+    color: #2563eb;
 
-.theme-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
+    background: rgba(37, 99, 235, 0.08);
 
-    min-width:76px;
-    min-height:38px;
+    font-weight: 700;
+  }
 
-    padding:9px 13px;
 
-    border:1px solid rgba(37,99,235,.18);
-    border-radius:999px;
+  /* -------------------------------------------------------
+     DROPDOWN TRIGGER
+  ------------------------------------------------------- */
 
-    background:#eff6ff;
-    color:var(--primary-color);
+  .dropdown-trigger {
 
-    box-shadow:0 4px 12px rgba(37,99,235,.12);
+    width: 100%;
 
-    font-size:.82rem;
-    font-weight:700;
-    line-height:1;
+    display: flex;
+    align-items: center;
+  }
 
-    cursor:pointer;
+  .dropdown-trigger .dropdown-link {
+    flex: 1;
+  }
+
+
+  /* -------------------------------------------------------
+     DROPDOWN BUTTON
+  ------------------------------------------------------- */
+
+  .dropdown-toggle {
+
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--text-faint);
+
+    cursor: pointer;
+
+    border-radius: 8px;
 
     transition:
-        background-color .3s ease,
-        color .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease,
-        transform .3s ease;
-}
+      color 0.2s ease,
+      background 0.2s ease;
+  }
 
-.theme-btn:hover{
-    border-color:rgba(37,99,235,.38);
-    background:var(--primary-color);
-    color:#fff;
+  .dropdown-toggle:hover {
+    color: var(--text);
 
-    box-shadow:0 7px 16px rgba(37,99,235,.22);
+    background: var(--surface);
+  }
 
-    transform:translateY(-2px);
-}
+  .dropdown-toggle i {
+    font-size: 11px;
 
-.theme-btn i{
-    font-size:.9rem;
-}
-
-.theme-btn-text{
-    font-size:.78rem;
-    font-weight:700;
-}
-
-/* Flip animation */
-
-.theme-btn.theme-flip{
-    animation:themeButtonFlip .45s ease;
-}
-
-@keyframes themeButtonFlip{
-
-    0%{
-        transform:rotateY(0);
-    }
-
-    50%{
-        transform:rotateY(90deg);
-    }
-
-    100%{
-        transform:rotateY(180deg);
-    }
-
-}
+    transition: transform 0.25s ease;
+  }
 
 
-/* ==================================================
-   WHATSAPP BUTTON
-================================================== */
+  /* Rotate arrow when dropdown is open */
 
-.whatsapp-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-
-    padding:10px 18px;
-
-    border-radius:999px;
-
-    background:#25d366;
-    color:#fff;
-
-    box-shadow:0 8px 22px rgba(37,211,102,.22);
-
-    font-size:.9rem;
-    font-weight:600;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.whatsapp-btn:hover{
-    transform:translateY(-3px);
-
-    box-shadow:0 12px 28px rgba(37,211,102,.32);
-}
-
-.whatsapp-btn i{
-    font-size:1.08rem;
-}
+  .dropdown.open .dropdown-toggle i {
+    transform: rotate(180deg);
+  }
 
 
-/* ==================================================
-   HAMBURGER
-================================================== */
+  /* -------------------------------------------------------
+     MOBILE DROPDOWN
+  ------------------------------------------------------- */
 
-.hamburger{
-    display:none;
+  .dropdown-menu {
 
-    flex-direction:column;
-    gap:5px;
+    position: static;
 
-    padding:8px 0 8px 8px;
+    width: 100%;
+    min-width: 0;
 
-    cursor:pointer;
-}
+    display: none;
 
-.hamburger span{
-    display:block;
+    margin: 2px 0 6px;
+    padding: 4px 0 4px 12px;
 
-    width:27px;
-    height:3px;
+    background: transparent;
 
-    border-radius:999px;
+    border: 0;
 
-    background:var(--secondary-color);
+    box-shadow: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+
+  /* Dropdown child links */
+
+  .dropdown-menu li {
+    width: 100%;
+  }
+
+  .dropdown-menu li a {
+
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: var(--text-faint);
+
+    text-decoration: none;
+
+    border-radius: 7px;
 
     transition:
-        transform .3s ease,
-        opacity .3s ease,
-        background-color .3s ease;
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .dropdown-menu li a:hover {
+    color: var(--text);
+
+    background: var(--surface);
+  }
+
+  .dropdown-menu li a.active {
+    color: #2563eb;
+
+    background: rgba(37, 99, 235, 0.07);
+
+    font-weight: 600;
+  }
+
+
+  /* -------------------------------------------------------
+     DESKTOP WHATSAPP
+  ------------------------------------------------------- */
+
+  .nav-actions {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE WHATSAPP
+  ------------------------------------------------------- */
+
+  .mobile-whatsapp-btn {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-left: auto;
+    margin-right: 10px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+    color: #ffffff;
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    box-shadow: 0 5px 14px rgba(37, 211, 102, 0.18);
+
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .mobile-whatsapp-btn:hover {
+    background: #20bd5a;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 7px 18px rgba(37, 211, 102, 0.25);
+  }
+
+
+  /* -------------------------------------------------------
+     HAMBURGER
+  ------------------------------------------------------- */
+
+  .hamburger {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .hamburger:hover {
+    background: var(--surface);
+  }
+
+  .hamburger span {
+
+    width: 19px;
+    height: 2px;
+
+    display: block;
+
+    border-radius: 2px;
+
+    background: currentColor;
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.2s ease;
+  }
+
+
+  /* Hamburger -> X */
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
 
 
-/* ==================================================
-   DARK MODE
-================================================== */
+/* =========================================================
+   SMALL MOBILE
+   420px AND BELOW
+========================================================= */
 
-body.dark-theme .header{
-    background:rgba(15,23,42,.94);
+@media (max-width: 420px) {
+
+  .navbar {
+    min-height: 64px;
+
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    top: 64px;
+
+    max-height: calc(100vh - 64px);
+
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mobile-whatsapp-btn {
+    width: 38px;
+    height: 38px;
+
+    margin-right: 8px;
+
+    font-size: 17px;
+  }
+
+  .hamburger {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links > li > a,
+  .dropdown-link {
+    min-height: 48px;
+
+    font-size: 15px;
+  }
+
+  .dropdown-toggle {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+  }
 }
 
-body.dark-theme .header.scrolled{
-    background:rgba(15,23,42,.98);
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nav-links,
+  .dropdown-toggle i,
+  .hamburger span,
+  .mobile-whatsapp-btn {
+    transition: none;
+  }
 }
 
-body.dark-theme .logo,
-body.dark-theme .nav-links a{
-    color:#f8fafc;
+body.menu-open {
+  overflow: hidden;
 }
 
-body.dark-theme .dropdown-link{
-    color:#f8fafc;
-}
-
-body.dark-theme .nav-links a:hover,
-body.dark-theme .nav-links a.active{
-    color:#60a5fa;
-}
-
-body.dark-theme .dropdown-menu{
-    border-color:rgba(148,163,184,.2);
-    background:#1e293b;
-}
-
-body.dark-theme .dropdown-menu li{
-    border-color:rgba(148,163,184,.16);
-}
-
-body.dark-theme .dropdown-menu a{
-    color:#e2e8f0;
-}
-
-body.dark-theme .dropdown-menu a:hover{
-    background:#334155;
-    color:#fff;
-}
-
-body.dark-theme .dropdown-toggle{
-    color:#f8fafc;
-}
-
-body.dark-theme .theme-btn{
-    border-color:rgba(96,165,250,.32);
-    background:rgba(96,165,250,.14);
-    color:#bfdbfe;
-}
-
-body.dark-theme .theme-btn:hover{
-    border-color:#60a5fa;
-    background:#60a5fa;
-    color:#0f172a;
-}
-
-body.dark-theme .hamburger span{
-    background:#f8fafc;
-}
-
-/* ==================================================
-   MOBILE NAVIGATION
-================================================== */
-
-.mobile-theme-item{
-    display:none;
-}
-
-@media (max-width:768px){
-
-    .navbar{
-        min-height:72px;
-    }
-
-    .nav-actions{
-        display:none;
-    }
-
-    .hamburger{
-        display:flex;
-    }
-
-    /* ===============================
-       Mobile Menu Container
-    =============================== */
-
-    .nav-links{
-
-        position:fixed;
-
-        top:72px;
-        left:-100%;
-
-        z-index:999;
-
-        display:flex;
-        flex-direction:column;
-        align-items:stretch;
-
-        gap:0;
-
-        width:100%;
-        height:calc(100vh - 72px);
-
-        padding:24px 5%;
-
-        overflow-y:auto;
-
-        background:var(--white);
-
-        box-shadow:0 12px 24px rgba(15,23,42,.08);
-
-        transition:
-            left .35s ease,
-            background-color .3s ease;
-    }
-
-    .nav-links.active{
-        left:0;
-    }
-
-    body.dark-theme .nav-links{
-        background:#0f172a;
-        box-shadow:0 12px 24px rgba(0,0,0,.28);
-    }
-
-    /* ===============================
-       Menu Items
-    =============================== */
-
-    .nav-links > li{
-
-        width:100%;
-
-        border-bottom:1px solid var(--border);
-    }
-
-    body.dark-theme .nav-links > li{
-
-        border-color:rgba(148,163,184,.18);
-    }
-
-    .nav-links > li:last-child{
-        border-bottom:none;
-    }
-
-    /* ===============================
-       Regular Links
-    =============================== */
-
-    .nav-links > li > a{
-
-        display:flex;
-        align-items:center;
-
-        width:100%;
-
-        padding:15px 20px;
-
-        font-size:1rem;
-    }
-
-    .nav-links a::after{
-        display:none;
-    }
-
-    /* ===============================
-       Split Dropdown
-    =============================== */
-
-    .dropdown-trigger{
-
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-
-        width:100%;
-    }
-
-    .dropdown-link{
-
-        flex:1;
-
-        padding:15px 20px;
-
-        color:var(--text);
-
-        font-size:1rem;
-
-        text-decoration:none;
-    }
-
-    body.dark-theme .dropdown-link{
-
-        color:#f8fafc;
-    }
-
-    .dropdown-link::after{
-        display:none;
-    }
-
-    .dropdown-toggle{
-
-        display:flex;
-
-        align-items:center;
-        justify-content:center;
-
-        flex-shrink:0;
-
-        width:52px;
-        height:52px;
-
-        border:none;
-        outline:none;
-
-        background:none;
-
-        cursor:pointer;
-
-        color:var(--text);
-
-        transition:color .3s ease;
-    }
-
-    body.dark-theme .dropdown-toggle{
-
-        color:#f8fafc;
-    }
-
-    .dropdown-toggle:hover{
-
-        color:var(--primary-color);
-    }
-
-    .dropdown-toggle i{
-
-        font-size:.9rem;
-
-        transition:transform .3s ease;
-    }
-
-    .dropdown.active .dropdown-toggle i{
-
-        transform:rotate(180deg);
-    }
-
-    /* ===============================
-       Mobile Dropdown Menu
-    =============================== */
-
-    .dropdown-menu{
-
-        position:static;
-
-        display:none;
-
-        width:100%;
-
-        margin:0 0 12px;
-
-        padding:0 0 0 18px;
-
-        border:none;
-        border-radius:0;
-
-        background:transparent;
-
-        box-shadow:none;
-
-        opacity:1;
-        visibility:visible;
-
-        transform:none;
-    }
-
-    .dropdown.active .dropdown-menu{
-
-        display:block;
-    }
-
-    .dropdown-menu li{
-
-        border-bottom:none;
-    }
-
-    .dropdown-menu a{
-
-        display:block;
-
-        padding:10px 4px;
-
-        color:var(--text-light);
-
-        font-size:.92rem;
-    }
-
-    body.dark-theme .dropdown-menu a{
-
-        color:#cbd5e1;
-    }
-
-    .dropdown-menu a:hover{
-
-        background:transparent;
-
-        color:var(--primary-color);
-    }
-
-    body.dark-theme .dropdown-menu a:hover{
-
-        color:#60a5fa;
-    }
-
-        /* ===============================
-       Mobile Theme Button
-    =============================== */
-
-    .mobile-theme-item{
-
-        display:flex;
-
-        align-items:center;
-
-        padding:18px 12px 8px;
-    }
-
-    .mobile-theme-btn{
-
-        min-width:76px;
-        min-height:38px;
-
-        padding:9px 13px;
-
-        border-radius:20px;
-    }
-
-    .dropdown-toggle{
-
-    width:50px;
-    height:50px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    flex-shrink:0;
-
-    border:none;
-    background:none;
-
-    cursor:pointer;
-    }
-
-} /* END OF 768px MEDIA QUERY */
-
-
-/* ==================================================
+/* =========================================================
    MOBILE WHATSAPP BUTTON
-================================================== */
+========================================================= */
 
-.mobile-whatsapp-btn{
+.mobile-whatsapp-btn {
+  display: none;
+}
 
-    display:none;
 
-    align-items:center;
-    justify-content:center;
+/* =========================================================
+   TABLET + MOBILE
+========================================================= */
 
-    width:42px;
-    height:42px;
+@media (max-width: 1024px) {
 
-    border-radius:999px;
+  .mobile-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    background:#25d366;
+    width: 42px;
+    height: 42px;
 
-    color:#fff;
+    flex-shrink: 0;
 
-    font-size:1.35rem;
+    border-radius: 50%;
 
-    text-decoration:none;
+    background: #25D366;
+    color: #ffffff;
 
-    box-shadow:0 8px 18px rgba(37,211,102,.28);
+    font-size: 21px;
+    text-decoration: none;
+
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.20);
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background-color .3s ease;
-}
+      transform 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+  }
 
-.mobile-whatsapp-btn:hover{
+  .mobile-whatsapp-btn:hover {
+    background: #20bd5a;
+    color: #ffffff;
 
-    background:#1ebe5d;
+    transform: translateY(-2px);
 
-    color:#fff;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.30);
+  }
 
-    transform:translateY(-3px) scale(1.04);
+  .mobile-whatsapp-btn i {
+    display: block;
+    line-height: 1;
+  }
 
-    box-shadow:0 12px 22px rgba(37,211,102,.38);
-}
-
-.mobile-whatsapp-btn:active{
-
-    transform:translateY(0) scale(.96);
-}
-
-.mobile-whatsapp-btn:focus-visible{
-
-    outline:3px solid rgba(37,211,102,.35);
-
-    outline-offset:3px;
 }
 
 
-/* ==================================================
-   MOBILE LAYOUT
-================================================== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .mobile-whatsapp-btn{
+  .mobile-whatsapp-btn {
+    width: 40px;
+    height: 40px;
 
-        display:inline-flex;
+    font-size: 20px;
+  }
 
-        margin-left:auto;
-        margin-right:12px;
-    }
-
-    .hamburger{
-
-        margin-left:0;
-    }
 }
 
 
-/* ==================================================
-   SMALL PHONES
-================================================== */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-@media (max-width:480px){
+@media (max-width: 420px) {
 
-    .logo{
+  .mobile-whatsapp-btn {
+    width: 38px;
+    height: 38px;
 
-        font-size:1.55rem;
-    }
+    font-size: 19px;
+  }
 
-    .whatsapp-btn{
-
-        padding:10px 14px;
-    }
 }
 
-
-@media (max-width:380px){
-
-    .mobile-whatsapp-btn{
-
-        width:38px;
-        height:38px;
-
-        margin-right:10px;
-
-        font-size:1.2rem;
-    }
-}
